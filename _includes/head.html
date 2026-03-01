@@ -1,0 +1,22 @@
+{%- include assign.liquid -%}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {%- if page.url == "/" -%}
+  <title>
+    {{ contents.title | replace: "/", "" | default: contents.title }} | {{
+    site.baseurl | prepend: site.url }}
+  </title>
+  {%- else -%}
+  <title>
+    {{ page.title | replace: "/", "" | capitalize }} | {{ contents.title |
+    default: contents.title }}
+  </title>
+  {%- endif -%} {% include seo.html %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="{{ contents.fonts_url }}" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+</head>

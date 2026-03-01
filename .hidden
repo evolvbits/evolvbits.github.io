@@ -1,0 +1,10 @@
+temp
+_site
+node_modules
+tools
+CNAME
+LICENSE.txt
+Gemfile
+Gemfile.lock
+package.json
+package-lock.json

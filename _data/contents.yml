@@ -1,0 +1,19 @@
+lang: en
+fonts_url: https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap
+title: EvolvBits
+description: Tools that scale with you.
+repo_url: https://github.com/crewbits
+gitlab_url: https://gitlab.com/crewbits
+org:
+  name: EvolvBits Contributors
+  author:
+    name: William C. Canin
+    url: https://williamcanin.github.io
+
+home:
+  nav:
+    - href: "#cli"
+      label: Products
+      aria_label: Products
+      title: Products
+      icon: prod

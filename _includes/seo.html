@@ -1,0 +1,39 @@
+{%- include assign.liquid -%}
+
+<!-- SEO -->
+<meta
+  name="description"
+  content="{{ include.description | default: contents.description | strip_html | truncate: 160 }}"
+/>
+<meta name="author" content="{{ contents.org.author.name }}" />
+<meta
+  property="og:title"
+  content="{{ include.title | default: contents.title }}"
+/>
+<meta property="og:locale" content="contents.lang" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta
+  property="og:description"
+  content="{{ include.description | default: contents.description | strip_html | truncate: 160 }}"
+/>
+<link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+<meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+<meta property="og:site_name" content="{{ contents.title }}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta
+  property="twitter:title"
+  content="{{ include.title | default: contents.title }}"
+/>
+<meta name="robots" content="{{ include.robots | default: 'index, follow' }}" />
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "description": "{{ include.description | default: contents.description | strip_html | truncate: 160 | escape }}",
+    "headline": "{{ include.title | default: contents.title | escape }}",
+    "name": "contents.title",
+    "url": "{{ page.url | prepend: site.url }}"
+  }
+</script>
+<!-- End SEO -->

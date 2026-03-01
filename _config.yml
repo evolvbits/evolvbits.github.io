@@ -1,0 +1,28 @@
+# [ important!!! ] the base hostname & protocol for your site, e.g. http://example.com
+url: "https://evolvbits.github.io"
+
+# the subpath of your site, e.g. /products
+baseurl: ""
+
+title: EvolvBits
+description: Tools that scale with you.
+plugins:
+  - jekyll-sitemap
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+include:
+  - _pages
+exclude:
+  - node_modules
+  - .bundle-cache
+  - Gemfile
+  - Gemfile.lock
+  - package-lock.json
+  - package.json
+  - README.md
+  - tools

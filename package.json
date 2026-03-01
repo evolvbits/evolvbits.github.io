@@ -1,0 +1,36 @@
+{
+  "name": "evolvbits-site",
+  "version": "0.1.0",
+  "description": "EvolvBits Site",
+  "type": "module",
+  "scripts": {
+    "install": "echo 'wait...' && bundle install",
+    "minify:files": "node tools/scripts/minify.mjs",
+    "jekyll:build": "cross-env JEKYLL_ENV=production bundle exec jekyll build",
+    "jekyll:serve": "JEKYLL_ENV=development; echo JEKYLL_ENV=$JEKYLL_ENV; bundle exec jekyll serve --host 127.0.0.1 --port 4000 --drafts",
+    "clean:cache": "node tools/scripts/clean.mjs --cache",
+    "clean:all": "node tools/scripts/clean.mjs --all",
+    "build": "npm-run-all clean:cache jekyll:build minify:files",
+    "serve": "npm run clean:cache && npm run jekyll:serve",
+    "help": "node tools/scripts/help.mjs"
+  },
+  "repository": "git+https://github.com/seedctl/seedctl.github.io.git",
+  "keywords": [
+    "evolvbits",
+    "site",
+    "jekyll"
+  ],
+  "author": "William Canin <https://evolvbits.github.io>",
+  "license": "https://evolvbits.github.io/LICENSE",
+  "homepage": "https://evolvbits.github.io",
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "del": "^8.0.1",
+    "esbuild": "^0.25.11",
+    "execa": "^9.6.0",
+    "glob": "^11.1.0",
+    "html-minifier-terser": "^7.2.0",
+    "kleur": "^4.1.5"
+  }
+}
