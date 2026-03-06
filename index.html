@@ -7,7 +7,7 @@ title: Home
 {% assign contents = site.data.contents %}
 
 <main class="main home-page">
-  <section class="home-hero container">
+  <section class="home-hero container" data-reveal>
     <p class="home-hero__badge">{{ contents.home.badge }}</p>
     <h1 class="home-hero__title">{{ contents.home.headline }}</h1>
     <p class="home-hero__subtitle">{{ contents.home.subheadline }}</p>
@@ -27,11 +27,11 @@ title: Home
     </div>
   </section>
 
-  <section class="container home-section">
+  <section class="container home-section" data-reveal>
     <div class="row g-4">
       {% for pillar in contents.home.pillars %}
       <div class="col-12 col-md-6 col-lg-4">
-        <article class="home-card h-100">
+        <article class="home-card h-100" data-reveal>
           <i class="{{ pillar.icon }} home-card__icon"></i>
           <h2 class="home-card__title">{{ pillar.title }}</h2>
           <p class="home-card__text">{{ pillar.text }}</p>
@@ -41,13 +41,13 @@ title: Home
     </div>
   </section>
 
-  <section class="container home-section">
+  <section class="container home-section" data-reveal>
     <div class="row align-items-center g-4">
       <div class="col-lg-6">
-        <h2 class="home-section__title">What we deliver</h2>
+        <h2 class="home-section__title">How we help teams</h2>
         <p class="home-section__lead">
-          We design practical tools and maintainable systems that keep teams
-          moving without adding unnecessary complexity.
+          We focus on practical outcomes: less manual effort, clearer tooling,
+          and faster delivery cycles.
         </p>
       </div>
       <div class="col-lg-6">
@@ -63,8 +63,8 @@ title: Home
     </div>
   </section>
 
-  <section class="container home-section">
-    <div class="home-cta">
+  <section class="container home-section" data-reveal>
+    <div class="home-cta" data-reveal>
       <h2>See all public work</h2>
       <p>
         Visit the EvolvBits repositories to track releases, roadmap updates, and

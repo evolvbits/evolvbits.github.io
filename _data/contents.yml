@@ -75,7 +75,7 @@ nav:
 home:
   badge: "Open source tooling for modern teams"
   headline: "Build better systems with practical, high-signal developer tools."
-  subheadline: "EvolvBits creates lightweight utilities and workflows that help teams ship faster, automate safely, and scale with confidence."
+  subheadline: "EvolvBits provides tools designed to simplify workflows, automate tasks, solve real problems, and improve productivity across different ecosystems."
   cta_primary:
     label: "Explore Projects"
     href: "/projects/"
@@ -83,42 +83,50 @@ home:
     label: "Contact Us"
     href: "/contact/"
   pillars:
-    - title: "Developer-first"
-      text: "We focus on clear DX, simple setup, and tools that are straightforward to adopt."
+    - title: "Fast"
+      text: "Tools optimized for quick setup and immediate practical use."
       icon: "bi bi-terminal"
-    - title: "Automation with control"
-      text: "Automate repetitive tasks while keeping observability, safety checks, and human approval where needed."
+    - title: "Modular"
+      text: "Composable building blocks that work independently or together."
       icon: "bi bi-gear-wide-connected"
-    - title: "Open by default"
-      text: "We publish, document, and evolve projects in public whenever possible."
+    - title: "Easy to use"
+      text: "Designed for low friction, clear behavior, and maintainable adoption."
+      icon: "bi bi-hand-thumbs-up"
+    - title: "Ecosystem compatible"
+      text: "Built to integrate with varied stacks, workflows, and environments."
       icon: "bi bi-boxes"
   highlights:
-    - title: "Reliable foundations"
-      text: "Opinionated starters and workflows to reduce setup and operational drift."
-    - title: "Pragmatic architecture"
-      text: "Design decisions grounded in maintainability, performance, and team autonomy."
-    - title: "Security-aware delivery"
-      text: "Security considerations integrated into the normal delivery lifecycle."
+    - title: "Workflow simplification"
+      text: "Automating repetitive tasks and reducing operational overhead."
+    - title: "Problem-oriented tooling"
+      text: "Focused on solving concrete engineering bottlenecks."
+    - title: "Productivity leverage"
+      text: "Helping teams spend more time building and less time debugging setup."
 
 about:
-  mission: "Deliver practical software tools that improve engineering quality, reduce maintenance cost, and scale with real teams."
-  values:
-    - title: "Clarity"
-      text: "Readable code, explicit tradeoffs, and documentation that helps people move quickly."
-    - title: "Pragmatism"
-      text: "Solutions built for production realities, not just ideal conditions."
-    - title: "Rigor"
-      text: "Technical choices backed by consistency, testing, and operational accountability."
+  intro: "EvolvBits builds a unified ecosystem of tools to help developers create, automate, and manage technical workflows faster and smarter."
+  mission: "Provide developers with practical, lightweight, and composable software that respects developer time and solves real problems."
+  philosophy:
+    - "Software should solve real problems."
+    - "Tools should stay lightweight and focused."
+    - "Components should be composable."
+    - "Developer time should always be respected."
+  collaboration:
+    text: "We welcome ideas, issues, and pull requests from contributors interested in improving tools and documentation."
+    steps:
+      - "Fork the repository"
+      - "Create your feature branch"
+      - "Open a pull request with context"
 
 projects:
   featured:
     - name: "SeedCTL"
       url: "https://github.com/evolvbits/seedctl"
-      description: "CLI utility for fast project scaffolding and repeatable engineering setup."
+      description: "Cryptocurrency multichain wallet generator focused on automation and reproducible execution."
       tags:
         - "CLI"
         - "Automation"
-        - "Developer Experience"
+        - "Blockchain"
     - name: "EvolvBits Website"
       url: "https://github.com/evolvbits/evolvbits.github.io"
       description: "Jekyll-based website with a maintainable content structure and legal governance pages."
