@@ -228,6 +228,52 @@ html {
   }
 }
 
+.contact-form {
+  margin-top: 0.8rem;
+}
+
+.contact-form__label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: #2f3f45;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  border: 1px solid #bdece5;
+  background: #fcfffe;
+  border-radius: 0.7rem;
+  padding: 0.62rem 0.75rem;
+  color: #2f3f45;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #47cdbf;
+    box-shadow: 0 0 0 3px rgba(71, 205, 191, 0.2);
+  }
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form__actions {
+  margin-top: 1rem;
+}
+
+.contact-form__status {
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
+  color: #2f3f45;
+}
+
 .page-list,
 .page-steps {
   padding-left: 1.1rem;

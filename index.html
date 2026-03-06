@@ -132,10 +132,10 @@ title: Home
   <section class="container home-section" data-reveal>
     <div class="row align-items-center g-4">
       <div class="col-lg-6">
-        <h2 class="home-section__title">How we help teams</h2>
+        <h2 class="home-section__title">How we help everyone</h2>
         <p class="home-section__lead">
-          We focus on practical outcomes: less manual effort, clearer tooling,
-          and faster delivery cycles.
+          We focus on practical outcomes: less manual effort, clearer tools, and
+          better daily productivity for different types of users.
         </p>
       </div>
       <div class="col-lg-6">
@@ -160,30 +160,95 @@ title: Home
       <p class="page-hero__badge">Contact</p>
       <h2 class="page-hero__title">{{ contents.contact.title }}</h2>
       <p class="page-hero__subtitle">{{ contents.contact.text }}</p>
-      <a
-        class="btn home-btn home-btn--primary"
-        href="mailto:{{ contents.email }}"
-      >
-        {{ contents.contact.cta_label }}
-      </a>
     </div>
   </section>
 
   <section class="container page-section" data-reveal>
     <div class="row g-4">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-7">
         <article class="page-card h-100" data-reveal>
-          <h3 class="page-card__title">Email</h3>
+          <h3 class="page-card__title">Send a Message</h3>
           <p class="page-card__text">
-            For all inquiries, use the official channel below.
+            Fill out the form and your default email app will open with your
+            message ready to send.
+          </p>
+          <form
+            id="contactForm"
+            class="contact-form"
+            data-contact-email="{{ contents.email }}"
+          >
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="contactName" class="contact-form__label"
+                  >Name</label
+                >
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="contactEmail" class="contact-form__label"
+                  >Email</label
+                >
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="contactSubject" class="contact-form__label"
+                  >Subject</label
+                >
+                <input
+                  id="contactSubject"
+                  name="subject"
+                  type="text"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="contactMessage" class="contact-form__label"
+                  >Message</label
+                >
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  class="contact-form__textarea"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="contact-form__actions">
+              <button type="submit" class="btn home-btn home-btn--primary">
+                {{ contents.contact.cta_label }}
+              </button>
+            </div>
+            <p
+              id="contactFormStatus"
+              class="contact-form__status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </article>
+      </div>
+      <div class="col-12 col-lg-5">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Direct Contact</h3>
+          <p class="page-card__text">
+            You can also contact us directly by email or social channels.
           </p>
           <a href="mailto:{{ contents.email }}" class="page-card__link"
             >{{ contents.email }}</a
           >
-        </article>
-      </div>
-      <div class="col-12 col-lg-6">
-        <article class="page-card h-100" data-reveal>
           <h3 class="page-card__title">Social Media</h3>
           <p class="page-card__text">
             Follow updates and announcements on official profiles.

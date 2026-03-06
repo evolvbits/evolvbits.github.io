@@ -41,4 +41,38 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealElements.forEach((element) => observer.observe(element));
+
+  const contactForm = document.getElementById("contactForm");
+  const contactStatus = document.getElementById("contactFormStatus");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const emailTo = contactForm.dataset.contactEmail || "";
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const subject = contactForm.subject.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name || !email || !subject || !message || !emailTo) {
+        if (contactStatus) {
+          contactStatus.textContent =
+            "Please complete all fields before sending.";
+        }
+        return;
+      }
+
+      const mailSubject = encodeURIComponent(`[EvolvBits] ${subject}`);
+      const mailBody = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      );
+
+      if (contactStatus) {
+        contactStatus.textContent = "Opening your email app...";
+      }
+
+      window.location.href = `mailto:${emailTo}?subject=${mailSubject}&body=${mailBody}`;
+    });
+  }
 });

@@ -73,9 +73,9 @@ nav:
     icon: "bi bi-shield-check"
 
 home:
-  badge: "Open source tooling for modern teams"
-  headline: "Build better systems with practical, high-signal developer tools."
-  subheadline: "EvolvBits provides tools designed to simplify workflows, automate tasks, solve real problems, and improve productivity across different ecosystems."
+  badge: "Open tools for everyone"
+  headline: "Practical tools for people, teams, and organizations."
+  subheadline: "EvolvBits provides accessible tools that simplify routines, automate tasks, solve real problems, and improve productivity across different contexts."
   cta_primary:
     label: "Explore Projects"
     href: "/#projects"
@@ -97,26 +97,26 @@ home:
       icon: "bi bi-boxes"
   highlights:
     - title: "Workflow simplification"
-      text: "Automating repetitive tasks and reducing operational overhead."
+      text: "Automating repetitive tasks and reducing everyday operational effort."
     - title: "Problem-oriented tooling"
-      text: "Focused on solving concrete engineering bottlenecks."
+      text: "Focused on solving concrete real-world bottlenecks."
     - title: "Productivity leverage"
-      text: "Helping teams spend more time building and less time debugging setup."
+      text: "Helping users spend less time on setup and more time on results."
 
 about:
-  intro: "EvolvBits builds a unified ecosystem of tools to help developers create, automate, and manage technical workflows faster and smarter."
-  mission: "Provide developers with practical, lightweight, and composable software that respects developer time and solves real problems."
+  intro: "EvolvBits builds a unified ecosystem of tools for all types of users, from beginners to technical professionals."
+  mission: "Provide practical, lightweight, and composable tools that respect people's time and solve real problems."
   philosophy:
     - "Software should solve real problems."
     - "Tools should stay lightweight and focused."
     - "Components should be composable."
     - "Developer time should always be respected."
   collaboration:
-    text: "We welcome ideas, issues, and pull requests from contributors interested in improving tools and documentation."
+    text: "We welcome ideas, feedback, and contributions from anyone interested in improving tools and documentation."
     steps:
-      - "Fork the repository"
-      - "Create your feature branch"
-      - "Open a pull request with context"
+      - "Share feedback or suggestions"
+      - "Report issues or improvement ideas"
+      - "Contribute directly if you want to collaborate technically"
 
 projects:
   featured:
@@ -135,14 +135,14 @@ projects:
         - "Bootstrap"
         - "Sass"
   roadmap:
-    - "Starter kits for backend and DevOps workflows"
-    - "Internal tooling templates for small engineering teams"
-    - "Extended automation modules for CI/CD pipelines"
+    - "Simple utility packs for everyday personal and professional tasks"
+    - "Templates and starters for small teams and independent users"
+    - "New automation modules adaptable to different kinds of workflows"
 
 contact:
-  title: "Let's build something useful"
-  text: "For partnerships, product discussions, or technical collaboration, reach out through email or social channels."
-  cta_label: "Send an email"
+  title: "Talk to EvolvBits"
+  text: "Use the form below to send your message. Anyone can contact us: users, creators, partners, or curious visitors."
+  cta_label: "Send message"
 
 # Footer
 footer:
