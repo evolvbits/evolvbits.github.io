@@ -1,13 +1,13 @@
 {
   "name": "evolvbits-site",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "EvolvBits SITE",
   "type": "module",
   "scripts": {
     "install": "echo 'wait...' && bundle install",
     "minify:files": "node tools/scripts/minify.mjs",
     "jekyll:build": "cross-env JEKYLL_ENV=production bundle exec jekyll build",
-    "jekyll:serve": "JEKYLL_ENV=development; echo JEKYLL_ENV=$JEKYLL_ENV; bundle exec jekyll serve --host 127.0.0.1 --port 4000 --drafts",
+    "jekyll:serve": "JEKYLL_ENV=development; echo JEKYLL_ENV=$JEKYLL_ENV; bundle exec jekyll serve --host 0.0.0.0 --port 4000 --drafts",
     "clean:cache": "node tools/scripts/clean.mjs --cache",
     "clean:all": "node tools/scripts/clean.mjs --all",
     "build": "npm-run-all clean:cache jekyll:build minify:files",
