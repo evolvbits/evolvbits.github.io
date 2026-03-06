@@ -1,20 +1,21 @@
 ---
-layout: license
-title: EvolvBits Site License
+layout: legal_context
+title: Website license
 description: Proprietary license governing the EvolvBits site source code, design, and assets.
 eyebrow: License
 updated_at: February 27, 2026
-intro: This license governs the use of the EvolvBits site source code, including all HTML templates, stylesheets, scripts, layout files, configuration files, data files, static assets, and design elements contained in this repository.
+intro: |
+  This license governs the use of the EvolvBits site source code, including all HTML templates, stylesheets, scripts, layout files, configuration files, data files, static assets, and design elements contained in this repository.
 published: true
-permalink: /license/
+permalink: /legal/license/
 ---
 
-{% assign d = site.data.data.site.org %}
+{% assign organization = site.data.contents.organization %}
 
 ## 1. Ownership
 
 The Website and all of its constituent files, code, and content are the exclusive intellectual property of
-[{{ d.author.name }}]({{ d.author.url }}){:target="\_blank"}. No ownership rights are transferred to any party under any circumstances.
+[{{ organization.author.name }}]({{ organization.author.url }}){:target="\_blank"}. No ownership rights are transferred to any party under any circumstances.
 
 ## 2. Restrictions
 
@@ -42,7 +43,7 @@ The Website is provided "as is", without warranty of any kind, express or implie
 
 ## 5. Limitation of Liability
 
-In no event shall {{ d.author.name }} be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to loss of data, loss of profits, or business interruption) arising out of or in connection with the use or inability to use the Website, even if advised of the possibility of such damages.
+In no event shall {{ organization.author.name }} be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to loss of data, loss of profits, or business interruption) arising out of or in connection with the use or inability to use the Website, even if advised of the possibility of such damages.
 
 ## 6. Termination
 
@@ -52,9 +53,9 @@ Any rights granted or implied under this license terminate automatically and imm
 
 To request permission for any use not covered by Section 3, contact the copyright holder through the official project repository:
 
-- **GitHub:** [github.com/evolvbits](https://github.com/evolvbits){:target="\_blank" rel="noreferrer"}
-- **GitLab:** [gitlab.com/evolvbits](https://gitlab.com/evolvbits){:target="\_blank" rel="noreferrer"}
+- **GitHub:** [github.com/evolvbits/evolvbits.github.io](https://github.com/evolvbits/evolvbits.github.io){:target="\_blank" rel="noreferrer"}
+- **GitLab:** [gitlab.com/evolvbits/evolvbits.gitlab.io](https://gitlab.com/evolvbits/evolvbits.gitlab.io){:target="\_blank" rel="noreferrer"}
 
 ---
 
-Copyright (c) 2026 {{ d.author.name }}. All rights reserved.
+Copyright (c) 2026 {{ organization.author.name }}. All rights reserved.

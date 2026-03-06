@@ -1,2 +1,22 @@
-@forward "mixins";
-@forward "tokens";
+@use "reset";
+@use "mixins";
+@use "tokens";
+@use "typography";
+
+body {
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: var(--font-family-primary);
+  // impede selecionar texto no site
+  // user-select: none;
+}
+
+a[target="_blank"]::after {
+  content: "🢅";
+  font-size: .9em;
+  margin-left: 0.25em;
+  vertical-align: middle;
+}
+
+main {
+  margin-top: 100px;
+}

@@ -1,0 +1,61 @@
+@use "../components/index";
+
+.footer {
+  position: relative;
+  background-color: var(--bg-footer);
+  font-size: .8rem !important;
+
+  &-links {
+    &:hover {
+      color: var(--color-links) !important;
+    }
+  }
+
+  &-socials {
+    font-size: 1.2rem;
+  }
+
+  // &::before {
+  //   @extend %grainy;
+  // }
+
+  &-description {
+    margin-top: 5px;
+  }
+
+  &-brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text);
+
+    &__text {
+      color: black !important;
+      margin-left: 60px;
+      margin-top: 35px;
+      font-size: 1.3rem;
+      position: absolute;
+    }
+
+    &__highlight {
+      transition: color .2s ease;
+    }
+
+    &:hover .footer-brand__highlight {
+      color: var(--color-links);
+    }
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .border-top {
+    border-top: 1px solid #a8a8a8 !important;
+  }
+
+  a[target="_blank"]::after {
+    content: "" !important;
+  }
+}

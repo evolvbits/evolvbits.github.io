@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "static" as static;
+
+@function theme-color($key, $mode: static) {
+  @if $mode == static {
+    @return map.get(static.$theme-colors, $key);
+  }
+  @return null;
+}

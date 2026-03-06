@@ -1,0 +1,47 @@
+@use "../components/index";
+
+.maintenance {
+  background: linear-gradient(100deg,#b2fff9,#ffffff);
+  &-main {
+    text-align: center !important;
+  }
+
+  &-avatar {
+    width: 220px !important;
+  }
+
+  &-title {
+    margin-top: 20px !important;
+    font-family: var(font-family-secondary);
+    font-weight: bold;
+    letter-spacing: 15px !important;
+  }
+
+  &-subtitle {
+    font-family: var(font-family-primary);
+    font-weight: 300;
+  }
+
+  &-socials {
+    span {
+      text-align: center;
+      font-size: .9rem;
+    }
+    &__links {
+      transition: color .2s ease;
+      font-size: 1.5rem;
+      color: var(--text-color) !important;
+      &:hover {
+        color: var(--color-links) !important;
+      }
+      &::after {
+        content: unset !important;
+      }
+    }
+  }
+
+  &::before {
+    @extend %grainy;
+  }
+
+}

@@ -1,7 +1,7 @@
 {
   "name": "evolvbits-site",
   "version": "0.1.0",
-  "description": "EvolvBits Site",
+  "description": "EvolvBits SITE",
   "type": "module",
   "scripts": {
     "install": "echo 'wait...' && bundle install",
@@ -14,14 +14,14 @@
     "serve": "npm run clean:cache && npm run jekyll:serve",
     "help": "node tools/scripts/help.mjs"
   },
-  "repository": "git+https://github.com/seedctl/seedctl.github.io.git",
+  "repository": "git+https://github.com/evolvbits/evolvbits.github.io.git",
   "keywords": [
     "evolvbits",
     "site",
     "jekyll"
   ],
-  "author": "William Canin <https://evolvbits.github.io>",
-  "license": "https://evolvbits.github.io/LICENSE",
+  "author": "William C. Canin <https://williamcanin.github.io>",
+  "license": "https://evolvbits.github.io/license/",
   "homepage": "https://evolvbits.github.io",
   "devDependencies": {
     "cross-env": "^10.0.0",

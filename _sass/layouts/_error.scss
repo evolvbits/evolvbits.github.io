@@ -1,0 +1,19 @@
+@use "../components/index";
+
+.error {
+  position: relative;
+  background: linear-gradient(100deg,var(--secondary-color),var(--bg-color));
+  .btn-back-to-home {
+    @extend %btn-standard;
+  }
+
+  &::before {
+    @extend %grainy;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}

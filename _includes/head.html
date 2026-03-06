@@ -6,17 +6,21 @@
 
   {%- if page.url == "/" -%}
   <title>
-    {{ contents.title | replace: "/", "" | default: contents.title }} | {{
+    {{ contents.title.static | replace: "/", "" | default: contents.title.static }} | {{
     site.baseurl | prepend: site.url }}
   </title>
   {%- else -%}
   <title>
-    {{ page.title | replace: "/", "" | capitalize }} | {{ contents.title |
-    default: contents.title }}
+    {{ page.title  }} | {{ contents.title.static |
+    default: contents.title.static }}
   </title>
   {%- endif -%} {% include seo.html %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="{{ contents.fonts_url }}" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/vendors/bootstrap-5.3.8/css/bootstrap.min.css' | relative_url }}" />
+  <link href="{{ contents.icons_url }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
 </head>

@@ -1,10 +1,14 @@
 {%- include assign.liquid -%}
 
+{%- if contents.maintenance.enable == false -%}
 <!doctype html>
-<html lang="{{ contents.lang }}">
+<html lang="{{ contents.lang }}" data-theme="static">
   {% include head.html %}
-  <body id="top">
+  <body id="top" class="d-flex flex-column min-vh-100">
     {% include navbar.html %} {{ content }} {% include footer.html %}
-    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+    {%- include scripts.html -%}
   </body>
 </html>
+{%- else -%}
+  {%- include maintenance.html -%}
+{%- endif -%}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ contents.lang }}" data-theme="static">
+  {% include head.html %}
+  <body id="top">
+
+    {% include navbar.html %}
+
+    <main class="container legal-context py-5">
+
+      <div class="row mb-5 legal-context__header">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold">{{ page.title }}</h1>
+          {% if page.intro %}
+          <p class="lead text-muted">
+            {{ page.intro }}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row g-4 legal-context__content">
+        <article class="legal-context__article">
+          <div class="legal-content">{{ content }}</div>
+        </article>
+      </div>
+
+    </main>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+
+  </body>
+</html>
+
+

@@ -1,0 +1,118 @@
+{%- include assign.liquid -%}
+
+<footer class="py-5 mt-auto footer">
+  <div class="container">
+    <div class="row">
+
+      <!-- Brand -->
+      <div class="col-12 col-md-3 mb-3">
+        <a href="{{ '/' | relative_url }}" class="d-inline-flex align-items-center mb-2 text-dark text-decoration-none footer-brand">
+          <img src="{{ contents.footer.avatar | relative_url }}" width="50" alt="{{ contents.title.static }}">
+          <span class="footer-brand__text">
+            {{ contents.title.first }}<span class="footer-brand__highlight">{{ contents.title.second }}</span>
+          </span>
+        </a>
+
+        <p class="text-muted footer-description">
+          {{ contents.description }}
+        </p>
+
+        <p class="text-muted mb-1">
+          Contact us:
+        </p>
+
+        <ul class="list-unstyled d-flex mb-2">
+          {% assign socials_links = contents.socials.links %}
+          {% for item in socials_links %}
+          <li class="me-3">
+            <a class="text-muted footer-links footer-socials"
+               href="{{ item.url }}"
+               title="{{ item.title }}"
+               target="_blank">
+              <i class="{{ item.icon }}"></i>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <p class="text-muted mb-0">
+          E-mail:
+          <a class="text-muted footer-links"
+             href="mailto:{{ contents.email }}">
+             {{ contents.email }}
+          </a>
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="col-6 col-md-3 mb-3">
+        <h5>Navigation</h5>
+        {% assign links = contents.nav %}
+        <ul class="nav flex-column">
+          {% for item in links %}
+          <li class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted footer-links"
+               href="{{ item.href | relative_url }}">
+               {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Projects -->
+      <div class="col-6 col-md-3 mb-3">
+        <h5>Project</h5>
+        <ul class="nav flex-column">
+
+          <li class="nav-item mb-2">
+            <a href="https://github.com/evolvbits/seedctl"
+               class="nav-link p-0 text-muted footer-links"
+               target="_blank">
+               SeedCTL
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="col-6 col-md-3 mb-3">
+        <h5>Legal</h5>
+        <ul class="nav flex-column">
+
+          <li class="nav-item mb-2">
+            <a href="{{ '/legal/privacy' | relative_url }}"
+               class="nav-link p-0 text-muted footer-links">
+               Privacy Policy
+            </a>
+          </li>
+
+          <li class="nav-item mb-2">
+            <a href="{{ '/legal/terms' | relative_url }}"
+               class="nav-link p-0 text-muted footer-links">
+               Terms of Service
+            </a>
+          </li>
+
+          <li class="nav-item mb-2">
+            <a href="{{ '/legal' | relative_url }}"
+               class="nav-link p-0 text-muted footer-links">
+               Legal Information
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="d-flex justify-content-center pt-4 mt-4 border-top">
+      <p class="text-muted text-center mb-0">
+        © {{ current_year }} {{ contents.title.static }}.
+        Created by <a class="text-muted footer-links" href="{{ contents.organization.author.url }}" target="_blank">{{ contents.organization.author.name }}</a>.
+      </p>
+    </div>
+
+  </div>
+</footer>

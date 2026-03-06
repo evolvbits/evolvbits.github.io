@@ -1,0 +1,33 @@
+.legal {
+  &-card .card {
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  &-card:hover .card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    border-color: #6c63ff;
+  }
+
+  &-context {
+    font-family: var(--font-family-secondary), serif !important;
+    a {
+      color: var(--text-color);
+      &:hover {color: var(--color-links);}
+    }
+    &__header {
+      justify-content: center;
+      margin-bottom: 150px !important;
+    }
+    &__content {
+      justify-content: center;
+    }
+    &__article {
+      max-width: 980px; // largura de leitura ideal
+      margin: 0 auto;
+    }
+    &__article p {
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+  }
+}

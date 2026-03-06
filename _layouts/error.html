@@ -1,0 +1,22 @@
+---
+layout: base
+---
+
+{%- include assign.liquid -%}
+
+<main class="flex-grow-1 d-flex align-items-center justify-content-center error">
+  <div class="row">
+    <div class="col-sm text-center">
+        {%- if contents.error.image -%}
+          <img class="error-image" src="{{ contents.error.image }}" alt="Error 404">
+        {%- endif -%}
+        {%- if contents.error.title -%}
+          <h1 class="error-title">{{ contents.error.title | escape }}</h1>
+        {%- endif -%}
+        {%- if contents.error.description -%}
+          <h2 class="error-description">{{ contents.error.description | markdownify }}</h2>
+        {%- endif -%}
+      <a class="btn btn-back-to-home" href="{{ '/' | relative_url }}">Back to Home</a>
+    </div>
+  </div>
+</main>

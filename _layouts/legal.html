@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="{{ contents.lang }}" data-theme="static">
+  {% include head.html %}
+  <body id="top">
+
+    {% include navbar.html %}
+
+    <main class="container legal py-5">
+
+      <!-- Header -->
+      <div class="row mb-5">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold">{{ page.title }}</h1>
+          <p class="lead text-muted">{{ page.description }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="row g-4">
+
+        <!-- Card -->
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/terms' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-journal-text fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Terms of Service</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/privacy' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-shield-lock fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Privacy Policy</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/intellectual-property' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-lightbulb fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Intellectual Property</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/compliance/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-shield-check fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Compliance</h5>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/acceptable-use/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-ban fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Acceptable Use Policy (AUP)</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/security/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-shield fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Security Policy</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/license/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-award fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">License</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/trademark-policy/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-patch-check fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Trademark Policy</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/open-source/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-boxes fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Open Source</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="{{ '/legal/credits/' | relative_url }}" class="legal-card d-block text-decoration-none">
+            <div class="card h-100 border rounded-4 p-4">
+              <div class="mb-3">
+                <i class="bi bi-heart fs-2"></i>
+              </div>
+              <h5 class="fw-semibold mb-0">Credits</h5>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </main>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+
+  </body>
+</html>

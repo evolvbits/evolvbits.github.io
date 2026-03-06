@@ -1,2 +1,15 @@
+@use "theme" as theme;
 @use "base";
+@use "includes";
 @use "layouts";
+
+:root[data-theme="static"] {
+  --bg-color: #{theme.theme-color(bg-color, static)};
+  --bg-footer: #{theme.theme-color(bg-footer, static)};
+  --color-text: #{theme.theme-color(color-text, static)};
+  --color-links: #{theme.theme-color(color-links, static)};
+  --primary-color: #{theme.theme-color(primary-color, static)};
+  --secondary-color: #{theme.theme-color(secondary-color, static)};
+  --font-family-primary: #{theme.theme-color(font-family-primary, static)};
+  --font-family-secondary: #{theme.theme-color(font-family-secondary, static)};
+}

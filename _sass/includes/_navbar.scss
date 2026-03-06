@@ -1,0 +1,89 @@
+/* NAVBAR BASE (FULL WIDTH) */
+.navbar-default {
+  height: 44px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  width: 100%;
+  z-index: 9999;
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text);
+
+    .brand-highlight {
+      transition: color .2s ease;
+    }
+
+    &:hover .brand-highlight {
+      color: var(--color-links);
+    }
+  }
+}
+
+/* CONTAINER INTERNO */
+.navbar-inner {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ESQUERDA */
+.nav-left .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+/* DIREITA */
+.nav-right {
+  gap: 28px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.85;
+  transition: opacity .2s ease;
+}
+
+.nav-right a:hover {
+  opacity: 1;
+}
+
+/* MOBILE BUTTON */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+}
+
+/* OFFCANVAS STYLE */
+.eb-offcanvas {
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.mobile-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-list li {
+  margin-bottom: 18px;
+}
+
+.mobile-list a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #1d1d1f;
+}

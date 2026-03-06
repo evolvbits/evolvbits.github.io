@@ -1,19 +1,71 @@
-lang: en
-fonts_url: https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap
-title: EvolvBits
+# Default
+lang: en-US
+fonts_url: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sora:wght@100..800&display=swap"
+icons_url: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+title:
+  static: EvolvBits
+  first: Evolv
+  second: Bits
 description: Tools that scale with you.
-repo_url: https://github.com/crewbits
-gitlab_url: https://gitlab.com/crewbits
-org:
+email: evolvbits@gmail.com
+socials:
+  links:
+    - title: GitHub
+      icon: "bi bi-github"
+      url: https://github.com/evolvbits
+    - title: GitLab
+      icon: "bi bi-gitlab"
+      url: https://gitlab.com/evolvbits
+    - title: YouTube
+      icon: "bi bi-youtube"
+      url: https://youtube.com/@evolvbits
+    - title: X
+      icon: "bi bi-twitter-x"
+      url: https://x.com/evolvbits
+    - title: Facebook
+      icon: "bi bi-facebook"
+      url: https://facebook.com/evolvbits
+    - title: Instagram
+      icon: "bi bi-instagram"
+      url: https://instagram.com/evolvbits
+organization:
   name: EvolvBits Contributors
+  repositories: https://github.com/orgs/evolvbits/repositories
   author:
     name: William C. Canin
     url: https://williamcanin.github.io
 
-home:
-  nav:
-    - href: "#cli"
-      label: Products
-      aria_label: Products
-      title: Products
-      icon: prod
+# Maintenance page
+maintenance:
+  enable: true
+  avatar: "assets/images/evolvbits-logo-transparent-compact.png"
+  title: "Under construction"
+  subtitle: |
+    Our page is under construction. In the meantime, you can follow us on the social media links below to receive future updates.
+  socials: true
+
+# Menu
+nav:
+  - href: "/"
+    label: Home
+    aria_label: Home
+    title: Home
+    icon: "bi bi-house-door"
+  # - href: "#products"
+  #   label: Products
+  #   aria_label: Products
+  #   title: Products
+  #   icon: "bi bi-box-seam"
+
+# Footer
+footer:
+  avatar: "assets/images/evolvbits-logo-transparent-compact.png"
+  contact:
+    message: "Contact us on social media or via the email below:"
+
+# Page Error
+error:
+  image:
+  title: "The page you’re looking for can’t be found."
+  description:
+
