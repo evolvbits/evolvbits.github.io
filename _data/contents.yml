@@ -46,22 +46,22 @@ maintenance:
 
 # Menu
 nav:
-  - href: "/"
+  - href: "/#home"
     label: Home
     aria_label: Home
     title: Home
     icon: "bi bi-house-door"
-  - href: "/about/"
+  - href: "/#about"
     label: About
     aria_label: About
     title: About
     icon: "bi bi-stars"
-  - href: "/projects/"
+  - href: "/#projects"
     label: Projects
     aria_label: Projects
     title: Projects
     icon: "bi bi-box-seam"
-  - href: "/contact/"
+  - href: "/#contact"
     label: Contact
     aria_label: Contact
     title: Contact
@@ -78,10 +78,10 @@ home:
   subheadline: "EvolvBits provides tools designed to simplify workflows, automate tasks, solve real problems, and improve productivity across different ecosystems."
   cta_primary:
     label: "Explore Projects"
-    href: "/projects/"
+    href: "/#projects"
   cta_secondary:
     label: "Contact Us"
-    href: "/contact/"
+    href: "/#contact"
   pillars:
     - title: "Fast"
       text: "Tools optimized for quick setup and immediate practical use."
