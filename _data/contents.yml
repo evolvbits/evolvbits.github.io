@@ -37,7 +37,7 @@ organization:
 
 # Maintenance page
 maintenance:
-  enable: true
+  enable: false
   avatar: "assets/images/evolvbits-logo-transparent-compact.png"
   title: "Under construction"
   subtitle: |
@@ -51,11 +51,90 @@ nav:
     aria_label: Home
     title: Home
     icon: "bi bi-house-door"
-  # - href: "#products"
-  #   label: Products
-  #   aria_label: Products
-  #   title: Products
-  #   icon: "bi bi-box-seam"
+  - href: "/about/"
+    label: About
+    aria_label: About
+    title: About
+    icon: "bi bi-stars"
+  - href: "/projects/"
+    label: Projects
+    aria_label: Projects
+    title: Projects
+    icon: "bi bi-box-seam"
+  - href: "/contact/"
+    label: Contact
+    aria_label: Contact
+    title: Contact
+    icon: "bi bi-chat-square-text"
+  - href: "/legal/"
+    label: Legal
+    aria_label: Legal
+    title: Legal
+    icon: "bi bi-shield-check"
+
+home:
+  badge: "Open source tooling for modern teams"
+  headline: "Build better systems with practical, high-signal developer tools."
+  subheadline: "EvolvBits creates lightweight utilities and workflows that help teams ship faster, automate safely, and scale with confidence."
+  cta_primary:
+    label: "Explore Projects"
+    href: "/projects/"
+  cta_secondary:
+    label: "Contact Us"
+    href: "/contact/"
+  pillars:
+    - title: "Developer-first"
+      text: "We focus on clear DX, simple setup, and tools that are straightforward to adopt."
+      icon: "bi bi-terminal"
+    - title: "Automation with control"
+      text: "Automate repetitive tasks while keeping observability, safety checks, and human approval where needed."
+      icon: "bi bi-gear-wide-connected"
+    - title: "Open by default"
+      text: "We publish, document, and evolve projects in public whenever possible."
+      icon: "bi bi-boxes"
+  highlights:
+    - title: "Reliable foundations"
+      text: "Opinionated starters and workflows to reduce setup and operational drift."
+    - title: "Pragmatic architecture"
+      text: "Design decisions grounded in maintainability, performance, and team autonomy."
+    - title: "Security-aware delivery"
+      text: "Security considerations integrated into the normal delivery lifecycle."
+
+about:
+  mission: "Deliver practical software tools that improve engineering quality, reduce maintenance cost, and scale with real teams."
+  values:
+    - title: "Clarity"
+      text: "Readable code, explicit tradeoffs, and documentation that helps people move quickly."
+    - title: "Pragmatism"
+      text: "Solutions built for production realities, not just ideal conditions."
+    - title: "Rigor"
+      text: "Technical choices backed by consistency, testing, and operational accountability."
+
+projects:
+  featured:
+    - name: "SeedCTL"
+      url: "https://github.com/evolvbits/seedctl"
+      description: "CLI utility for fast project scaffolding and repeatable engineering setup."
+      tags:
+        - "CLI"
+        - "Automation"
+        - "Developer Experience"
+    - name: "EvolvBits Website"
+      url: "https://github.com/evolvbits/evolvbits.github.io"
+      description: "Jekyll-based website with a maintainable content structure and legal governance pages."
+      tags:
+        - "Jekyll"
+        - "Bootstrap"
+        - "Sass"
+  roadmap:
+    - "Starter kits for backend and DevOps workflows"
+    - "Internal tooling templates for small engineering teams"
+    - "Extended automation modules for CI/CD pipelines"
+
+contact:
+  title: "Let's build something useful"
+  text: "For partnerships, product discussions, or technical collaboration, reach out through email or social channels."
+  cta_label: "Send an email"
 
 # Footer
 footer:
@@ -68,4 +147,3 @@ error:
   image:
   title: "The page you’re looking for can’t be found."
   description:
-

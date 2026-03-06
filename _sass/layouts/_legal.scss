@@ -1,18 +1,23 @@
 .legal {
   &-card .card {
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
   &-card:hover .card {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.08);
-    border-color: #6c63ff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: #0fb2a4;
   }
 
   &-context {
     font-family: var(--font-family-secondary), serif !important;
     a {
-      color: var(--text-color);
-      &:hover {color: var(--color-links);}
+      color: var(--color-text);
+      &:hover {
+        color: var(--color-links);
+      }
     }
     &__header {
       justify-content: center;
