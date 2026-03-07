@@ -1,13 +1,14 @@
-<nav class="navbar-default fixed-top">
+<nav class="navbar-{{ include.page }} fixed-top">
   <div class="container navbar-inner">
     <div class="nav-left">
       <a href="{{ '/' | relative_url }}" class="brand">
-        <img src="{{ contents.footer.avatar | relative_url }}" width="28" alt="{{ contents.title.static }}">
+        <img src="{{ contents.brand.dark | relative_url }}" width="28" alt="{{ contents.title.static }}">
         <span class="brand-text">
           {{ contents.title.first }}<span class="brand-highlight">{{ contents.title.second }}</span>
         </span>
     </a>
     </div>
+    {%- if contents.maintenance.enable == false -%}
     <div class="nav-right d-none d-lg-flex">
       {% assign links = contents.nav %}
       {% for item in links %}
@@ -19,6 +20,7 @@
         <i class="bi bi-list"></i>
       </button>
     </div>
+    {%- endif -%}
   </div>
 </nav>
 

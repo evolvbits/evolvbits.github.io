@@ -1,6 +1,6 @@
 @use "../components/index";
 
-.footer {
+.footer-default, .footer-seedctl {
   position: relative;
   background-color: var(--bg-footer);
   font-size: .8rem !important;
@@ -58,4 +58,8 @@
   a[target="_blank"]::after {
     content: "" !important;
   }
+}
+
+.footer-seedctl {
+  background-color: blue;
 }

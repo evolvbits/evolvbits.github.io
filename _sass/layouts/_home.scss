@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+#home {
+  margin-top: 100px;
+}
+
 .home-page,
 .page-main {
   padding-bottom: 4.5rem;
@@ -72,6 +76,7 @@ html {
 }
 
 .home-btn--primary {
+  min-width: 130px;
   border-color: #0c9689;
 }
 
@@ -108,7 +113,7 @@ html {
   }
 
   &__text {
-    margin-bottom: 0;
+    margin-bottom: 15px;
     color: #3c4a4f;
     line-height: 1.6;
   }
@@ -116,7 +121,7 @@ html {
 
 .home-card__icon {
   color: #0ea798;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.85rem;
   display: inline-block;
 }

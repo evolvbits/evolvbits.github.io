@@ -38,13 +38,18 @@ organization:
 # Maintenance page
 maintenance:
   enable: false
-  avatar: "assets/images/evolvbits-logo-transparent-compact.png"
+  avatar: "assets/images/evolvbits-logo-transparent-compact-white.png"
   title: "Under construction"
   subtitle: |
     Our page is under construction. In the meantime, you can follow us on the social media links below to receive future updates.
   socials: true
 
-# Menu
+# Brand
+brand:
+  light: "assets/images/evolvbits-logo-transparent-compact-white.png"
+  dark:  "assets/images/evolvbits-logo-transparent-compact-dark.png"
+
+# Menu Home
 nav:
   - href: "/#home"
     label: Home
@@ -66,13 +71,10 @@ nav:
     aria_label: Contact
     title: Contact
     icon: "bi bi-chat-square-text"
-  - href: "/legal/"
-    label: Legal
-    aria_label: Legal
-    title: Legal
-    icon: "bi bi-shield-check"
 
+# Home
 home:
+  brand: "assets/images/evolvbits-logo-transparent-compact-dark.png"
   badge: "Open tools for everyone"
   headline: "Practical tools for people, teams, and organizations."
   subheadline: "EvolvBits provides accessible tools that simplify routines, automate tasks, solve real problems, and improve productivity across different contexts."
@@ -121,19 +123,12 @@ about:
 projects:
   featured:
     - name: "SeedCTL"
-      url: "https://github.com/evolvbits/seedctl"
+      url: "/seedctl/"
       description: "Cryptocurrency multichain wallet generator focused on automation and reproducible execution."
       tags:
         - "CLI"
         - "Automation"
         - "Blockchain"
-    - name: "EvolvBits Website"
-      url: "https://github.com/evolvbits/evolvbits.github.io"
-      description: "Jekyll-based website with a maintainable content structure and legal governance pages."
-      tags:
-        - "Jekyll"
-        - "Bootstrap"
-        - "Sass"
   roadmap:
     - "Simple utility packs for everyday personal and professional tasks"
     - "Templates and starters for small teams and independent users"
@@ -143,6 +138,66 @@ contact:
   title: "Talk to EvolvBits"
   text: "Use the form below to send your message. Anyone can contact us: users, creators, partners, or curious visitors."
   cta_label: "Send message"
+
+
+seedctl:
+  brand: "/assets/images/seedctl-brand.png"
+  nav:
+    - href: "/seedctl/#cli"
+      label: CLI
+      aria_label: CLI Experience
+      title: CLI Experience
+      icon: bi bi-terminal
+    - href: "/seedctl/#features"
+      label: Features
+      aria_label: Features
+      title: Features
+      icon: bi bi-grid
+    - href: "/seedctl/#security"
+      label: Security
+      aria_label: Security
+      title: Security
+      icon: bi bi-shield-check
+    - href: "/seedctl/#coins"
+      label: Coins
+      aria_label: Coins
+      title: Coins
+      icon: bi bi-coin
+    - href: /docs/
+      label: Docs
+      aria_label: Documentation
+      title: Documentation
+      icon: bi bi-file-earmark-text
+    - href: https://github.com/evolvbits/seedctl
+      label: GitHub
+      aria_label: GitHub
+      title: GitHub
+      icon: bi bi-github
+      external: true
+  hero:
+    eyebrow: OFFLINE-FIRST • DETERMINISTIC • AUDITABLE
+    title: Terminal-native wallet generation for serious key management.
+    copy: SeedCTL gives you reproducible multichain derivation workflows with explicit entropy handling, path transparency and CLI-first operational control.
+    ctas:
+      - text: Download
+        href: https://github.com/evolvbits/seedctl/releases
+        class: btn btn-primary
+        external: true
+      - text: Explore Project
+        href: https://github.com/evolvbits/seedctl
+        class: btn btn-ghost
+        external: true
+      - text: Open Documentation
+        href: /docs/
+        class: btn btn-ghost
+      - text: See CLI Preview
+        href: "#cli"
+        class: btn btn-ghost
+    badges:
+      - offline capable
+      - no telemetry
+      - bip39 + passphrase
+      - deterministic recovery
 
 # Footer
 footer:

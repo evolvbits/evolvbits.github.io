@@ -4,7 +4,7 @@
 <html lang="{{ contents.lang | default: 'en-US' }}" data-theme="static">
   {%- include head.html -%}
   <body class="d-flex flex-column min-vh-100 maintenance">
-    {% include navbar.html %}
+    {% include navbar/light.html page="default" %}
     <main class="flex-grow-1 d-flex align-items-center justify-content-center maintenance-main">
       <div class="container">
         {%- if contents.maintenance.avatar != "" -%}

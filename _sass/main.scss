@@ -12,4 +12,5 @@
   --secondary-color: #{theme.theme-color(secondary-color, static)};
   --font-family-primary: #{theme.theme-color(font-family-primary, static)};
   --font-family-secondary: #{theme.theme-color(font-family-secondary, static)};
+  --font-family-tertiary: #{theme.theme-color(font-family-tertiary, static)};
 }

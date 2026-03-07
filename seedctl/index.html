@@ -1,0 +1,48 @@
+---
+layout: base
+title: SeedCTL
+description: Deterministic Multichain Wallet Generator
+permalink: /seedctl/
+---
+
+{%- include assign.liquid -%}
+
+<main class="seedctl">
+  <section class="hero">
+    <div class="hero-bg" data-parallax="0.12"></div>
+    <div class="hero-overlay"></div>
+    <img
+      class="hero-logo-mark"
+      src="{{ '/assets/images/seedctl-brand.png' | relative_url }}"
+      alt="SeedCTL brand mark"
+      data-parallax="0.06"
+    />
+    <div class="hero-content reveal">
+      <p class="eyebrow">{{ contents.seedctl.hero.eyebrow }}</p>
+      <h1>{{ contents.seedctl.hero.title }}</h1>
+      <p class="hero-copy">{{ contents.seedctl.hero.copy }}</p>
+      <div class="hero-cta">
+        {% for cta in contents.seedctl.hero.ctas %}
+        <a
+          class="{{ cta.class }}{% if cta.external %} external-link is-external{% endif %}"
+          href="{% if cta.external %}{{ cta.href }}{% else %}{{ cta.href | relative_url }}{% endif %}"
+          {%
+          if
+          cta.external
+          %}target="_blank"
+          rel="noreferrer"
+          {%
+          endif
+          %}
+          >{{ cta.text }}</a
+        >
+        {% endfor %}
+      </div>
+      <ul class="hero-badges">
+        {% for badge in contents.seedctl.hero.badges %}
+        <li>{{ badge }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>

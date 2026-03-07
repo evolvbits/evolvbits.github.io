@@ -1,27 +1,35 @@
 {%- include assign.liquid -%}
 
-<footer class="py-5 mt-auto footer">
+{%- if contents.maintenance.enable == false -%}
+  {%- assign column_brand = "col-12 col-md-3 mb-3" -%}
+  {%- assign column_legal = "col-6 col-md-3 mb-3" -%}
+{%- else -%}
+  {%- assign column_brand = "col-10" -%}
+  {%- assign column_legal = "col-2" -%}
+{%- endif -%}
+
+<footer class="py-5 mt-auto {{ include.class }}">
   <div class="container">
     <div class="row">
       <!-- Brand -->
-      <div class="col-12 col-md-3 mb-3">
+      <div class="{{ column_brand }}">
         <a
           href="{{ '/' | relative_url }}"
-          class="d-inline-flex align-items-center mb-2 text-dark text-decoration-none footer-brand"
+          class="d-inline-flex align-items-center mb-2 text-dark text-decoration-none {{ include.class }}-brand"
         >
           <img
-            src="{{ contents.footer.avatar | relative_url }}"
+            src="{{ contents.brand.dark | relative_url }}"
             width="50"
             alt="{{ contents.title.static }}"
           />
-          <span class="footer-brand__text">
-            {{ contents.title.first }}<span class="footer-brand__highlight"
+          <span class="{{ include.class }}-brand__text">
+            {{ contents.title.first }}<span class="{{ include.class }}-brand__highlight"
               >{{ contents.title.second }}</span
             >
           </span>
         </a>
 
-        <p class="text-muted footer-description">{{ contents.description }}</p>
+        <p class="text-muted {{ include.class }}-description">{{ contents.description }}</p>
 
         <p class="text-muted mb-1">{{ contents.footer.contact.message }}</p>
 
@@ -30,7 +38,7 @@
           socials_links %}
           <li class="me-3">
             <a
-              class="text-muted footer-links footer-socials"
+              class="text-muted {{ include.class }}-links {{ include.class }}-socials"
               href="{{ item.url }}"
               title="{{ item.title }}"
               target="_blank"
@@ -43,13 +51,14 @@
 
         <p class="text-muted mb-0">
           E-mail:
-          <a class="text-muted footer-links" href="mailto:{{ contents.email }}">
+          <a class="text-muted {{ include.class }}-links" href="mailto:{{ contents.email }}">
             {{ contents.email }}
           </a>
         </p>
       </div>
 
       <!-- Navigation -->
+      {%- if contents.maintenance.enable == false -%}
       <div class="col-6 col-md-3 mb-3">
         <h5>Navigation</h5>
         {% assign links = contents.nav %}
@@ -57,7 +66,7 @@
           {% for item in links %}
           <li class="nav-item mb-2">
             <a
-              class="nav-link p-0 text-muted footer-links"
+              class="nav-link p-0 text-muted {{ include.class }}-links"
               href="{{ item.href | relative_url }}"
             >
               {{ item.label }}
@@ -66,8 +75,10 @@
           {% endfor %}
         </ul>
       </div>
+      {%- endif -%}
 
       <!-- Projects -->
+      {%- if contents.maintenance.enable == false -%}
       <div class="col-6 col-md-3 mb-3">
         <h5>Project</h5>
         <ul class="nav flex-column">
@@ -75,7 +86,7 @@
           <li class="nav-item mb-2">
             <a
               href="{{ project.url }}"
-              class="nav-link p-0 text-muted footer-links"
+              class="nav-link p-0 text-muted {{ include.class }}-links"
               target="_blank"
             >
               {{ project.name }}
@@ -84,15 +95,16 @@
           {% endfor %}
         </ul>
       </div>
+      {%- endif -%}
 
       <!-- Legal -->
-      <div class="col-6 col-md-3 mb-3">
+      <div class="{{ column_legal }}">
         <h5>Legal</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
             <a
               href="{{ '/legal/privacy' | relative_url }}"
-              class="nav-link p-0 text-muted footer-links"
+              class="nav-link p-0 text-muted {{ include.class }}-links"
             >
               Privacy Policy
             </a>
@@ -101,7 +113,7 @@
           <li class="nav-item mb-2">
             <a
               href="{{ '/legal/terms' | relative_url }}"
-              class="nav-link p-0 text-muted footer-links"
+              class="nav-link p-0 text-muted {{ include.class }}-links"
             >
               Terms of Service
             </a>
@@ -110,7 +122,7 @@
           <li class="nav-item mb-2">
             <a
               href="{{ '/legal' | relative_url }}"
-              class="nav-link p-0 text-muted footer-links"
+              class="nav-link p-0 text-muted {{ include.class }}-links"
             >
               Legal Information
             </a>
@@ -124,7 +136,7 @@
       <p class="text-muted text-center mb-0">
         © {{ current_year }} {{ contents.title.static }}. Created by
         <a
-          class="text-muted footer-links"
+          class="text-muted {{ include.class }}-links"
           href="{{ contents.organization.author.url }}"
           target="_blank"
           >{{ contents.organization.author.name }}</a

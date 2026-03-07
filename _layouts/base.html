@@ -1,11 +1,32 @@
 {%- include assign.liquid -%}
 
 {%- if contents.maintenance.enable == false -%}
+
+  {%- if page.url == "/" -%}
+    {%- assign body_class = "body-default" -%}
+  {%- elsif page.url == "/seedctl/" -%}
+    {%- assign body_class = "body-seectl" -%}
+  {%- endif -%}
+
 <!doctype html>
 <html lang="{{ contents.lang }}" data-theme="static">
   {% include head.html %}
-  <body id="top" class="d-flex flex-column min-vh-100">
-    {% include navbar.html %} {{ content }} {% include footer.html %}
+  <body id="top" class="d-flex flex-column min-vh-100 {{ body_class }}">
+
+    {% if page.url == "/" %}
+      {% include navbar/light.html page="default" %}
+    {% elsif page.url == "/seedctl/" %}
+      {% include navbar/dark.html page="seedctl" %}
+    {% endif %}
+
+    {{ content }}
+
+    {%- if page.url == "/" -%}
+      {% include footer.html class="footer-default" %}
+    {%- elsif page.url == "/seedctl/" -%}
+      {% include footer.html class="footer-seedctl" %}
+    {%- endif -%}
+
     {%- include scripts.html -%}
   </body>
 </html>
