@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  //  PRELOADER
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("hide");
+  }, 300);
+
+
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;

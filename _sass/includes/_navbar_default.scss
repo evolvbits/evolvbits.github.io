@@ -7,20 +7,20 @@
   border-bottom: 1px solid rgba(0,0,0,0.08);
   width: 100%;
   z-index: 9999;
+}
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-text);
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text);
 
-    .brand-highlight {
-      transition: color .2s ease;
-    }
+  .brand-highlight {
+    transition: color .2s ease;
+  }
 
-    &:hover .brand-highlight {
-      color: var(--color-links);
-    }
+  &:hover .brand-highlight {
+    color: var(--color-links);
   }
 }
 

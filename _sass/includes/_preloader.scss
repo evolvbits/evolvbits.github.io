@@ -1,0 +1,46 @@
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.loader {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.body-default {
+  background: rgba(255,255,255,0.85);
+  .loader {
+    border: 3px solid rgba(0,0,0,0.08);
+    border-top-color: #000;
+  }
+}
+
+.body-seedctl {
+  background: rgba(22, 26, 56, 0.85);
+  .loader {
+    border: 3px solid rgba(234, 234, 234, 0.08);
+    border-top-color: #ffffff;
+  }
+}

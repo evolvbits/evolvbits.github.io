@@ -7,17 +7,31 @@
   border-bottom: 1px solid rgba(121,247,255,.15);
 
   .brand {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-text);
-
     .brand-highlight {
-      transition: color .2s ease;
+      transition: color .5s ease;
     }
 
     &:hover .brand-highlight {
-      color: var(--color-links);
+      color: cyan;
+    }
+  }
+
+  .navbar-inner {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      color: white;
+    }
+  }
+
+  .nav-right {
+    a {
+      transition: color .5s ease;
+      &:hover {
+        color: cyan;
+      }
     }
   }
 }

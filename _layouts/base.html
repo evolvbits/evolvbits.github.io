@@ -12,6 +12,7 @@
 <html lang="{{ contents.lang }}" data-theme="static">
   {% include head.html %}
   <body id="top" class="d-flex flex-column min-vh-100 {{ body_class }}">
+    {% include preloader.html %}
 
     {% if page.url == "/" %}
       {% include navbar/light.html page="default" %}
