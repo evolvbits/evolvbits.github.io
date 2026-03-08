@@ -22,10 +22,10 @@
 
     {{ content }}
 
-    {%- if page.url == "/" -%}
-      {% include footer.html class="footer-default" %}
-    {%- elsif page.url == "/seedctl/" -%}
+    {%- if page.url == "/seedctl/" -%}
       {% include footer.html class="footer-seedctl" %}
+    {%- else -%}
+      {% include footer.html class="footer-default" %}
     {%- endif -%}
 
     {%- include scripts.html -%}
