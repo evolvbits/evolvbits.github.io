@@ -4,7 +4,7 @@
 
   {%- if page.url == "/" -%}
     {%- assign body_class = "body-default" -%}
-  {%- elsif page.url == "/seedctl/" -%}
+  {%- elsif page.url == seedctl_url -%}
     {%- assign body_class = "body-seedctl" -%}
   {%- endif -%}
 
@@ -16,13 +16,13 @@
 
     {% if page.url == "/" %}
       {% include navbar/light.html page="default" %}
-    {% elsif page.url == "/seedctl/" %}
+    {% elsif page.url == seedctl_url %}
       {% include navbar/dark.html page="seedctl" %}
     {% endif %}
 
     {{ content }}
 
-    {%- if page.url == "/seedctl/" -%}
+    {%- if page.url == seedctl_url -%}
       {% include footer.html class="footer-seedctl" %}
     {%- else -%}
       {% include footer.html class="footer-default" %}
@@ -32,7 +32,7 @@
 
     {%- if page.url == "/" -%}
       {%- include scripts/home.html -%}
-    {% elsif page.url == "/seedctl/" %}
+    {% elsif page.url == seedctl_url %}
       {%- include scripts/seedctl.html -%}
     {%- endif -%}
 
