@@ -139,66 +139,6 @@ contact:
   text: "Use the form below to send your message. Anyone can contact us: users, creators, partners, or curious visitors."
   cta_label: "Send message"
 
-
-seedctl:
-  brand: "/assets/images/seedctl-brand.png"
-  nav:
-    - href: "/seedctl/#cli"
-      label: CLI
-      aria_label: CLI Experience
-      title: CLI Experience
-      icon: bi bi-terminal
-    - href: "/seedctl/#features"
-      label: Features
-      aria_label: Features
-      title: Features
-      icon: bi bi-grid
-    - href: "/seedctl/#security"
-      label: Security
-      aria_label: Security
-      title: Security
-      icon: bi bi-shield-check
-    - href: "/seedctl/#coins"
-      label: Coins
-      aria_label: Coins
-      title: Coins
-      icon: bi bi-coin
-    - href: /seedctl/docs/
-      label: Docs
-      aria_label: Documentation
-      title: Documentation
-      icon: bi bi-file-earmark-text
-    - href: https://github.com/evolvbits/seedctl
-      label: GitHub
-      aria_label: GitHub
-      title: GitHub
-      icon: bi bi-github
-      external: true
-  hero:
-    eyebrow: OFFLINE-FIRST • DETERMINISTIC • AUDITABLE
-    title: Terminal-native wallet generation for serious key management.
-    copy: SeedCTL gives you reproducible multichain derivation workflows with explicit entropy handling, path transparency and CLI-first operational control.
-    ctas:
-      - text: Download
-        href: https://github.com/evolvbits/seedctl/releases
-        class: btn btn-primary
-        external: true
-      - text: Explore Project
-        href: https://github.com/evolvbits/seedctl
-        class: btn btn-ghost
-        external: true
-      - text: Open Documentation
-        href: /seedctl/docs/
-        class: btn btn-ghost
-      - text: See CLI Preview
-        href: "/seedctl/#cli"
-        class: btn btn-ghost
-    badges:
-      - offline capable
-      - no telemetry
-      - bip39 + passphrase
-      - deterministic recovery
-
 # Footer
 footer:
   avatar: "assets/images/evolvbits-logo-transparent-compact.png"
