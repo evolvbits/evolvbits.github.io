@@ -9,7 +9,7 @@ published: true
 permalink: /legal/acceptable-use/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Purpose
 

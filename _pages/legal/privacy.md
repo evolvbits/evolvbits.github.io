@@ -9,7 +9,7 @@ published: true
 permalink: /legal/privacy/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 # Privacy Policy
 

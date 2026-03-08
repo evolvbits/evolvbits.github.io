@@ -1,583 +1,582 @@
-seedctl:
-  brand: "/assets/images/seedctl-brand.png"
-  nav:
-    - href: "/seedctl/#top"
-      label: Top
-      aria_label: TOP
-      title: Top
-      icon: bi bi-arrow-up-circle
-    - href: "/seedctl/#cli"
-      label: CLI
-      aria_label: CLI Experience
-      title: CLI Experience
-      icon: bi bi-terminal
-    - href: "/seedctl/#features"
-      label: Features
-      aria_label: Features
-      title: Features
-      icon: bi bi-grid
-    - href: "/seedctl/#security"
-      label: Security
-      aria_label: Security
-      title: Security
-      icon: bi bi-shield-check
-    - href: "/seedctl/#coins"
-      label: Coins
-      aria_label: Coins
-      title: Coins
-      icon: bi bi-coin
-    - href: /seedctl/docs/
-      label: Docs
-      aria_label: Documentation
-      title: Documentation
-      icon: bi bi-file-earmark-text
-    - href: https://github.com/evolvbits/seedctl
-      label: GitHub
-      aria_label: GitHub
-      title: GitHub
-      icon: bi bi-github
+brand: "/assets/images/seedctl-brand.png"
+nav:
+  - href: "/seedctl/#top"
+    label: Top
+    aria_label: TOP
+    title: Top
+    icon: bi bi-arrow-up-circle
+  - href: "/seedctl/#cli"
+    label: CLI
+    aria_label: CLI Experience
+    title: CLI Experience
+    icon: bi bi-terminal
+  - href: "/seedctl/#features"
+    label: Features
+    aria_label: Features
+    title: Features
+    icon: bi bi-grid
+  - href: "/seedctl/#security"
+    label: Security
+    aria_label: Security
+    title: Security
+    icon: bi bi-shield-check
+  - href: "/seedctl/#coins"
+    label: Coins
+    aria_label: Coins
+    title: Coins
+    icon: bi bi-coin
+  - href: /seedctl/docs/
+    label: Docs
+    aria_label: Documentation
+    title: Documentation
+    icon: bi bi-file-earmark-text
+  - href: https://github.com/evolvbits/seedctl
+    label: GitHub
+    aria_label: GitHub
+    title: GitHub
+    icon: bi bi-github
+    external: true
+hero:
+  eyebrow: OFFLINE-FIRST • DETERMINISTIC • AUDITABLE
+  title: Terminal-native wallet generation for serious key management.
+  copy: SeedCTL gives you reproducible multichain derivation workflows with explicit entropy handling, path transparency and CLI-first operational control.
+  ctas:
+    - text: Download
+      href: https://github.com/evolvbits/seedctl/releases
+      class: btn btn-primary
       external: true
-  hero:
-    eyebrow: OFFLINE-FIRST • DETERMINISTIC • AUDITABLE
-    title: Terminal-native wallet generation for serious key management.
-    copy: SeedCTL gives you reproducible multichain derivation workflows with explicit entropy handling, path transparency and CLI-first operational control.
-    ctas:
-      - text: Download
-        href: https://github.com/evolvbits/seedctl/releases
-        class: btn btn-primary
-        external: true
-      - text: Explore Project
-        href: https://github.com/evolvbits/seedctl
-        class: btn btn-ghost
-        external: true
-      - text: Open Documentation
-        href: /seedctl/docs/
-        class: btn btn-ghost
-      - text: See CLI Preview
-        href: "/seedctl/#cli"
-        class: btn btn-ghost
-    badges:
-      - offline capable
-      - no telemetry
-      - bip39 + passphrase
-      - deterministic recovery
+    - text: Explore Project
+      href: https://github.com/evolvbits/seedctl
+      class: btn btn-ghost
+      external: true
+    - text: Open Documentation
+      href: /seedctl/docs/
+      class: btn btn-ghost
+    - text: See CLI Preview
+      href: "/seedctl/#cli"
+      class: btn btn-ghost
+  badges:
+    - offline capable
+    - no telemetry
+    - bip39 + passphrase
+    - deterministic recovery
 
-  cli:
-    id: cli
-    eyebrow: CLI EXPERIENCE
-    title: Designed like a real terminal workflow
-    terminal_title: "seedctl — interactive session"
-    terminal_image_alt: SeedCTL CLI startup screen
-    video:
-      eyebrow: WALKTHROUGH VIDEO
-      title: Execution flow demonstration
-      url: https://www.w3schools.com/html/mov_bbb.mp4
-      play_text: Play Demo
-      aria_label: Play video walkthrough
-      note: Replace this demo URL with your own video file when ready.
+cli:
+  id: cli
+  eyebrow: CLI EXPERIENCE
+  title: Designed like a real terminal workflow
+  terminal_title: "seedctl — interactive session"
+  terminal_image_alt: SeedCTL CLI startup screen
+  video:
+    eyebrow: WALKTHROUGH VIDEO
+    title: Execution flow demonstration
+    url: https://www.w3schools.com/html/mov_bbb.mp4
+    play_text: Play Demo
+    aria_label: Play video walkthrough
+    note: Replace this demo URL with your own video file when ready.
 
-  features:
-    id: features
-    eyebrow: WHY SEEDCTL
-    title: Built for paranoid-by-default operations
-    items:
-      - title: Deterministic by design
-        text: Manual entropy mode reproduces identical outputs from identical inputs.
-      - title: Hybrid entropy option
-        text: Combine dice entropy with system RNG for defense in depth on fresh generation.
-      - title: Path transparency
-        text: Derivation mode/style/path are explicit, making cross-wallet verification practical.
-      - title: Air-gap friendly
-        text: Core workflow does not require network connectivity to generate keys and addresses.
+features:
+  id: features
+  eyebrow: WHY SEEDCTL
+  title: Built for paranoid-by-default operations
+  items:
+    - title: Deterministic by design
+      text: Manual entropy mode reproduces identical outputs from identical inputs.
+    - title: Hybrid entropy option
+      text: Combine dice entropy with system RNG for defense in depth on fresh generation.
+    - title: Path transparency
+      text: Derivation mode/style/path are explicit, making cross-wallet verification practical.
+    - title: Air-gap friendly
+      text: Core workflow does not require network connectivity to generate keys and addresses.
 
-  how_it_works:
-    eyebrow: HOW IT WORKS
-    title: From entropy input to reproducible wallet outputs
-    items:
-      - step: "01"
-        title: Entropy Input
-        text: Choose deterministic manual dice input or hybrid mode with system RNG.
-        icon: entropy
-      - step: "02"
-        title: Mnemonic & Passphrase
-        text: Generate/import BIP39 mnemonic and apply optional passphrase.
-        icon: mnemonic
-      - step: "03"
-        title: Derivation Selection
-        text: Select network, derivation style/path and address index range.
-        icon: derivation
-      - step: "04"
-        title: Verification
-        text: Compare outputs, paths and addresses for independent reproducibility checks.
-        icon: check
+how_it_works:
+  eyebrow: HOW IT WORKS
+  title: From entropy input to reproducible wallet outputs
+  items:
+    - step: "01"
+      title: Entropy Input
+      text: Choose deterministic manual dice input or hybrid mode with system RNG.
+      icon: entropy
+    - step: "02"
+      title: Mnemonic & Passphrase
+      text: Generate/import BIP39 mnemonic and apply optional passphrase.
+      icon: mnemonic
+    - step: "03"
+      title: Derivation Selection
+      text: Select network, derivation style/path and address index range.
+      icon: derivation
+    - step: "04"
+      title: Verification
+      text: Compare outputs, paths and addresses for independent reproducibility checks.
+      icon: check
 
-  entropy_modes:
-    eyebrow: ENTROPY MODES
-    title: Deterministic vs Hybrid mode
-    items:
-      - title: Deterministic Mode
-        tag: reproducibility-first
-        icon: triangle
-        points:
-          - Manual dice sequence (1-6)
-          - No hidden runtime randomness
-          - Best for recovery and audit
-      - title: Hybrid Mode
-        tag: fresh-generation-first
-        icon: circle
-        points:
-          - Dice entropy + system RNG
-          - Defense in depth for new wallets
-          - Not intended for deterministic replay
-
-  threat_model:
-    eyebrow: THREAT MODEL
-    title: What SeedCTL mitigates and what it does not
-    cards:
-      - title: Mitigates
-        icon: shield
-        points:
-          - Opaque key generation process
-          - Single-source entropy dependence
-          - Derivation path ambiguity
-          - Lack of reproducibility checkpoints
-      - title: Does Not Mitigate
-        icon: warning
-        points:
-          - Compromised OS or malware
-          - Keyloggers and screen capture
-          - Malicious firmware/hardware
-          - Unsafe operational practices
-
-  security_intro:
-    id: security
-    eyebrow: SECURITY
-    title: Security is a process, not a toggle.
-
-  security_panels:
-    - eyebrow: OPERATIONAL SNAPSHOT
-      title: Deterministic process with visible checkpoints
+entropy_modes:
+  eyebrow: ENTROPY MODES
+  title: Deterministic vs Hybrid mode
+  items:
+    - title: Deterministic Mode
+      tag: reproducibility-first
+      icon: triangle
       points:
-        - Entropy flow is explicit in manual and hybrid modes.
-        - Derivation style and path remain visible during generation.
-        - Same inputs produce the same output for verification.
-        - Structured for audit and cold-storage workflows.
-    - eyebrow: SECURITY MODEL
-      title: What SeedCTL guarantees, and what remains your responsibility
+        - Manual dice sequence (1-6)
+        - No hidden runtime randomness
+        - Best for recovery and audit
+    - title: Hybrid Mode
+      tag: fresh-generation-first
+      icon: circle
       points:
-        - Core generation can run without network dependency.
-        - Deterministic mode avoids hidden runtime randomness.
-        - You must protect the execution environment and secret storage.
-        - You must verify network, path, and passphrase before funding addresses.
-      cta:
-        text: Open Security Guide
-        href: /docs/#security
-        class: btn btn-primary
+        - Dice entropy + system RNG
+        - Defense in depth for new wallets
+        - Not intended for deterministic replay
 
-  coins:
-    id: coins
-    eyebrow: MULTICHAIN COVERAGE
-    title: One workflow, ten major networks
+threat_model:
+  eyebrow: THREAT MODEL
+  title: What SeedCTL mitigates and what it does not
+  cards:
+    - title: Mitigates
+      icon: shield
+      points:
+        - Opaque key generation process
+        - Single-source entropy dependence
+        - Derivation path ambiguity
+        - Lack of reproducibility checkpoints
+    - title: Does Not Mitigate
+      icon: warning
+      points:
+        - Compromised OS or malware
+        - Keyloggers and screen capture
+        - Malicious firmware/hardware
+        - Unsafe operational practices
+
+security_intro:
+  id: security
+  eyebrow: SECURITY
+  title: Security is a process, not a toggle.
+
+security_panels:
+  - eyebrow: OPERATIONAL SNAPSHOT
+    title: Deterministic process with visible checkpoints
+    points:
+      - Entropy flow is explicit in manual and hybrid modes.
+      - Derivation style and path remain visible during generation.
+      - Same inputs produce the same output for verification.
+      - Structured for audit and cold-storage workflows.
+  - eyebrow: SECURITY MODEL
+    title: What SeedCTL guarantees, and what remains your responsibility
+    points:
+      - Core generation can run without network dependency.
+      - Deterministic mode avoids hidden runtime randomness.
+      - You must protect the execution environment and secret storage.
+      - You must verify network, path, and passphrase before funding addresses.
+    cta:
+      text: Open Security Guide
+      href: /docs/#security
+      class: btn btn-primary
+
+coins:
+  id: coins
+  eyebrow: MULTICHAIN COVERAGE
+  title: One workflow, ten major networks
+  items:
+    - name: Bitcoin
+      logo: bitcoin-btc-logo.png
+      alt: Bitcoin logo
+      text: BIP84 / BIP49 / BIP44
+    - name: Ethereum
+      logo: ethereum-eth-logo.png
+      alt: Ethereum logo
+      text: EVM standard + ledger
+    - name: BNB Chain
+      logo: bnb-bnb-logo.png
+      alt: BNB logo
+      text: EVM derivation
+    - name: XRP Ledger
+      logo: xrp-xrp-logo.png
+      alt: XRP logo
+      text: BIP44 m/44'/144'
+    - name: Tron
+      logo: tron-trx-logo.png
+      alt: Tron logo
+      text: Standard / ledger / custom
+    - name: Solana
+      logo: solana-sol-logo.png
+      alt: Solana logo
+      text: Ed25519 BIP44 path
+    - name: Litecoin
+      logo: litecoin-ltc-logo.png
+      alt: Litecoin logo
+      text: SegWit bech32
+    - name: Polygon
+      logo: polygon-matic-logo.png
+      alt: Polygon logo
+      text: EVM compatible
+    - name: Cardano
+      logo: cardano-ada-logo.png
+      alt: Cardano logo
+      text: CIP-1852 / Shelley
+    - name: Monero
+      logo: monero-xmr-logo.png
+      alt: Monero logo
+      text: Standard + subaddress model
+
+footer:
+  text: SeedCTL • Deterministic Multichain Wallet Generator
+  links:
+    - text: GitLab Mirror
+      href: https://gitlab.com/evolvbits/seedctl
+      external: true
+
+docs:
+title: SeedCTL Docs
+description: Technical documentation for SeedCTL - usage flow, entropy modes, derivation paths, outputs, and security model.
+brand_text: "seedctl Docs"
+sidebar_title: Contents
+toc:
+  - id: overview
+    label: Overview
+  - id: project
+    label: Project Context
+  - id: quickstart
+    label: Quick Start
+  - id: flow
+    label: Execution Flow
+  - id: entropy
+    label: Entropy Modes
+  - id: networks
+    label: Networks & Paths
+  - id: compatibility
+    label: Compatibility
+  - id: outputs
+    label: Generated Outputs
+  - id: security
+    label: Security Policy
+  - id: recovery
+    label: Recovery Guide
+  - id: reproducibility
+    label: Reproducibility
+  - id: terms
+    label: Terms of Use
+  - id: disclaimer
+    label: Disclaimer
+
+overview:
+  eyebrow: Overview
+  title: SeedCTL Documentation
+  text: SeedCTL is a CLI-first, deterministic, offline-focused multichain wallet generator. It supports reproducible wallet derivation workflows with explicit entropy handling and visible derivation paths.
+  logo:
+    src: /assets/images/seedctl.png
+    alt: SeedCTL
+  badges:
+    - href: https://github.com/evolvbits/seedctl/actions/workflows/release.yml
+      src: https://github.com/evolvbits/seedctl/actions/workflows/release.yml/badge.svg
+      alt: Build and Release (Linux & Windows)
+    - href: https://github.com/evolvbits/seedctl/releases
+      src: https://img.shields.io/github/v/release/seedctl/seedctl?label=latest&color=blue
+      alt: Latest Release
+    - href: https://github.com/evolvbits/seedctl/blob/main/LICENSE
+      src: https://img.shields.io/github/license/seedctl/seedctl
+      alt: License
+    - src: https://img.shields.io/badge/rust-1.75%2B-orange
+      alt: Rust 1.75+
+    - src: https://img.shields.io/badge/works-offline-important
+      alt: Works Offline
+    - src: https://img.shields.io/badge/deterministic-yes-success
+      alt: Deterministic
+    - src: https://img.shields.io/badge/network-none-lightgrey
+      alt: No Network Required
+
+project:
+  title: Project Context
+  summary: SeedCTL is a multichain, deterministic and auditable wallet generator focused on secure offline operation.
+  goal: The goal is to allow verifiable wallet derivation from explicit inputs, reducing trust in opaque runtime behavior.
+  mirrors:
+    - text: GitHub (canonical)
+      href: https://github.com/evolvbits/seedctl
+      external: true
+    - text: GitLab (mirror)
+      href: https://gitlab.com/evolvbits/seedctl
+      external: true
+  status:
+    - text: Build and Release workflow
+      href: https://github.com/evolvbits/seedctl/actions/workflows/release.yml
+      external: true
+    - text: Latest releases
+      href: https://github.com/evolvbits/seedctl/releases
+      external: true
+    - text: Issues tracker
+      href: https://github.com/evolvbits/seedctl/issues
+      external: true
+  warning_title: Operational Warning
+  warning: This software displays highly sensitive material (mnemonic, passphrase, keys). Use only in secure offline environments.
+  philosophy:
+    - No network dependency
+    - No data transmission
+    - No disk persistence by design intent
+    - Compatible with offline and air-gapped workflows
+
+quickstart:
+  title: Quick Start
+  steps:
+    - Download SeedCTL in [https://github.com/evolvbits/seedctl/releases](https://github.com/evolvbits/seedctl/releases){:target="_blank"}
+    - Run `seedctl-[VERSION]-[SYSTEM]-x86_64` in a trusted environment.
+    - Select `Create new wallet` or `Import existing wallet`.
+    - Choose entropy mode and enter/select passphrase.
+    - Select network and derivation options.
+    - Verify outputs before funding addresses.
+
+flow:
+  title: Execution Flow
+  cards:
+    - title: "1. Entropy Input"
+      text: Manual dice for reproducibility or hybrid with system RNG for fresh generation.
+    - title: "2. Mnemonic Stage"
+      text: BIP39 12/24 words, optional passphrase, deterministic seed derivation.
+    - title: "3. Path Selection"
+      text: Choose chain, network, derivation style/path and address index range.
+    - title: "4. Verification"
+      text: Validate paths, keys and addresses against expected values before use.
+
+entropy:
+  title: Entropy Modes
+  panels:
+    - title: Deterministic Mode
+      points:
+        - Manual dice sequence input.
+        - No hidden runtime randomness.
+        - Best for recovery and audit workflows.
+    - title: Hybrid Mode
+      points:
+        - Combines dice entropy and system RNG.
+        - Good for creating new wallets with defense in depth.
+        - Not intended for exact deterministic replay.
+  formula: |
+    dice_entropy = SHA256(dice_sequence_bytes)
+
+    deterministic: entropy_final = truncate_bits(dice_entropy, mnemonic_bits)
+    hybrid:        entropy_final = truncate_bits(SHA256(dice_entropy || system_entropy_32B), mnemonic_bits)
+
+networks:
+  title: Networks & Derivation Paths
+  headers:
+    - Network
+    - Primary Path / Style
+    - Address Format
+  rows:
+    - [
+        Bitcoin,
+        "`m/84'/coin_type'/0'` (+ BIP49/BIP44)",
+        "`bc1...` / `tb1...`",
+      ]
+    - [Ethereum, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
+    - [BNB Chain, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
+    - [XRP Ledger, "`m/44'/144'/0'/0/x`", "`r...`"]
+    - [Tron, "`m/44'/195'/0'/0/x` (+ ledger/custom)", "`T...`"]
+    - [Solana, "`m/44'/501'/index'/0'`", base58]
+    - [Litecoin, "`m/84'/coin_type'/0'/0/x`", "`ltc...` / `tltc...`"]
+    - [Polygon, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
+    - [Cardano, "`m/1852'/1815'/0'/0/index`", "`addr...` / `addr_test...`"]
+    - [Monero, "`xmr(major=0,minor=index)` model", base58]
+
+compatibility:
+  title: Wallet Compatibility
+  groups:
+    - network: Bitcoin
+      wallets:
+        - Sparrow Wallet
+        - Electrum
+        - BlueWallet
+        - Bitcoin Core
+    - network: Ethereum
+      wallets:
+        - MetaMask
+        - Ledger Live
+        - Other BIP39/BIP44 wallets with `m/44'/60'/0'/0/x`
+    - network: BNB Smart Chain
+      wallets:
+        - MetaMask (BSC network)
+        - Trust Wallet
+        - Rabby
+        - Other EVM wallets with `m/44'/60'/0'/0/x`
+    - network: XRP Ledger
+      wallets:
+        - Xaman (XUMM)
+        - Ledger Live
+        - Other XRPL wallets with `m/44'/144'/0'/0/x`
+    - network: Tron
+      wallets:
+        - TronLink
+        - Wallets using `m/44'/195'/0'/0/x`
+    - network: Solana
+      wallets:
+        - Phantom
+        - Solana CLI / `solana-keygen`
+        - Wallets using `m/44'/501'/index'/0'`
+    - network: Cardano
+      wallets:
+        - Eternl
+        - Yoroi
+        - Lace
+        - Wallets using CIP-1852 `m/1852'/1815'/account'/0/index`
+    - network: Monero
+      wallets:
+        - Monero GUI Wallet
+        - "`monero-wallet-cli`"
+        - Feather Wallet
+        - Wallets compatible with standard/subaddress format
+
+outputs:
+  title: Generated Outputs
+  items:
+    - BIP39 mnemonic and word indexes.
+    - Account-level key material (as applicable by chain).
+    - Derivation paths used for each generated address.
+    - Address lists by selected index range.
+    - Optional watch-only export files.
+
+security:
+  title: Security Policy
+  version_note: Only the latest version of SeedCTL is supported.
+  reporting:
+    title: Reporting a Vulnerability
     items:
-      - name: Bitcoin
-        logo: bitcoin-btc-logo.png
-        alt: Bitcoin logo
-        text: BIP84 / BIP49 / BIP44
-      - name: Ethereum
-        logo: ethereum-eth-logo.png
-        alt: Ethereum logo
-        text: EVM standard + ledger
-      - name: BNB Chain
-        logo: bnb-bnb-logo.png
-        alt: BNB logo
-        text: EVM derivation
-      - name: XRP Ledger
-        logo: xrp-xrp-logo.png
-        alt: XRP logo
-        text: BIP44 m/44'/144'
-      - name: Tron
-        logo: tron-trx-logo.png
-        alt: Tron logo
-        text: Standard / ledger / custom
-      - name: Solana
-        logo: solana-sol-logo.png
-        alt: Solana logo
-        text: Ed25519 BIP44 path
-      - name: Litecoin
-        logo: litecoin-ltc-logo.png
-        alt: Litecoin logo
-        text: SegWit bech32
-      - name: Polygon
-        logo: polygon-matic-logo.png
-        alt: Polygon logo
-        text: EVM compatible
-      - name: Cardano
-        logo: cardano-ada-logo.png
-        alt: Cardano logo
-        text: CIP-1852 / Shelley
-      - name: Monero
-        logo: monero-xmr-logo.png
-        alt: Monero logo
-        text: Standard + subaddress model
+      - Do NOT open a public issue.
+      - Contact the maintainer privately via GitHub or GitLab.
+      - "Provide: issue description, impact analysis, and reproduction steps if possible."
+  assumptions:
+    assumes:
+      title: This project assumes
+      points:
+        - Offline usage
+        - Trusted execution environment
+        - No OS-level compromise
+        - No malicious hardware or firmware
+    not_mitigated:
+      title: Does not mitigate
+      points:
+        - Malware and keyloggers
+        - Screen recording
+        - Side-channel attacks
+  responsibility:
+    title: User Responsibility
+    points:
+      - Environment security and host integrity.
+      - Key storage and backup strategy.
+      - Understanding derivation paths for all supported networks.
+      - Use at your own risk.
+  panels:
+    - title: What SeedCTL Helps With
+      points:
+        - Transparent derivation and generation flow.
+        - Deterministic reproducibility controls.
+        - Reduced dependence on opaque tools/services.
+    - title: What You Must Handle
+      points:
+        - Host OS security and malware hygiene.
+        - Safe key/mnemonic storage and backups.
+        - Correct network/path/passphrase validation.
 
-  footer:
-    text: SeedCTL • Deterministic Multichain Wallet Generator
-    links:
-      - text: GitLab Mirror
-        href: https://gitlab.com/evolvbits/seedctl
-        external: true
+recovery:
+  title: Deterministic Recovery Checklist
+  steps:
+    - Use same mnemonic source and size.
+    - Use same entropy mode and dice sequence (if used).
+    - Use exact same passphrase.
+    - Use same chain/network and derivation style/path.
+    - Compare paths, keys and addresses for the same indices.
 
-  docs:
-  title: SeedCTL Docs
-  description: Technical documentation for SeedCTL - usage flow, entropy modes, derivation paths, outputs, and security model.
-  brand_text: "seedctl Docs"
-  sidebar_title: Contents
-  toc:
-    - id: overview
-      label: Overview
-    - id: project
-      label: Project Context
-    - id: quickstart
-      label: Quick Start
-    - id: flow
-      label: Execution Flow
-    - id: entropy
-      label: Entropy Modes
-    - id: networks
-      label: Networks & Paths
-    - id: compatibility
-      label: Compatibility
-    - id: outputs
-      label: Generated Outputs
-    - id: security
-      label: Security Policy
-    - id: recovery
-      label: Recovery Guide
-    - id: reproducibility
-      label: Reproducibility
-    - id: terms
-      label: Terms of Use
-    - id: disclaimer
-      label: Disclaimer
-
-  overview:
-    eyebrow: Overview
-    title: SeedCTL Documentation
-    text: SeedCTL is a CLI-first, deterministic, offline-focused multichain wallet generator. It supports reproducible wallet derivation workflows with explicit entropy handling and visible derivation paths.
-    logo:
-      src: /assets/images/seedctl.png
-      alt: SeedCTL
-    badges:
-      - href: https://github.com/evolvbits/seedctl/actions/workflows/release.yml
-        src: https://github.com/evolvbits/seedctl/actions/workflows/release.yml/badge.svg
-        alt: Build and Release (Linux & Windows)
-      - href: https://github.com/evolvbits/seedctl/releases
-        src: https://img.shields.io/github/v/release/seedctl/seedctl?label=latest&color=blue
-        alt: Latest Release
-      - href: https://github.com/evolvbits/seedctl/blob/main/LICENSE
-        src: https://img.shields.io/github/license/seedctl/seedctl
-        alt: License
-      - src: https://img.shields.io/badge/rust-1.75%2B-orange
-        alt: Rust 1.75+
-      - src: https://img.shields.io/badge/works-offline-important
-        alt: Works Offline
-      - src: https://img.shields.io/badge/deterministic-yes-success
-        alt: Deterministic
-      - src: https://img.shields.io/badge/network-none-lightgrey
-        alt: No Network Required
-
-  project:
-    title: Project Context
-    summary: SeedCTL is a multichain, deterministic and auditable wallet generator focused on secure offline operation.
-    goal: The goal is to allow verifiable wallet derivation from explicit inputs, reducing trust in opaque runtime behavior.
-    mirrors:
-      - text: GitHub (canonical)
-        href: https://github.com/evolvbits/seedctl
-        external: true
-      - text: GitLab (mirror)
-        href: https://gitlab.com/evolvbits/seedctl
-        external: true
-    status:
-      - text: Build and Release workflow
-        href: https://github.com/evolvbits/seedctl/actions/workflows/release.yml
-        external: true
-      - text: Latest releases
-        href: https://github.com/evolvbits/seedctl/releases
-        external: true
-      - text: Issues tracker
-        href: https://github.com/evolvbits/seedctl/issues
-        external: true
-    warning_title: Operational Warning
-    warning: This software displays highly sensitive material (mnemonic, passphrase, keys). Use only in secure offline environments.
-    philosophy:
-      - No network dependency
-      - No data transmission
-      - No disk persistence by design intent
-      - Compatible with offline and air-gapped workflows
-
-  quickstart:
-    title: Quick Start
-    steps:
-      - Download SeedCTL in [https://github.com/evolvbits/seedctl/releases](https://github.com/evolvbits/seedctl/releases){:target="_blank"}
-      - Run `seedctl-[VERSION]-[SYSTEM]-x86_64` in a trusted environment.
-      - Select `Create new wallet` or `Import existing wallet`.
-      - Choose entropy mode and enter/select passphrase.
-      - Select network and derivation options.
-      - Verify outputs before funding addresses.
-
-  flow:
-    title: Execution Flow
-    cards:
-      - title: "1. Entropy Input"
-        text: Manual dice for reproducibility or hybrid with system RNG for fresh generation.
-      - title: "2. Mnemonic Stage"
-        text: BIP39 12/24 words, optional passphrase, deterministic seed derivation.
-      - title: "3. Path Selection"
-        text: Choose chain, network, derivation style/path and address index range.
-      - title: "4. Verification"
-        text: Validate paths, keys and addresses against expected values before use.
-
-  entropy:
-    title: Entropy Modes
-    panels:
-      - title: Deterministic Mode
-        points:
-          - Manual dice sequence input.
-          - No hidden runtime randomness.
-          - Best for recovery and audit workflows.
-      - title: Hybrid Mode
-        points:
-          - Combines dice entropy and system RNG.
-          - Good for creating new wallets with defense in depth.
-          - Not intended for exact deterministic replay.
-    formula: |
-      dice_entropy = SHA256(dice_sequence_bytes)
-
-      deterministic: entropy_final = truncate_bits(dice_entropy, mnemonic_bits)
-      hybrid:        entropy_final = truncate_bits(SHA256(dice_entropy || system_entropy_32B), mnemonic_bits)
-
+reproducibility:
+  title: Reproducibility & Deterministic Recovery
+  intro: "This section explains how to deterministically reproduce wallets generated with SeedCTL. A wallet is reproducible only when all relevant inputs are identical — if any input changes, outputs change."
   networks:
-    title: Networks & Derivation Paths
-    headers:
-      - Network
-      - Primary Path / Style
-      - Address Format
-    rows:
-      - [
-          Bitcoin,
-          "`m/84'/coin_type'/0'` (+ BIP49/BIP44)",
-          "`bc1...` / `tb1...`",
-        ]
-      - [Ethereum, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
-      - [BNB Chain, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
-      - [XRP Ledger, "`m/44'/144'/0'/0/x`", "`r...`"]
-      - [Tron, "`m/44'/195'/0'/0/x` (+ ledger/custom)", "`T...`"]
-      - [Solana, "`m/44'/501'/index'/0'`", base58]
-      - [Litecoin, "`m/84'/coin_type'/0'/0/x`", "`ltc...` / `tltc...`"]
-      - [Polygon, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
-      - [Cardano, "`m/1852'/1815'/0'/0/index`", "`addr...` / `addr_test...`"]
-      - [Monero, "`xmr(major=0,minor=index)` model", base58]
+    - Bitcoin (BTC)
+    - Ethereum (ETH)
+    - BNB Smart Chain (BNB)
+    - XRP Ledger (XRP)
+    - Tron (TRX)
+    - Solana (SOL)
+    - Litecoin (LTC)
+    - Polygon (POL/MATIC)
+    - Cardano (ADA)
+    - Monero (XMR)
 
-  compatibility:
-    title: Wallet Compatibility
-    groups:
-      - network: Bitcoin
-        wallets:
-          - Sparrow Wallet
-          - Electrum
-          - BlueWallet
-          - Bitcoin Core
-      - network: Ethereum
-        wallets:
-          - MetaMask
-          - Ledger Live
-          - Other BIP39/BIP44 wallets with `m/44'/60'/0'/0/x`
-      - network: BNB Smart Chain
-        wallets:
-          - MetaMask (BSC network)
-          - Trust Wallet
-          - Rabby
-          - Other EVM wallets with `m/44'/60'/0'/0/x`
-      - network: XRP Ledger
-        wallets:
-          - Xaman (XUMM)
-          - Ledger Live
-          - Other XRPL wallets with `m/44'/144'/0'/0/x`
-      - network: Tron
-        wallets:
-          - TronLink
-          - Wallets using `m/44'/195'/0'/0/x`
-      - network: Solana
-        wallets:
-          - Phantom
-          - Solana CLI / `solana-keygen`
-          - Wallets using `m/44'/501'/index'/0'`
-      - network: Cardano
-        wallets:
-          - Eternl
-          - Yoroi
-          - Lace
-          - Wallets using CIP-1852 `m/1852'/1815'/account'/0/index`
-      - network: Monero
-        wallets:
-          - Monero GUI Wallet
-          - "`monero-wallet-cli`"
-          - Feather Wallet
-          - Wallets compatible with standard/subaddress format
-
-  outputs:
-    title: Generated Outputs
-    items:
-      - BIP39 mnemonic and word indexes.
-      - Account-level key material (as applicable by chain).
-      - Derivation paths used for each generated address.
-      - Address lists by selected index range.
-      - Optional watch-only export files.
-
-  security:
-    title: Security Policy
-    version_note: Only the latest version of SeedCTL is supported.
-    reporting:
-      title: Reporting a Vulnerability
-      items:
-        - Do NOT open a public issue.
-        - Contact the maintainer privately via GitHub or GitLab.
-        - "Provide: issue description, impact analysis, and reproduction steps if possible."
-    assumptions:
-      assumes:
-        title: This project assumes
-        points:
-          - Offline usage
-          - Trusted execution environment
-          - No OS-level compromise
-          - No malicious hardware or firmware
-      not_mitigated:
-        title: Does not mitigate
-        points:
-          - Malware and keyloggers
-          - Screen recording
-          - Side-channel attacks
-    responsibility:
-      title: User Responsibility
+terms:
+  title: Terms of Use
+  updated_at: "February 26, 2026"
+  intro: These terms describe the operational responsibilities and risk assumptions accepted when you use SeedCTL.
+  sections:
+    - title: "1. Scope"
       points:
-        - Environment security and host integrity.
-        - Key storage and backup strategy.
-        - Understanding derivation paths for all supported networks.
-        - Use at your own risk.
-    panels:
-      - title: What SeedCTL Helps With
-        points:
-          - Transparent derivation and generation flow.
-          - Deterministic reproducibility controls.
-          - Reduced dependence on opaque tools/services.
-      - title: What You Must Handle
-        points:
-          - Host OS security and malware hygiene.
-          - Safe key/mnemonic storage and backups.
-          - Correct network/path/passphrase validation.
+        - SeedCTL is provided as a technical tool for deterministic wallet generation and verification workflows.
+        - The software does not custody assets, execute transactions, or provide investment advice.
+    - title: "2. User Responsibilities"
+      points:
+        - Use the software only in trusted environments under your control.
+        - Protect mnemonic phrases, passphrases, private keys, and exported files at all times.
+        - Validate derivation paths, network selection, and addresses before funding any wallet.
+    - title: "3. Security Care"
+      points:
+        - Keep host OS, firmware, and security controls hardened and updated.
+        - Prefer offline or air-gapped procedures for high-value key generation.
+        - Maintain tested backup and disaster-recovery procedures.
+    - title: "4. Risk Disclosure"
+      points:
+        - Any compromise of your host, inputs, storage, or operational process can cause irreversible asset loss.
+        - Blockchain transfers are irreversible; wrong addresses or wrong networks may not be recoverable.
+        - Deterministic reproduction depends on exact matching inputs, passphrase, path, and network.
+    - title: "5. No Warranty"
+      points:
+        - SeedCTL is provided "as is", without warranties of availability, fitness, or non-infringement.
+        - You assume all risks resulting from software use, misuse, or environment failures.
+    - title: "6. Acceptance"
+      points:
+        - By using SeedCTL, you agree to these terms and confirm you understand the operational risks.
 
-  recovery:
-    title: Deterministic Recovery Checklist
-    steps:
-      - Use same mnemonic source and size.
-      - Use same entropy mode and dice sequence (if used).
-      - Use exact same passphrase.
-      - Use same chain/network and derivation style/path.
-      - Compare paths, keys and addresses for the same indices.
+disclaimer:
+  title: Disclaimer
+  sections:
+    - title: Security and Liability Notice
+      text: This software handles highly sensitive material and may irreversibly expose mnemonic phrases (BIP39 seeds), passphrases, private keys, and wallet metadata. If any of the above is exposed, funds can be permanently lost.
+    - title: User Responsibility
+      intro: "By using this software, you accept full responsibility for:"
+      points:
+        - where and how this software is executed
+        - seed/key generation, storage, backup, and recovery procedures
+        - validation of derivation paths, address formats, and network selection
+        - testing and verification before moving significant funds
+    - title: Operational Security Requirements (Recommended)
+      points:
+        - run offline / air-gapped whenever possible
+        - use a clean and trusted operating environment
+        - avoid shared computers, remote sessions, and screen recording
+        - verify binaries, checksums, and signatures before execution
+        - never store sensitive secrets in plaintext or cloud-synced folders
+    - title: No Warranty
+      text: 'This software is provided "AS IS", without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.'
+    - title: Limitation of Liability
+      text: "The author(s), maintainer(s), and contributor(s) shall not be liable for any direct or indirect loss, including loss of funds, data loss, operational loss, or security incidents resulting from use or misuse of this software."
+    - title: Acceptance of Risk
+      text: By using this software, you acknowledge that you understand these risks and accept full responsibility for all outcomes.
 
-  reproducibility:
-    title: Reproducibility & Deterministic Recovery
-    intro: "This section explains how to deterministically reproduce wallets generated with SeedCTL. A wallet is reproducible only when all relevant inputs are identical — if any input changes, outputs change."
-    networks:
-      - Bitcoin (BTC)
-      - Ethereum (ETH)
-      - BNB Smart Chain (BNB)
-      - XRP Ledger (XRP)
-      - Tron (TRX)
-      - Solana (SOL)
-      - Litecoin (LTC)
-      - Polygon (POL/MATIC)
-      - Cardano (ADA)
-      - Monero (XMR)
-
-  terms:
-    title: Terms of Use
-    updated_at: "February 26, 2026"
-    intro: These terms describe the operational responsibilities and risk assumptions accepted when you use SeedCTL.
-    sections:
-      - title: "1. Scope"
-        points:
-          - SeedCTL is provided as a technical tool for deterministic wallet generation and verification workflows.
-          - The software does not custody assets, execute transactions, or provide investment advice.
-      - title: "2. User Responsibilities"
-        points:
-          - Use the software only in trusted environments under your control.
-          - Protect mnemonic phrases, passphrases, private keys, and exported files at all times.
-          - Validate derivation paths, network selection, and addresses before funding any wallet.
-      - title: "3. Security Care"
-        points:
-          - Keep host OS, firmware, and security controls hardened and updated.
-          - Prefer offline or air-gapped procedures for high-value key generation.
-          - Maintain tested backup and disaster-recovery procedures.
-      - title: "4. Risk Disclosure"
-        points:
-          - Any compromise of your host, inputs, storage, or operational process can cause irreversible asset loss.
-          - Blockchain transfers are irreversible; wrong addresses or wrong networks may not be recoverable.
-          - Deterministic reproduction depends on exact matching inputs, passphrase, path, and network.
-      - title: "5. No Warranty"
-        points:
-          - SeedCTL is provided "as is", without warranties of availability, fitness, or non-infringement.
-          - You assume all risks resulting from software use, misuse, or environment failures.
-      - title: "6. Acceptance"
-        points:
-          - By using SeedCTL, you agree to these terms and confirm you understand the operational risks.
-
-  disclaimer:
-    title: Disclaimer
-    sections:
-      - title: Security and Liability Notice
-        text: This software handles highly sensitive material and may irreversibly expose mnemonic phrases (BIP39 seeds), passphrases, private keys, and wallet metadata. If any of the above is exposed, funds can be permanently lost.
-      - title: User Responsibility
-        intro: "By using this software, you accept full responsibility for:"
-        points:
-          - where and how this software is executed
-          - seed/key generation, storage, backup, and recovery procedures
-          - validation of derivation paths, address formats, and network selection
-          - testing and verification before moving significant funds
-      - title: Operational Security Requirements (Recommended)
-        points:
-          - run offline / air-gapped whenever possible
-          - use a clean and trusted operating environment
-          - avoid shared computers, remote sessions, and screen recording
-          - verify binaries, checksums, and signatures before execution
-          - never store sensitive secrets in plaintext or cloud-synced folders
-      - title: No Warranty
-        text: 'This software is provided "AS IS", without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.'
-      - title: Limitation of Liability
-        text: "The author(s), maintainer(s), and contributor(s) shall not be liable for any direct or indirect loss, including loss of funds, data loss, operational loss, or security incidents resulting from use or misuse of this software."
-      - title: Acceptance of Risk
-        text: By using this software, you acknowledge that you understand these risks and accept full responsibility for all outcomes.
-
-  site_footer:
-    brand_title: SeedCTL
-    description: Deterministic multichain wallet generation for security-focused operators.
-    columns:
-      - title: Project
-        links:
-          - text: Documentation
-            href: /docs/
-          - text: GitHub
-            href: https://github.com/evolvbits/seedctl
-            external: true
-          - text: GitLab Mirror
-            href: https://gitlab.com/evolvbits/seedctl
-            external: true
-    notice_title: Usage Notice
-    notices:
-      - SeedCTL is non-custodial software and does not store, recover, or transmit your secrets.
-      - You are fully responsible for host integrity, secure backups, and key lifecycle operations.
-      - Always test recovery on a safe environment before holding funds.
-    legal_links:
-      - text: SeedCTL Website License
-        href: /license-for-this-site/
-    copyright: "© 2026 SeedCTL"
+site_footer:
+  brand_title: SeedCTL
+  description: Deterministic multichain wallet generation for security-focused operators.
+  columns:
+    - title: Project
+      links:
+        - text: Documentation
+          href: /docs/
+        - text: GitHub
+          href: https://github.com/evolvbits/seedctl
+          external: true
+        - text: GitLab Mirror
+          href: https://gitlab.com/evolvbits/seedctl
+          external: true
+  notice_title: Usage Notice
+  notices:
+    - SeedCTL is non-custodial software and does not store, recover, or transmit your secrets.
+    - You are fully responsible for host integrity, secure backups, and key lifecycle operations.
+    - Always test recovery on a safe environment before holding funds.
+  legal_links:
+    - text: SeedCTL Website License
+      href: /license-for-this-site/
+  copyright: "© 2026 SeedCTL"

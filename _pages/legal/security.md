@@ -9,7 +9,7 @@ published: true
 permalink: /legal/security/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Reporting Security Vulnerabilities
 

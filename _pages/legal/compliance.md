@@ -9,7 +9,7 @@ published: true
 permalink: /legal/compliance/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Legal Compliance
 

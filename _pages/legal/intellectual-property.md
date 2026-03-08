@@ -9,7 +9,7 @@ published: true
 permalink: /legal/intellectual-property/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Original Authorship
 

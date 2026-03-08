@@ -9,7 +9,7 @@ published: true
 permalink: /legal/trademark-policy/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Overview
 

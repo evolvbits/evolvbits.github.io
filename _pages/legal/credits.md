@@ -9,7 +9,7 @@ published: true
 permalink: /legal/credits/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 ## Open Source Technologies
 

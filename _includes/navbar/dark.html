@@ -9,7 +9,7 @@
     </a>
     </div>
     <div class="nav-right d-none d-lg-flex">
-      {% assign links = seedctl.nav %}
+      {% assign links = site.data[include.page].nav %}
       {% for item in links %}
         <a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a>
       {% endfor %}

@@ -10,7 +10,7 @@ published: true
 permalink: /legal/terms/
 ---
 
-{% assign contents = site.data.contents %}
+{% assign contents = site.data.default %}
 
 # Terms of Service
 

@@ -10,7 +10,7 @@ published: true
 permalink: /legal/license/
 ---
 
-{% assign organization = site.data.contents.organization %}
+{% assign organization = site.data.default.organization %}
 
 ## 1. Ownership
 
