@@ -188,10 +188,10 @@ seedctl:
         class: btn btn-ghost
         external: true
       - text: Open Documentation
-        href: /docs/
+        href: /seedctl/docs/
         class: btn btn-ghost
       - text: See CLI Preview
-        href: "#cli"
+        href: "/seedctl/#cli"
         class: btn btn-ghost
     badges:
       - offline capable
