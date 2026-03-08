@@ -17,7 +17,7 @@
           href="{{ '/' | relative_url }}"
           class="d-inline-flex align-items-center mb-2 text-dark text-decoration-none {{ include.class }}-brand"
         >
-          {%- if page.url == seedctl_url -%}
+          {%- if page.url contains "seedctl" -%}
             {%- assign brand = contents.brand.light -%}
           {%- else -%}
             {%- assign brand = contents.brand.dark -%}
