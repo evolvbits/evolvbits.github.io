@@ -163,7 +163,7 @@ seedctl:
       aria_label: Coins
       title: Coins
       icon: bi bi-coin
-    - href: /docs/
+    - href: /seedctl/docs/
       label: Docs
       aria_label: Documentation
       title: Documentation

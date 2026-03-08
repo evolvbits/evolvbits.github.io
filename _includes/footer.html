@@ -17,8 +17,14 @@
           href="{{ '/' | relative_url }}"
           class="d-inline-flex align-items-center mb-2 text-dark text-decoration-none {{ include.class }}-brand"
         >
+          {%- if page.url == "/" -%}
+            {%- assign brand = contents.brand.dark -%}
+          {%- elsif page.url == "/seedctl/" -%}
+            {%- assign brand = contents.brand.light -%}
+          {%- endif -%}
+
           <img
-            src="{{ contents.brand.dark | relative_url }}"
+            src="{{ brand | relative_url }}"
             width="50"
             alt="{{ contents.title.static }}"
           />
@@ -31,7 +37,7 @@
 
         <p class="text-muted {{ include.class }}-description">{{ contents.description }}</p>
 
-        <p class="text-muted mb-1">{{ contents.footer.contact.message }}</p>
+        <p class="text-muted mb-1 {{ include.class }}-contact--message">{{ contents.footer.contact.message }}</p>
 
         <ul class="list-unstyled d-flex mb-2">
           {% assign socials_links = contents.socials.links %} {% for item in
@@ -49,7 +55,7 @@
           {% endfor %}
         </ul>
 
-        <p class="text-muted mb-0">
+        <p class="text-muted mb-0 {{ include.class }}-email--title">
           E-mail:
           <a class="text-muted {{ include.class }}-links" href="mailto:{{ contents.email }}">
             {{ contents.email }}
@@ -130,7 +136,7 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div class="d-flex justify-content-center pt-4 mt-4 border-top">
+    <div class="d-flex justify-content-center pt-4 mt-4 border-top {{ include.class }}-bottom">
       <p class="text-muted text-center mb-0">
         © {{ current_year }} {{ contents.title.static }}. Created by
         <a
