@@ -102,4 +102,160 @@ permalink: /seedctl/
     </div>
   </section>
 
+  <section class="section">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ seedctl.how_it_works.eyebrow }}</p>
+      <h2>{{ seedctl.how_it_works.title }}</h2>
+    </div>
+    <div class="how-grid">
+      {% for item in seedctl.how_it_works.items %}
+      <article class="how-card reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            {% case item.icon %} {% when 'entropy' %}
+            <path d="M12 3v18"></path>
+            <path d="M7 8h10"></path>
+            <path d="M7 16h10"></path>
+            <path d="M5 12h14"></path>
+            {% when 'mnemonic' %}
+            <path d="M6 17V7"></path>
+            <path d="M10 17V7"></path>
+            <path d="M14 17V7"></path>
+            <path d="M18 17V7"></path>
+            {% when 'derivation' %}
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path>
+            <path d="M12 12l8-4.5"></path>
+            <path d="M12 12L4 7.5"></path>
+            {% when 'check' %}
+            <path d="M5 13l4 4L19 7"></path>
+            {% endcase %}
+          </svg>
+        </span>
+        <p class="step">{{ item.step }}</p>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ seedctl.entropy_modes.eyebrow }}</p>
+      <h2>{{ seedctl.entropy_modes.title }}</h2>
+    </div>
+    <div class="mode-grid">
+      {% for mode in seedctl.entropy_modes.items %}
+      <article class="mode-card reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            {% if mode.icon == 'triangle' %}
+            <path d="M12 4l8 15H4z"></path>
+            {% else %}
+            <circle cx="12" cy="12" r="8"></circle>
+            <path d="M12 8v8"></path>
+            <path d="M8 12h8"></path>
+            {% endif %}
+          </svg>
+        </span>
+        <h3>{{ mode.title }}</h3>
+        <ul>
+          {% for point in mode.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+        <p class="mode-tag">{{ mode.tag }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ seedctl.threat_model.eyebrow }}</p>
+      <h2>{{ seedctl.threat_model.title }}</h2>
+    </div>
+    <div class="threat-grid">
+      {% for card in seedctl.threat_model.cards %}
+      <article class="threat-card reveal">
+        <span class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            {% if card.icon == 'shield' %}
+            <path
+              d="M12 3l7 3v6c0 5.2-3.2 9.6-7 11-3.8-1.4-7-5.8-7-11V6z"
+            ></path>
+            {% else %}
+            <path d="M12 4l9 16H3z"></path>
+            <path d="M12 9v5"></path>
+            <circle cx="12" cy="17" r="1"></circle>
+            {% endif %}
+          </svg>
+        </span>
+        <h3>{{ card.title }}</h3>
+        <ul>
+          {% for point in card.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="{{ seedctl.security_intro.id }}" class="section security-wrap">
+    <div class="section-head reveal security-intro">
+      <p class="eyebrow">{{ seedctl.security_intro.eyebrow }}</p>
+      <h2>{{ seedctl.security_intro.title }}</h2>
+    </div>
+  </section>
+
+  <section class="section security">
+    {% for panel in seedctl.security_panels %}
+    <article class="security-panel reveal">
+      <div class="security-panel-content">
+        <p class="eyebrow">{{ panel.eyebrow }}</p>
+        <h2>{{ panel.title }}</h2>
+        <ul>
+          {% for point in panel.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+        {% if panel.cta %}<a
+          class="{{ panel.cta.class }}{% if panel.cta.external %} external-link is-external{% endif %}"
+          href="{% if panel.cta.external %}{{ panel.cta.href }}{% else %}{{ panel.cta.href | relative_url }}{% endif %}"
+          {%
+          if
+          panel.cta.external
+          %}target="_blank"
+          rel="noreferrer"
+          {%
+          endif
+          %}
+          >{{ panel.cta.text }}</a
+        >{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section id="{{ seedctl.coins.id }}" class="section">
+    <div class="section-head reveal">
+      <p class="eyebrow">{{ seedctl.coins.eyebrow }}</p>
+      <h2>{{ seedctl.coins.title }}</h2>
+    </div>
+    <div class="coins-grid">
+      {% for coin in seedctl.coins.items %}
+      <article class="coin-card reveal">
+        <img
+          src="{{ '/assets/images/' | append: coin.logo | relative_url }}"
+          alt="{{ coin.alt }}"
+          loading="lazy"
+        />
+        <h3>{{ coin.name }}</h3>
+        <p>{{ coin.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
 </main>

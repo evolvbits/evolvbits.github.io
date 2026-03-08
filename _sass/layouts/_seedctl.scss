@@ -164,7 +164,7 @@
     h2,
     h3 {
       margin: 0;
-      font-family: var(--font-family-primary);
+      font-family: var(--font-family-secondary);
       line-height: 1.1;
     }
   }
@@ -529,7 +529,7 @@
     h2,
     h3 {
       margin: 0;
-      font-family: var(--font-family-secondary);
+      font-family: var(--font-family-secondary) !important;
     }
 
     h2 {

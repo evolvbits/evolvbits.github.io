@@ -28,7 +28,14 @@
       {% include footer.html class="footer-default" %}
     {%- endif -%}
 
-    {%- include scripts.html -%}
+    {%- include scripts/global.html -%}
+
+    {%- if page.url == "/" -%}
+      {%- include scripts/home.html -%}
+    {% elsif page.url == "/seedctl/" %}
+      {%- include scripts/seedctl.html -%}
+    {%- endif -%}
+
   </body>
 </html>
 {%- else -%}
