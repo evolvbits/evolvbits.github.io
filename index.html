@@ -57,7 +57,10 @@ title: Home
   </section>
 
   <section class="container page-section" data-reveal>
-    <div class="row g-4">
+    {% assign featured_count = contents.projects.featured | size %}
+    <div
+      class="row g-4{% if featured_count == 1 %} justify-content-center{% endif %}"
+    >
       {% for project in contents.projects.featured %}
       <div class="col-12 col-lg-6">
         <article
