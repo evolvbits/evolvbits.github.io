@@ -50,7 +50,7 @@ hero:
       class: btn btn-ghost
       external: true
     - text: Open Documentation
-      href: /seedctl/docs/
+      href: /seedctl/documentation/
       class: btn btn-ghost
     - text: See CLI Preview
       href: "/seedctl/#cli"
@@ -170,7 +170,7 @@ security_panels:
       - You must verify network, path, and passphrase before funding addresses.
     cta:
       text: Open Security Guide
-      href: /docs/#security
+      href: /documentation/#security
       class: btn btn-primary
 
 coins:
@@ -233,7 +233,7 @@ site_footer:
     - title: Project
       links:
         - text: Documentation
-          href: /docs/
+          href: /documentation/
         - text: GitHub
           href: https://github.com/evolvbits/seedctl
           external: true

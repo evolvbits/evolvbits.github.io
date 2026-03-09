@@ -126,9 +126,12 @@ projects:
       url: "/seedctl/"
       description: "Cryptocurrency multichain wallet generator focused on automation and reproducible execution."
       tags:
+        - "Rust"
         - "CLI"
-        - "Automation"
-        - "Blockchain"
+        - "Cryptocurrency"
+        - "Seed Generator"
+        - "Bip39"
+        - "Multichain"
   roadmap:
     - "Simple utility packs for everyday personal and professional tasks"
     - "Templates and starters for small teams and independent users"
