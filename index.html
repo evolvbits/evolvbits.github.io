@@ -252,27 +252,33 @@ title: Home
         </article>
       </div>
       <div class="col-12 col-lg-5">
-        <article class="page-card h-100" data-reveal>
-          <h3 class="page-card__title">Direct Contact</h3>
-          <p class="page-card__text">
-            You can also contact us directly by email or social channels.
-          </p>
-          <a href="mailto:{{ contents.email }}" class="page-card__link"
-            >{{ contents.email }}</a
-          >
-          <h3 class="page-card__title">Social Media</h3>
-          <p class="page-card__text">
-            Follow updates and announcements on official profiles.
-          </p>
-          <ul class="page-socials list-unstyled mb-0">
-            {% for item in contents.socials.links %}
-            <li>
-              <a href="{{ item.url }}" target="_blank">
-                <i class="{{ item.icon }}"></i> {{ item.title }}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
+        <article class="page-card page-card--direct-contact h-100" data-reveal>
+          <div class="direct-contact__group">
+            <p class="direct-contact__label">Direct Contact</p>
+            <p class="page-card__text">
+              You can also contact us directly by email or social channels.
+            </p>
+            <a href="mailto:{{ contents.email }}" class="direct-contact__email">
+              <span class="direct-contact__dot" aria-hidden="true"></span>
+              <span>{{ contents.email }}</span>
+            </a>
+          </div>
+          <div class="direct-contact__group">
+            <p class="direct-contact__label">Social Media</p>
+            <p class="page-card__text">
+              Follow updates and announcements on official profiles.
+            </p>
+            <ul class="page-socials list-unstyled mb-0">
+              {% for item in contents.socials.links %}
+              <li>
+                <a href="{{ item.url }}" target="_blank">
+                  <i class="{{ item.icon }}"></i>
+                  <span>{{ item.title }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
         </article>
       </div>
     </div>

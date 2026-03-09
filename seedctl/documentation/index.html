@@ -223,7 +223,7 @@ permalink: /seedctl/documentation/
         </div>
         {% endfor %}
       </div>
-      <div class="split" style="margin-top: 10px">
+      <div class="split split--spaced">
         <div class="panel">
           <h3>{{ seedctl_doc.security.assumptions.assumes.title }}</h3>
           <ul>
@@ -235,13 +235,14 @@ permalink: /seedctl/documentation/
         <div class="panel">
           <h3>{{ seedctl_doc.security.assumptions.not_mitigated.title }}</h3>
           <ul>
-            {% for point in seedctl_doc.security.assumptions.not_mitigated.points %}
+            {% for point in
+            seedctl_doc.security.assumptions.not_mitigated.points %}
             <li>{{ point }}</li>
             {% endfor %}
           </ul>
         </div>
       </div>
-      <div class="panel doc-note" style="margin-top: 10px">
+      <div class="panel doc-note panel--spaced">
         <h3>{{ seedctl_doc.security.reporting.title }}</h3>
         <ul>
           {% for item in seedctl_doc.security.reporting.items %}
@@ -249,7 +250,7 @@ permalink: /seedctl/documentation/
           {% endfor %}
         </ul>
       </div>
-      <div class="panel" style="margin-top: 10px">
+      <div class="panel panel--spaced">
         <h3>{{ seedctl_doc.security.responsibility.title }}</h3>
         <ul>
           {% for point in seedctl_doc.security.responsibility.points %}
@@ -271,7 +272,7 @@ permalink: /seedctl/documentation/
     <section id="reproducibility">
       <h2 class="title">{{ seedctl_doc.reproducibility.title }}</h2>
       <p>{{ seedctl_doc.reproducibility.intro }}</p>
-      <div class="panel" style="margin-bottom: 14px">
+      <div class="panel panel--spaced-bottom">
         <h3>Supported Networks</h3>
         <ul class="network-list">
           {% for net in seedctl_doc.reproducibility.networks %}
@@ -279,8 +280,8 @@ permalink: /seedctl/documentation/
           {% endfor %}
         </ul>
       </div>
-      {% capture repro_md %}{% include seedctl/documentation/reproducibility.md %}{%
-      endcapture %}
+      {% capture repro_md %}{% include seedctl/documentation/reproducibility.md
+      %}{% endcapture %}
       <div class="doc-markdown">{{ repro_md | markdownify }}</div>
     </section>
 
@@ -291,7 +292,7 @@ permalink: /seedctl/documentation/
       {% endif %}
       <p>{{ seedctl_doc.terms.intro }}</p>
       {% for sec in seedctl_doc.terms.sections %}
-      <div class="panel" style="margin-top: 10px">
+      <div class="panel panel--spaced">
         <h3>{{ sec.title }}</h3>
         <ul>
           {% for point in sec.points %}
@@ -306,8 +307,7 @@ permalink: /seedctl/documentation/
       <h2 class="title">{{ seedctl_doc.disclaimer.title }}</h2>
       {% for sec in seedctl_doc.disclaimer.sections %}
       <div
-        class="panel{% if sec.title == 'Security and Liability Notice' %} doc-note{% endif %}"
-        style="margin-top: 10px"
+        class="panel{% if sec.title == 'Security and Liability Notice' %} doc-note{% endif %} panel--spaced"
       >
         <h3>{{ sec.title }}</h3>
         {% if sec.text %}

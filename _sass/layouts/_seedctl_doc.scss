@@ -47,6 +47,8 @@
   grid-template-columns: 250px minmax(0, 1fr);
   gap: 20px;
   padding: 22px clamp(14px, 4vw, 42px) 44px;
+  color: #d8ebef;
+  font-family: var(--font-family-tertiary);
 
   .sidebar {
     position: sticky;
@@ -71,11 +73,11 @@
       padding: 5px 8px;
 
       &:hover,
-        &.is-active {
-          color: #79f7ff;
-          border-left-color: #79f7ff;
-          background: rgba(121, 247, 255, 0.08);
-        }
+      &.is-active {
+        color: #79f7ff;
+        border-left-color: #79f7ff;
+        background: rgba(121, 247, 255, 0.08);
+      }
     }
   }
 
@@ -97,11 +99,12 @@
       rgba(8, 14, 19, 0.95)
     );
     padding: clamp(18px, 3vw, 34px);
+    color: #d8ebef;
   }
 
   section + section {
-    margin-top: 34px;
-    padding-top: 24px;
+    margin-top: 28px;
+    padding-top: 20px;
     border-top: 1px dashed rgba(121, 247, 255, 0.2);
   }
 
@@ -122,19 +125,22 @@
   }
 
   h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    color: #eff8fb;
   }
   h2 {
-    font-size: clamp(1.2rem, 3vw, 1.85rem);
+    font-size: clamp(1.24rem, 3vw, 1.9rem);
+    color: #e9f6f9;
   }
   h3 {
     font-size: 1rem;
+    color: #d7eef2;
   }
 
   p,
   li {
-    color: #d8ebef;
-    line-height: 1.58;
+    color: #cfe2e7;
+    line-height: 1.62;
   }
 
   ul,
@@ -148,6 +154,10 @@
     margin-top: 14px;
     display: grid;
     gap: 10px;
+  }
+
+  .split--spaced {
+    margin-top: 10px;
   }
 
   .cards {
@@ -166,41 +176,38 @@
       rgba(15, 27, 36, 0.92),
       rgba(10, 16, 22, 0.95)
     );
-    padding: 14px;
+    padding: 14px 15px;
   }
 
-  #terms,
-  #disclaimer,
-  #security,
-  #quickstart,
-  #flow,
-  #entropy,
-  #compatibility,
-  #networks,
-  #recovery,
-  #reproducibility {
-    h2 {
-      padding: 10px;
-      border: 1px solid white;
-      border-radius: 10px;
-      background: linear-gradient(
-        180deg,
-        rgba(30, 21, 12, 0.45),
-        rgba(10, 16, 22, 0.95)
-      );
-      margin-bottom: 10px;
-    }
-    .panel {
-      border: none !important;
-      border-radius: 0px !important;
-      background: none !important;
-    }
+  .content > section > h2.title,
+  .content > section > h2 {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(121, 247, 255, 0.26);
+    border-radius: 10px;
+    background: linear-gradient(
+      180deg,
+      rgba(20, 31, 40, 0.58),
+      rgba(10, 16, 22, 0.85)
+    );
   }
 
   .panel {
     li {
       margin: 8px 0px;
     }
+  }
+
+  .panel + .panel {
+    margin-top: 10px;
+  }
+
+  .panel--spaced {
+    margin-top: 10px;
+  }
+
+  .panel--spaced-bottom {
+    margin-bottom: 14px;
   }
 
   #quickstart {
@@ -274,7 +281,6 @@
 
   .doc-note {
     margin-top: 14px;
-    border-color: rgba(255, 150, 31, 0.3);
     border: 1px solid rgba(121, 247, 255, 0.7);
     border-radius: 10px;
     background: linear-gradient(
@@ -672,5 +678,4 @@
       align-items: flex-start;
     }
   }
-
 }
