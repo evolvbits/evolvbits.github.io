@@ -9,58 +9,6 @@ body.body-default {
   color: #e6edf3;
 }
 
-body.body-default .navbar-default {
-  height: 64px;
-  background: rgba(10, 15, 20, 0.62);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-body.body-default .navbar-inner {
-  height: 64px;
-}
-
-body.body-default .brand,
-body.body-default .nav-left .brand,
-body.body-default .nav-right a,
-body.body-default .menu-btn,
-body.body-default .mobile-list a {
-  color: #aab4bf;
-}
-
-body.body-default .brand:hover .brand-highlight,
-body.body-default .nav-right a:hover,
-body.body-default .mobile-list a:hover {
-  color: #ffffff;
-}
-
-body.body-default .eb-offcanvas {
-  background: rgba(11, 15, 20, 0.94);
-}
-
-body.body-default .footer-default {
-  background: #0f141b;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-body.body-default .footer-default .text-muted,
-body.body-default .footer-default h5 {
-  color: #aab4bf !important;
-}
-
-body.body-default .footer-default-brand {
-  color: #e6edf3;
-}
-
-body.body-default .footer-default-brand__text {
-  color: #e6edf3 !important;
-}
-
-body.body-default .footer-default .border-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
 .home-page {
   position: relative;
   padding-bottom: 4.5rem;

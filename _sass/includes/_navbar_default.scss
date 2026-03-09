@@ -15,7 +15,7 @@
   color: var(--color-text);
 
   .brand-highlight {
-    transition: color .2s ease;
+    transition: color 0.2s ease;
   }
 
   &:hover .brand-highlight {
@@ -49,7 +49,7 @@
   font-size: 13px;
   color: var(--color-text);
   opacity: 0.85;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .nav-right a:hover {
@@ -80,4 +80,35 @@
   text-decoration: none;
   font-size: 22px;
   color: #1d1d1f;
+}
+
+body.body-default .navbar-default {
+  height: 44px;
+  background: rgba(10, 15, 20, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.body-default .navbar-inner {
+  height: 44px;
+}
+
+body.body-default .brand,
+body.body-default .nav-left .brand,
+body.body-default .nav-right a,
+body.body-default .menu-btn,
+body.body-default .menu-btn i,
+body.body-default .mobile-list a {
+  color: #aab4bf;
+}
+
+body.body-default .brand:hover .brand-highlight,
+body.body-default .nav-right a:hover,
+body.body-default .mobile-list a:hover {
+  color: #ffffff;
+}
+
+body.body-default .eb-offcanvas {
+  background: rgba(11, 15, 20, 0.94);
 }

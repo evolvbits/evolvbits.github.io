@@ -57,3 +57,25 @@
   }
 }
 
+
+body.body-default .footer-default {
+  background: #0f141b;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.body-default .footer-default .text-muted,
+body.body-default .footer-default h5 {
+  color: #aab4bf !important;
+}
+
+body.body-default .footer-default-brand {
+  color: #e6edf3;
+}
+
+body.body-default .footer-default-brand__text {
+  color: #e6edf3 !important;
+}
+
+body.body-default .footer-default .border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
