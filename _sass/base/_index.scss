@@ -4,7 +4,6 @@
 @use "typography";
 
 body {
-  background: linear-gradient(100deg,var(--secondary-color),var(--bg-color));
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: var(--font-family-primary);
   // impede selecionar texto no site

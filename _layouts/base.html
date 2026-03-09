@@ -15,7 +15,7 @@
     {% include preloader.html %}
 
     {% if page.url == "/" %}
-      {% include navbar/light.html page="default" %}
+      {% include navbar/dark.html page="default" %}
     {% elsif page.url contains "seedctl" %}
       {% include navbar/dark.html page="seedctl" %}
     {% endif %}
