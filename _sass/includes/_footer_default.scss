@@ -4,6 +4,7 @@
   position: relative;
   background-color: var(--bg-footer);
   font-size: .8rem !important;
+  border-top: 1px solid #a4a4a4;
 
   &-links {
     &:hover {
@@ -14,10 +15,6 @@
   &-socials {
     font-size: 1.2rem;
   }
-
-  // &::before {
-  //   @extend %grainy;
-  // }
 
   &-description {
     margin-top: 5px;

@@ -51,7 +51,7 @@ html {
   &__subtitle {
     max-width: 800px;
     margin: 0 auto 1.5rem;
-    color: #495057;
+    color: #191a1b;
     font-size: 1.06rem;
     line-height: 1.7;
   }
@@ -91,8 +91,8 @@ html {
 
 .home-card,
 .page-card {
-  border: 1px solid #d2f1ed;
-  background: linear-gradient(160deg, #ffffff 0%, #f6fffd 100%);
+  border: 1px solid #a8a8a8;
+  background: linear-gradient(160deg, #fff 0%, #c0f5e9 100%);
   border-radius: 1rem;
   padding: 1.35rem;
   transition:
@@ -252,14 +252,14 @@ html {
   background: #fcfffe;
   border-radius: 0.7rem;
   padding: 0.62rem 0.75rem;
-  color: #2f3f45;
+  color: #141718;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: #47cdbf;
+    border-color: #131615;
     box-shadow: 0 0 0 3px rgba(71, 205, 191, 0.2);
   }
 }

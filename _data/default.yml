@@ -151,5 +151,5 @@ footer:
 # Page Error
 error:
   image:
-  title: "The page you’re looking for can’t be found."
-  description:
+  title: "Error 404"
+  description: "The page you’re looking for can’t be found."

@@ -1,9 +1,9 @@
 .navbar-default {
   height: 44px;
-  background: rgba(255, 255, 255, 0.72);
+  background: hsla(165, 100%, 96.9%, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(209, 209, 209, 0.4);
   width: 100%;
   z-index: 9999;
 }
