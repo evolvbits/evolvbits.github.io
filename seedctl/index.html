@@ -258,4 +258,23 @@ permalink: /seedctl/
     </div>
   </section>
 
+  <!-- footer  -->
+  <section class="footer">
+    <div class="row">
+      <div class="col-8 footer-brand">
+        <h2>{{ seedctl.footer.brand_title }}</h2>
+        <p>{{ seedctl.footer.description }}</p>
+      </div>
+
+      <div class="col-4 footer-notice">
+        <h3>{{ seedctl.footer.notice_title }}</h3>
+        <ul>
+          {% for item in seedctl.footer.notices %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
 </main>

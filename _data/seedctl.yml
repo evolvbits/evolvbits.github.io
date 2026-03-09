@@ -1,10 +1,11 @@
 brand: "/assets/images/seedctl-brand.png"
 nav:
   - href: "/seedctl/#top"
-    label: Download
-    aria_label: Download
-    title: Download
-    icon: bi bi-download
+    label: SeedCTL
+    aria_label: SeedCTL
+    title: SeedCTL
+    icon: "assets/images/seedctl-brand.png"
+    url: true
   - href: "/seedctl/#cli"
     label: CLI
     aria_label: CLI Experience
@@ -220,32 +221,11 @@ coins:
       text: Standard + subaddress model
 
 footer:
-  text: SeedCTL • Deterministic Multichain Wallet Generator
-  links:
-    - text: GitLab Mirror
-      href: https://gitlab.com/evolvbits/seedctl
-      external: true
-
-site_footer:
   brand_title: SeedCTL
   description: Deterministic multichain wallet generation for security-focused operators.
-  columns:
-    - title: Project
-      links:
-        - text: Documentation
-          href: /documentation/
-        - text: GitHub
-          href: https://github.com/evolvbits/seedctl
-          external: true
-        - text: GitLab Mirror
-          href: https://gitlab.com/evolvbits/seedctl
-          external: true
   notice_title: Usage Notice
   notices:
     - SeedCTL is non-custodial software and does not store, recover, or transmit your secrets.
     - You are fully responsible for host integrity, secure backups, and key lifecycle operations.
     - Always test recovery on a safe environment before holding funds.
-  legal_links:
-    - text: SeedCTL Website License
-      href: /license-for-this-site/
-  copyright: "© 2026 SeedCTL"
+

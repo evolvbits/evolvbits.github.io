@@ -11,7 +11,11 @@
     <div class="nav-right d-none d-lg-flex">
       {% assign links = site.data[include.page].nav %}
       {% for item in links %}
-        <a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a>
+        {%- if item.url == true -%}
+          <a href="{{ item.href | relative_url }}"><img style="margin-top: -3px;" src="{{ item.icon | relative_url }}" alt="{{ item.label }}" width="20">{{ item.label }}</a>
+        {%- else -%}
+          <a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a>
+        {%- endif -%}
       {% endfor %}
     </div>
     <div class="nav-mobile d-lg-none">
