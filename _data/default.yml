@@ -56,16 +56,16 @@ nav:
     aria_label: Home
     title: Home
     icon: "bi bi-house-door"
-  - href: "/#about"
-    label: About
-    aria_label: About
-    title: About
-    icon: "bi bi-stars"
   - href: "/#projects"
     label: Projects
     aria_label: Projects
     title: Projects
     icon: "bi bi-box-seam"
+  - href: "/#about"
+    label: About
+    aria_label: About
+    title: About
+    icon: "bi bi-stars"
   - href: "/#contact"
     label: Contact
     aria_label: Contact

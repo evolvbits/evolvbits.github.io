@@ -41,47 +41,6 @@ title: Home
     </div>
   </section>
 
-  <section id="about" class="container page-section section-anchor" data-reveal>
-    <div class="page-hero page-hero--inline">
-      <p class="page-hero__badge">About EvolvBits</p>
-      <h2 class="page-hero__title">A unified ecosystem of practical tools.</h2>
-      <p class="page-hero__subtitle">{{ contents.about.intro }}</p>
-    </div>
-  </section>
-
-  <section class="container page-section" data-reveal>
-    <article class="page-card">
-      <h3 class="page-card__title">Mission</h3>
-      <p class="page-card__text">{{ contents.about.mission }}</p>
-    </article>
-  </section>
-
-  <section class="container page-section" data-reveal>
-    <div class="row g-4">
-      <div class="col-12 col-lg-6">
-        <article class="page-card h-100" data-reveal>
-          <h3 class="page-card__title">Philosophy</h3>
-          <ul class="page-list mb-0">
-            {% for line in contents.about.philosophy %}
-            <li>{{ line }}</li>
-            {% endfor %}
-          </ul>
-        </article>
-      </div>
-      <div class="col-12 col-lg-6">
-        <article class="page-card h-100" data-reveal>
-          <h3 class="page-card__title">Contributing</h3>
-          <p class="page-card__text">{{ contents.about.collaboration.text }}</p>
-          <ol class="page-steps mb-0">
-            {% for step in contents.about.collaboration.steps %}
-            <li>{{ step }}</li>
-            {% endfor %}
-          </ol>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section
     id="projects"
     class="container page-section section-anchor"
@@ -150,6 +109,50 @@ title: Home
     </div>
   </section>
 
+  <!-- about -->
+
+  <section id="about" class="container page-section section-anchor" data-reveal>
+    <div class="page-hero page-hero--inline">
+      <p class="page-hero__badge">About EvolvBits</p>
+      <h2 class="page-hero__title">A unified ecosystem of practical tools.</h2>
+      <p class="page-hero__subtitle">{{ contents.about.intro }}</p>
+    </div>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <article class="page-card">
+      <h3 class="page-card__title">Mission</h3>
+      <p class="page-card__text">{{ contents.about.mission }}</p>
+    </article>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Philosophy</h3>
+          <ul class="page-list mb-0">
+            {% for line in contents.about.philosophy %}
+            <li>{{ line }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Contributing</h3>
+          <p class="page-card__text">{{ contents.about.collaboration.text }}</p>
+          <ol class="page-steps mb-0">
+            {% for step in contents.about.collaboration.steps %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
   <section
     id="contact"
     class="container page-section section-anchor"
