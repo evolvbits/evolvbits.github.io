@@ -60,7 +60,10 @@ title: Home
     <div class="row g-4">
       {% for project in contents.projects.featured %}
       <div class="col-12 col-lg-6">
-        <article class="page-card h-100" data-reveal>
+        <article
+          class="page-card h-100{% if project.name == 'SeedCTL' %} page-card--seedctl{% endif %}"
+          data-reveal
+        >
           <h3 class="page-card__title">{{ project.name }}</h3>
           <p class="page-card__text">{{ project.description }}</p>
           <p class="page-card__meta">
@@ -68,7 +71,8 @@ title: Home
             <span>{{ tag }}</span>
             {% endfor %}
           </p>
-          <a href="{{ project.url }}" class="btn home-btn home-btn--primary">View</a
+          <a href="{{ project.url }}" class="btn home-btn home-btn--primary"
+            >View</a
           >
         </article>
       </div>
