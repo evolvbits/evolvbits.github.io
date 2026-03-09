@@ -58,6 +58,80 @@ body.body-default {
   }
 }
 
+.home-page > :not(.home-bits-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.home-page .home-bits-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-page .home-bit {
+  --bit-size: 12px;
+  --bit-opacity: 0.3;
+  --bit-rotate: 45deg;
+  --bit-offset-x: 0px;
+  --bit-offset-y: 0px;
+  --bit-float-duration: 8s;
+  --bit-float-delay: 0s;
+  --bit-float-distance: 8px;
+  position: absolute;
+  left: var(--bit-left, 50%);
+  top: var(--bit-top, 50%);
+  width: var(--bit-size);
+  height: var(--bit-size);
+  border-radius: 2px;
+  opacity: var(--bit-opacity);
+  border: 1px solid rgba(102, 248, 218, 0.7);
+  background: rgba(102, 248, 218, 0.12);
+  box-shadow:
+    0 0 10px rgba(35, 213, 171, 0.22),
+    0 0 24px rgba(35, 213, 171, 0.08);
+  transform: translate3d(var(--bit-offset-x), var(--bit-offset-y), 0)
+    rotate(var(--bit-rotate));
+  animation: home-bit-float var(--bit-float-duration) ease-in-out infinite;
+  animation-delay: var(--bit-float-delay);
+  transition: transform 0.24s cubic-bezier(0.2, 0.65, 0.2, 1);
+  will-change: transform;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 22%;
+    border-radius: 1px;
+    background: rgba(200, 255, 245, 0.66);
+  }
+}
+
+@keyframes home-bit-float {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: var(--bit-float-distance);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .home-bit {
+    opacity: calc(var(--bit-opacity) * 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-bit {
+    animation: none;
+    transition: none;
+  }
+}
+
 .home-page #home {
   margin-top: 116px;
 }
