@@ -43,6 +43,7 @@ The {{ contents.title.static }} website uses open-source fonts distributed under
 
 * **Sora**
 * **Inter**
+* * **JetBrains Mono**
 
 ---
 

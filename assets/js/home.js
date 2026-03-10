@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const bitsLayer = document.querySelector("[data-bits-bg]");
+  const cubeCluster = document.querySelector("[data-cube-cluster]");
 
   if (bitsLayer) {
     const bitCount = window.innerWidth < 992 ? 24 : 40;
-    const bottomBitCount = window.innerWidth < 992 ? 18 : 30;
     const bits = [];
     let targetX = window.innerWidth * 0.5;
     let targetY = window.innerHeight * 0.35;
@@ -82,28 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wobble,
       });
     }
-
-    const placeBottomBits = () => {
-      const anchorX = window.innerWidth * 0.52;
-      const anchorY = window.innerHeight + 26;
-
-      for (let index = 0; index < bottomBitCount; index += 1) {
-        const bit = document.createElement("span");
-        bit.className = "home-bit home-bit--bottom";
-
-        const size = random(7, 16);
-        const spreadX = random(-280, 280);
-        const spreadY = random(-140, 8);
-        const rotation = random(0, 70);
-
-        bit.style.setProperty("--bit-size", `${size.toFixed(2)}px`);
-        bit.style.setProperty("--bit-rotate", `${rotation.toFixed(2)}deg`);
-        bit.style.transform = `translate3d(${(anchorX + spreadX).toFixed(2)}px, ${(anchorY + spreadY).toFixed(2)}px, 0) rotate(${rotation.toFixed(2)}deg)`;
-        bitsLayer.appendChild(bit);
-      }
-    };
-
-    placeBottomBits();
 
     const animateBits = (time) => {
       const seconds = time * 0.001;
@@ -157,6 +135,37 @@ document.addEventListener("DOMContentLoaded", () => {
         bit.element.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
       }
     }
+  }
+
+  if (cubeCluster && !prefersReducedMotion) {
+    let scrollFrame = null;
+    let latestScrollY = window.scrollY || 0;
+
+    const renderClusterParallax = () => {
+      const offsetY = latestScrollY * 0.12;
+      const rotate = latestScrollY * 0.006;
+      cubeCluster.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0) rotate(${rotate.toFixed(2)}deg)`;
+      scrollFrame = null;
+    };
+
+    const scheduleClusterParallax = () => {
+      if (scrollFrame !== null) {
+        return;
+      }
+
+      scrollFrame = window.requestAnimationFrame(renderClusterParallax);
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        latestScrollY = window.scrollY || 0;
+        scheduleClusterParallax();
+      },
+      { passive: true },
+    );
+
+    renderClusterParallax();
   }
 
   // Contact

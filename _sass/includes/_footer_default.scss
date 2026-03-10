@@ -4,7 +4,6 @@
   position: relative;
   background-color: var(--bg-footer);
   font-size: .8rem !important;
-  border-top: 1px solid #a4a4a4;
 
   &-links {
     &:hover {
@@ -59,8 +58,8 @@
 
 
 body.body-default .footer-default {
-  background: #0f141b;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #04080d;
+  border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
 }
 
 body.body-default .footer-default .text-muted,
