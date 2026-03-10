@@ -1,42 +1,49 @@
 @use "../components/index";
 
 // Footer All
-.footer-default, .footer-seedctl {
+.footer-default, .footer-seedctl, .footer-legal {
   position: relative;
   font-size: .8rem !important;
 
-  &-links {
-    &:hover {
-      color: var(--color-links) !important;
-    }
+  &-description {
+    margin-top: 5px;
   }
 
   &-socials {
     font-size: 1.2rem;
   }
 
-  &-description {
-    margin-top: 5px;
+  &-links {
+    transition: color .2s ease;
+    &:hover {
+      color: var(--color-links) !important;
+    }
+
+    i {
+      transition: color .2s ease;
+      &:hover {
+        color: var(--color-links) !important;
+      }
+    }
   }
 
   &-brand {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-
     &__text {
       margin-left: 60px;
       margin-top: 35px;
       font-size: 1.3rem;
       position: absolute;
-    }
-
-    &__highlight {
-      transition: color .2s ease;
-    }
-
-    &:hover .footer-brand__highlight {
-      color: var(--color-links);
+      &:hover {
+        .footer-default-brand__highlight,
+        .footer-seedctl-brand__highlight,
+        .footer-legal-brand__highlight  {
+          transition: color .2s ease;
+          color: var(--color-links) !important;
+        }
+      }
     }
   }
 
@@ -46,12 +53,13 @@
   }
 
   .border-top {
-    border-top: 1px solid #a8a8a8 !important;
+    border-top: 1px solid #a8a8a8;
   }
 
   a[target="_blank"]::after {
     content: "" !important;
   }
+
   a{
     text-decoration: underline !important;
   }
@@ -62,15 +70,7 @@
   background: #04080d;
   border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
   * {
-    color: #e9e9e9 !important;
-  }
-  &-links {
-    &:hover {
-      color: var(--color-links) !important;
-      i {
-        color: var(--color-links) !important;
-      }
-    }
+    color: #e9e9e9;
   }
 }
 
@@ -81,17 +81,17 @@
   border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
 
   * {
-    color: #e9e9e9 !important;
-  }
-  &-links {
-    &:hover {
-      color: var(--color-links) !important;
-      i {
-        color: var(--color-links) !important;
-      }
-    }
+    color: #e9e9e9;
   }
 }
 
 // Footer Legal
-.footer-legal {}
+.footer-legal {
+  background: linear-gradient(to bottom, rgba(229, 229, 229, 0.44), rgba(231, 231, 231, 0.45));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid hsla(0, 1.9%, 79.2%, 0.37);
+
+  * {
+    color: #292929;
+  }
+}
