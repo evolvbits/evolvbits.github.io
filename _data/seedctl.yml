@@ -171,7 +171,7 @@ security_panels:
       - You must verify network, path, and passphrase before funding addresses.
     cta:
       text: Open Security Guide
-      href: /documentation/#security
+      href: /seedctl/documentation/#security
       class: btn btn-primary
 
 coins:
