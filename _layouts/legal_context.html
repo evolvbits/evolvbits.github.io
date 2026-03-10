@@ -4,7 +4,7 @@
   <body id="top">
     {% include preloader.html %}
 
-    {% include navbar/light.html page="default" %}
+    {% include navbar.html data="default" class="navbar-light" %}
 
     <main class="container legal-context py-5">
 
@@ -27,7 +27,7 @@
 
     </main>
 
-    {% include footer.html class="footer-default" %}
+    {% include footer.html class="footer-legal" theme="light" %}
     {% include scripts/global.html %}
 
   </body>

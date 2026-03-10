@@ -629,6 +629,12 @@ body.body-default {
   background: rgba(3, 10, 18, 0.34);
 }
 
+.direct-contact__group {
+  a[target="_blank"]::after {
+    content: unset !important;
+  }
+}
+
 .home-page .direct-contact__label {
   margin: 0 0 0.45rem;
   color: #95efd9;

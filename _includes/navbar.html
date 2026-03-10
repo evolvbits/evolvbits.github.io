@@ -1,18 +1,23 @@
-<nav class="navbar-{{ include.page }} fixed-top">
+<nav class="fixed-top {{ include.class }}">
   <div class="container navbar-inner">
     <div class="nav-left">
       <a href="{{ '/' | relative_url }}" class="brand">
-        <img src="{{ contents.brand.light | relative_url }}" width="28" alt="{{ contents.title.static }}">
+        {% if include.class == 'navbar-light' %}
+         <img src="{{ contents.brand.dark | relative_url }}" width="28" alt="{{ contents.title.static }}">
+        {% else %}
+         <img src="{{ contents.brand.light | relative_url }}" width="28" alt="{{ contents.title.static }}">
+        {% endif %}
         <span class="brand-text">
           {{ contents.title.first }}<span class="brand-highlight">{{ contents.title.second }}</span>
         </span>
     </a>
     </div>
+    {%- if contents.maintenance.enable == false -%}
     <div class="nav-right d-none d-lg-flex">
-      {% assign links = site.data[include.page].nav %}
+      {% assign links = site.data[include.data].nav %}
       {% for item in links %}
         {%- if item.url == true -%}
-          <a href="{{ item.href | relative_url }}"><img style="margin-top: -3px;" src="{{ item.icon | relative_url }}" alt="{{ item.label }}" width="20">{{ item.label }}</a>
+          <a href="{{ item.href | relative_url }}"><img src="{{ item.icon | relative_url }}" alt="{{ item.label }}" width="20">{{ item.label }}</a>
         {%- else -%}
           <a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a>
         {%- endif -%}
@@ -23,14 +28,15 @@
         <i class="bi bi-list"></i>
       </button>
     </div>
+    {%- endif -%}
   </div>
 </nav>
 
-
+<!-- mobile menu -->
 <div class="offcanvas offcanvas-top eb-offcanvas d-lg-none" tabindex="-1" id="ebMenu">
   <div class="offcanvas-body">
     <ul class="mobile-list">
-      {% for item in contents.seedctl.nav %}
+      {% for item in contents.nav %}
         <li><a href="{{ item.href | relative_url }}">{{ item.label }}</a></li>
       {% endfor %}
     </ul>

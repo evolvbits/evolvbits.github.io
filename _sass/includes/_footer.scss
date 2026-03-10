@@ -1,8 +1,8 @@
 @use "../components/index";
 
+// Footer All
 .footer-default, .footer-seedctl {
   position: relative;
-  background-color: var(--bg-footer);
   font-size: .8rem !important;
 
   &-links {
@@ -23,10 +23,8 @@
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: var(--color-text);
 
     &__text {
-      color: black !important;
       margin-left: 60px;
       margin-top: 35px;
       font-size: 1.3rem;
@@ -54,27 +52,46 @@
   a[target="_blank"]::after {
     content: "" !important;
   }
+  a{
+    text-decoration: underline !important;
+  }
 }
 
-
-body.body-default .footer-default {
+// Footer Default
+.footer-default {
   background: #04080d;
   border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
+  * {
+    color: #e9e9e9 !important;
+  }
+  &-links {
+    &:hover {
+      color: var(--color-links) !important;
+      i {
+        color: var(--color-links) !important;
+      }
+    }
+  }
 }
 
-body.body-default .footer-default .text-muted,
-body.body-default .footer-default h5 {
-  color: #aab4bf !important;
+// Footer SeedCTL
+.footer-seedctl {
+  background: linear-gradient(to bottom, rgba(6, 11, 16, 0.95), rgba(6, 11, 16, 0.72));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
+
+  * {
+    color: #e9e9e9 !important;
+  }
+  &-links {
+    &:hover {
+      color: var(--color-links) !important;
+      i {
+        color: var(--color-links) !important;
+      }
+    }
+  }
 }
 
-body.body-default .footer-default-brand {
-  color: #e6edf3;
-}
-
-body.body-default .footer-default-brand__text {
-  color: #e6edf3 !important;
-}
-
-body.body-default .footer-default .border-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
+// Footer Legal
+.footer-legal {}

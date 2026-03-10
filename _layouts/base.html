@@ -15,17 +15,17 @@
     {% include preloader.html %}
 
     {% if page.url == "/" %}
-      {% include navbar/dark.html page="default" %}
+      {% include navbar.html data="default" class="navbar-default" %}
     {% elsif page.url contains "seedctl" %}
-      {% include navbar/dark.html page="seedctl" %}
+      {% include navbar.html data="seedctl" class="navbar-seedctl" %}
     {% endif %}
 
     {{ content }}
 
     {%- if page.url contains "seedctl" -%}
-      {% include footer.html class="footer-seedctl" %}
+      {% include footer.html class="footer-seedctl" theme="dark" %}
     {%- else -%}
-      {% include footer.html class="footer-default" %}
+      {% include footer.html class="footer-default" theme="dark" %}
     {%- endif -%}
 
     {%- include scripts/global.html -%}

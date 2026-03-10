@@ -4,7 +4,8 @@
   <body id="top">
     {% include preloader.html %}
 
-    {% include navbar/dark.html page="default" %}
+    <!-- navbar -->
+    {% include navbar.html data="default" class="navbar-light" %}
 
     <main class="container legal py-5">
 
@@ -136,7 +137,7 @@
 
     </main>
 
-    {% include footer.html class="footer-default" %}
+    {% include footer.html class="footer-legal" theme="light" %}
     {% include scripts/global.html %}
 
   </body>

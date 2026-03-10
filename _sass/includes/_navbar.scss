@@ -1,0 +1,130 @@
+$height: 44px;
+
+// All
+.navbar-default, .navbar-seedctl, .navbar-light {
+  height: $height;
+  width: 100%;
+  z-index: 9999;
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text);
+
+    .brand-highlight {
+      transition: color 0.2s ease;
+    }
+
+    &:hover .brand-highlight {
+      color: var(--color-links);
+    }
+  }
+
+  .navbar-inner {
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-left .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-right {
+    gap: 28px;
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      transition: opacity 0.2s ease;
+      transition: color .5s ease;
+      &:hover {
+        color: var(--color-links);
+      }
+    }
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+  }
+
+  .eb-offcanvas {
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .mobile-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .mobile-list li {
+    margin-bottom: 18px;
+  }
+
+  .mobile-list a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #1d1d1f;
+  }
+}
+
+// Default
+.navbar-default {
+  background: rgba(10, 15, 20, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  .navbar-inner {
+    a {
+      color: white;
+    }
+  }
+  .nav-right {
+    a {
+      &:hover {
+        color:  var(--color-links);
+      }
+    }
+  }
+}
+
+// SeedCtl
+.navbar-seedctl {
+  background: linear-gradient(to bottom, rgba(6, 11, 16, 0.95), rgba(6, 11, 16, 0.72));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(121,247,255,.15);
+
+  .brand {
+    &:hover .brand-highlight {
+      color: var(--color-links);
+    }
+  }
+
+  .navbar-inner {
+    a {
+      color: white;
+    }
+  }
+
+  .nav-right {
+    a {
+      &:hover {
+        color:  var(--color-links);
+      }
+    }
+  }
+}
+
+// Legal
+.navbar-legal {}
+
