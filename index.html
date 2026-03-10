@@ -1,5 +1,321 @@
 ---
-layout: home
+layout: base
+permalink: /
+title: Home
 ---
 
-<!-- Do not post any content here. -->
+{% assign contents = site.data.default %}
+
+<main class="home">
+  <div class="home-bits-bg" data-bits-bg aria-hidden="true">
+    <div class="home-cube-cluster" data-cube-cluster>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+      <span class="home-cube"></span>
+    </div>
+  </div>
+
+  <section id="home" class="home-hero container section-anchor" data-reveal>
+    <p class="home-hero__badge">{{ contents.home.badge }}</p>
+    <h1 class="home-hero__title">{{ contents.home.headline }}</h1>
+    <p class="home-hero__subtitle">{{ contents.home.subheadline }}</p>
+    <div class="home-hero__actions">
+      <a
+        class="btn home-btn home-btn--primary"
+        href="{{ contents.home.cta_primary.href | relative_url }}"
+      >
+        {{ contents.home.cta_primary.label }}
+      </a>
+      <a
+        class="btn home-btn home-btn--secondary"
+        href="{{ contents.home.cta_secondary.href | relative_url }}"
+      >
+        {{ contents.home.cta_secondary.label }}
+      </a>
+    </div>
+  </section>
+
+  <section class="container home-section" data-reveal>
+    <div class="row g-4 justify-content-center">
+      {% for pillar in contents.home.pillars %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="home-card h-100" data-reveal>
+          <i class="{{ pillar.icon }} home-card__icon"></i>
+          <h2 class="home-card__title">{{ pillar.title }}</h2>
+          <p class="home-card__text">{{ pillar.text }}</p>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section
+    id="projects"
+    class="container page-section section-anchor"
+    data-reveal
+  >
+    <div class="page-hero page-hero--inline">
+      <p class="page-hero__badge">Projects</p>
+      <h2 class="page-hero__title">Public tools and ongoing initiatives.</h2>
+      <p class="page-hero__subtitle">
+        Current repositories, practical tooling focus, and what is being built
+        next.
+      </p>
+    </div>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    {% assign featured_count = contents.projects.featured | size %}
+    <div
+      class="row g-4{% if featured_count == 1 %} justify-content-center{% endif %}"
+    >
+      {% for project in contents.projects.featured %}
+      <div class="col-12 col-lg-6">
+        <article
+          class="page-card h-100{% if project.name == 'SeedCTL' %} page-card--seedctl{% endif %}"
+          data-reveal
+        >
+          <h3 class="page-card__title">{{ project.name }}</h3>
+          <p class="page-card__text">{{ project.description }}</p>
+          <p class="page-card__meta">
+            {% for tag in project.tags %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+          </p>
+          <a href="{{ project.url }}" class="btn home-btn home-btn--primary"
+            >View</a
+          >
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <div class="page-roadmap" data-reveal>
+      <h3>Roadmap</h3>
+      <ul>
+        {% for item in contents.projects.roadmap %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="container home-section" data-reveal>
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h2 class="home-section__title">How we help everyone</h2>
+        <p class="home-section__lead">
+          We focus on practical outcomes: less manual effort, clearer tools, and
+          better daily productivity for different types of users.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <ul class="home-list">
+          {% for highlight in contents.home.highlights %}
+          <li class="home-list__item">
+            <h3>{{ highlight.title }}</h3>
+            <p>{{ highlight.text }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- about -->
+
+  <section id="about" class="container page-section section-anchor" data-reveal>
+    <div class="page-hero page-hero--inline">
+      <p class="page-hero__badge">About EvolvBits</p>
+      <h2 class="page-hero__title">A unified ecosystem of practical tools.</h2>
+      <p class="page-hero__subtitle">{{ contents.about.intro }}</p>
+    </div>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <article class="page-card">
+      <h3 class="page-card__title">Mission</h3>
+      <p class="page-card__text">{{ contents.about.mission }}</p>
+    </article>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Philosophy</h3>
+          <ul class="page-list mb-0">
+            {% for line in contents.about.philosophy %}
+            <li>{{ line }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Contributing</h3>
+          <p class="page-card__text">{{ contents.about.collaboration.text }}</p>
+          <ol class="page-steps mb-0">
+            {% for step in contents.about.collaboration.steps %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section
+    id="contact"
+    class="container page-section section-anchor"
+    data-reveal
+  >
+    <div class="page-hero page-hero--inline">
+      <p class="page-hero__badge">Contact</p>
+      <h2 class="page-hero__title">{{ contents.contact.title }}</h2>
+      <p class="page-hero__subtitle">{{ contents.contact.text }}</p>
+    </div>
+  </section>
+
+  <section class="container page-section" data-reveal>
+    <div class="row g-4">
+      <div class="col-12 col-lg-7">
+        <article class="page-card h-100" data-reveal>
+          <h3 class="page-card__title">Send a Message</h3>
+          <p class="page-card__text">
+            Fill out the form and your default email app will open with your
+            message ready to send.
+          </p>
+          <form
+            id="contactForm"
+            class="contact-form"
+            data-contact-email="{{ contents.email }}"
+          >
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="contactName" class="contact-form__label"
+                  >Name</label
+                >
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="contactEmail" class="contact-form__label"
+                  >Email</label
+                >
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="contactSubject" class="contact-form__label"
+                  >Subject</label
+                >
+                <input
+                  id="contactSubject"
+                  name="subject"
+                  type="text"
+                  class="contact-form__input"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="contactMessage" class="contact-form__label"
+                  >Message</label
+                >
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  class="contact-form__textarea"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="contact-form__actions">
+              <button type="submit" class="btn home-btn home-btn--primary">
+                {{ contents.contact.cta_label }}
+              </button>
+            </div>
+            <p
+              id="contactFormStatus"
+              class="contact-form__status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </article>
+      </div>
+      <div class="col-12 col-lg-5">
+        <article class="page-card page-card--direct-contact h-100" data-reveal>
+          <div class="direct-contact__group">
+            <p class="direct-contact__label">Direct Contact</p>
+            <p class="page-card__text">
+              You can also contact us directly by email or social channels.
+            </p>
+            <a href="mailto:{{ contents.email }}" class="direct-contact__email">
+              <span class="direct-contact__dot" aria-hidden="true"></span>
+              <span>{{ contents.email }}</span>
+            </a>
+          </div>
+          <div class="direct-contact__group">
+            <p class="direct-contact__label">Social Media</p>
+            <p class="page-card__text">
+              Follow updates and announcements on official profiles.
+            </p>
+            <ul class="page-socials list-unstyled mb-0">
+              {% for item in contents.socials.links %}
+              <li>
+                <a href="{{ item.url }}" target="_blank">
+                  <i class="{{ item.icon }}"></i>
+                  <span>{{ item.title }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container home-section" data-reveal>
+    <div class="home-cta" data-reveal>
+      <h2>See all public work</h2>
+      <p>
+        Visit the EvolvBits repositories to track releases, roadmap updates, and
+        collaboration opportunities.
+      </p>
+      <a
+        class="btn home-btn home-btn--primary"
+        href="{{ contents.organization.repositories }}"
+        target="_blank"
+      >
+        View Repositories
+      </a>
+      <a
+        class="btn home-btn home-btn--secondary"
+        href="{{ '/legal/' | relative_url }}"
+      >
+        Legal Information
+      </a>
+    </div>
+  </section>
+</main>

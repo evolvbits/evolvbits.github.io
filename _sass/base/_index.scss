@@ -3,6 +3,10 @@
 @use "tokens";
 @use "typography";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   transition: background-color 0.2s ease, color 0.2s ease;
   font-family: var(--font-family-primary);
