@@ -33,7 +33,7 @@
   background: rgba(255,255,255,0.85);
   .loader {
     border: 3px solid rgba(0,0,0,0.08);
-    border-top-color: #000;
+    border-top-color: #ffffff;
   }
 }
 
@@ -42,5 +42,13 @@
   .loader {
     border: 3px solid rgba(234, 234, 234, 0.08);
     border-top-color: #ffffff;
+  }
+}
+
+.body-legal {
+  background: rgba(255,255,255,0.85);
+  .loader {
+    border: 3px solid rgba(0,0,0,0.08);
+    border-top-color: #1f1f1f;
   }
 }
