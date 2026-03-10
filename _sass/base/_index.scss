@@ -20,3 +20,8 @@ a[target="_blank"]::after {
   margin-left: 0.25em;
   vertical-align: middle;
 }
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}

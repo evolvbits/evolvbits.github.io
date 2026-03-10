@@ -13,3 +13,9 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
