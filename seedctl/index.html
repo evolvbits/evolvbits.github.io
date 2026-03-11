@@ -19,12 +19,9 @@ permalink: /seedctl/
         <div class="hero-abstract hero-abstract--b" data-parallax="0.1"></div>
         <div class="hero-bg" data-parallax="0.12"></div>
         <div class="hero-overlay"></div>
-        {% include img.html
-          class="hero-logo-mark"
-          path="/assets/images/seedctl-brand.png"
-          alt="SeedCTL brand mark"
-          data_parallax="0.06"
-        %}
+        {% include img.html class="hero-logo-mark"
+        path="/assets/images/seedctl-brand.png" alt="SeedCTL brand mark"
+        data_parallax="0.06" %}
         <div class="hero-content reveal">
           <p class="eyebrow">{{ seedctl.hero.eyebrow }}</p>
           <h1>{{ seedctl.hero.title }}</h1>
@@ -72,76 +69,76 @@ permalink: /seedctl/
             data-bs-touch="false"
           >
             <div class="carousel-indicators">
-              {% for item in seedctl.cli.carousel %}
-                {% if item.active == true %}
-                  {%- assign active_class = "active" -%}
-                  {%- assign aria_current = "true" -%}
-                {% else %}
-                  {%- assign active_class = "deactive" -%}
-                  {%- assign aria_current = "false" -%}
-                {% endif %}
-                <button
-                  type="button"
-                  data-bs-target="#seedctlCliCarousel"
-                  data-bs-slide-to="{{ forloop.index0 }}"
-                  class="{{ active_class }}"
-                  aria-current="{{ aria_current }}"
-                  aria-label="{{ item.aria_label }}"
-                ></button>
+              {% for item in seedctl.cli.carousel %} {% if item.active == true
+              %} {%- assign active_class = "active" -%} {%- assign aria_current
+              = "true" -%} {% else %} {%- assign active_class = "deactive" -%}
+              {%- assign aria_current = "false" -%} {% endif %}
+              <button
+                type="button"
+                data-bs-target="#seedctlCliCarousel"
+                data-bs-slide-to="{{ forloop.index0 }}"
+                class="{{ active_class }}"
+                aria-current="{{ aria_current }}"
+                aria-label="{{ item.aria_label }}"
+              ></button>
               {% endfor %}
             </div>
             <div class="carousel-inner">
-              {% for item in seedctl.cli.carousel %}
-              {% if item.type == "image" %}
-                <div class="carousel-item {% if item.active == true %} active {% endif %}">
-                  <article class="terminal-card reveal">
-                    <p class="eyebrow">{{ item.eyebrow }}</p>
-                    <h3>{{ item.title }}</h3>
-                    <div class="terminal-content">
-                      <div class="terminal-bar">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="terminal-title"
-                          >seedctl — interactive session</span
-                        >
-                      </div>
-                        {% include img.html
-                          path=item.thumb
-                          alt=item.alt
-                        %}
+              {% for item in seedctl.cli.carousel %} {% if item.type == "image"
+              %}
+              <div
+                class="carousel-item {% if item.active == true %} active {% endif %}"
+              >
+                <article class="terminal-card reveal">
+                  <p class="eyebrow">{{ item.eyebrow }}</p>
+                  <!--<h3>{{ item.title }}</h3>-->
+                  <div class="terminal-content">
+                    <div class="terminal-bar">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                      <span class="terminal-title"
+                        >seedctl — interactive session</span
+                      >
                     </div>
-                  </article>
-                </div>
+                    {% include img.html path=item.thumb alt=item.alt %}
+                  </div>
+                </article>
+              </div>
               {% else %}
-                <div class="carousel-item {% if item.active == true %} active {% endif %}">
-                  <article class="video-card reveal">
-                    <p class="eyebrow">{{ item.eyebrow }}</p>
-                    <h3>{{ item.title }}</h3>
-                    {%- assign thumb_path = item.thumb | relative_url -%}
-                    <div style="background-image:
+              <div
+                class="carousel-item {% if item.active == true %} active {% endif %}"
+              >
+                <article class="video-card reveal">
+                  <p class="eyebrow">{{ item.eyebrow }}</p>
+                  <!--<h3>{{ item.title }}</h3>-->
+                  {%- assign thumb_path = item.thumb | relative_url -%}
+                  <div
+                    style="background-image:
                     linear-gradient(to bottom, rgba(6, 11, 16, 0.18),
                     rgba(6, 11, 16, 0.42)),url({{ thumb_path }})"
-                      class="video-frame"
-                      data-video-url="{{ item.video_url }}"
+                    class="video-frame"
+                    data-video-url="{{ item.video_url }}"
+                  >
+                    <button
+                      class="video-play"
+                      type="button"
+                      aria-label="{{ item.aria_label }}"
                     >
-                      <button
-                        class="video-play"
-                        type="button"
-                        aria-label="{{ item.aria_label }}"
-                      >
-                        <span class="video-play-icon"></span>
-                        <span>{{ item.play_button }}</span>
-                      </button>
-                    </div>
-                    {% if item.note %}<p class="video-note">{{ item.note }}</p>{% endif %}
-                  </article>
-                </div>
-              {% endif %}
-              {% endfor %}
-             </div> <!-- carousel-inner -->
+                      <span class="video-play-icon"></span>
+                      <span>{{ item.play_button }}</span>
+                    </button>
+                  </div>
+                  {% if item.note %}
+                  <p class="video-note">{{ item.note }}</p>
+                  {% endif %}
+                </article>
+              </div>
+              {% endif %} {% endfor %}
+            </div>
+            <!-- carousel-inner -->
 
-             <button
+            <button
               class="carousel-control-prev"
               type="button"
               data-bs-target="#seedctlCliCarousel"
@@ -203,7 +200,6 @@ permalink: /seedctl/
             <p class="video-note">{{ seedctl.cli.video.note }}</p>
           </article>
         </div> -->
-
       </div>
     </div>
   </section>
@@ -382,15 +378,12 @@ permalink: /seedctl/
       </div>
       <div class="coins-grid">
         {% for coin in seedctl.coins.items %}
-          <article class="coin-card reveal">
-            {%- assign path_imgs = '/assets/images/' | append: coin.logo -%}
-            {% include img.html
-              path=path_imgs
-              alt=coin.alt
-            %}
-            <h3>{{ coin.name }}</h3>
-            <p>{{ coin.text }}</p>
-          </article>
+        <article class="coin-card reveal">
+          {%- assign path_imgs = '/assets/images/' | append: coin.logo -%} {%
+          include img.html path=path_imgs alt=coin.alt %}
+          <h3>{{ coin.name }}</h3>
+          <p>{{ coin.text }}</p>
+        </article>
         {% endfor %}
       </div>
     </div>
@@ -401,11 +394,8 @@ permalink: /seedctl/
     <div class="container-xxl">
       <div class="row g-4">
         <div class="col-12 col-lg-5 footer-brand">
-        {% include img.html
-          class="footer-brand--img"
-          path="/assets/images/seedctl-brand.png"
-          alt="SeedCTL brand mark"
-        %}
+          {% include img.html class="footer-brand--img"
+          path="/assets/images/seedctl-brand.png" alt="SeedCTL brand mark" %}
           <h2>{{ seedctl.footer.brand_title }}</h2>
           <p>{{ seedctl.footer.description }}</p>
         </div>

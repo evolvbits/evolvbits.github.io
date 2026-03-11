@@ -3,7 +3,7 @@
 @use "../../base/mixins" as *;
 @use "../../components/index";
 
-$item-carrosel-size: 694.95px;
+$item-carrosel-size: 594.95px;
 
 .body-seedctl {
   --seedctl-ink: #060b10;
@@ -252,7 +252,6 @@ $item-carrosel-size: 694.95px;
       &-cta,
       &-badges {
         font-family: var(--font-family-tertiary);
-
       }
 
       &-bg {
@@ -317,7 +316,7 @@ $item-carrosel-size: 694.95px;
 
       &-logo-mark {
         position: absolute;
-        right: clamp(1px,7vw,0px);
+        right: clamp(1px, 7vw, 0px);
         top: 57%;
         width: clamp(120px, 18vw, 280px);
         opacity: 0.3;
@@ -500,23 +499,42 @@ $item-carrosel-size: 694.95px;
 
     .terminal {
       &-content {
-        bottom: 0 !important;
-        position: absolute;
-        margin: 20px;
-        margin-left: 0px;
-        margin-right: 15px;
+        position: relative;
+        margin-top: 12px;
         border: 4px solid #050a0f;
         border-radius: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        background: #0b0f14;
+
+        img {
+          width: 100%;
+          flex: 1 1 auto;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          display: block;
+        }
       }
       &-card {
         border-radius: 12px;
         overflow: hidden;
         min-height: $item-carrosel-size;
+        height: $item-carrosel-size;
+        display: flex;
+        flex-direction: column;
 
         img {
           width: 100%;
           display: block;
-          background: #121212;
+          background: #1e1e1e;
+          max-height: 460px;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
         }
       }
       &-bar {
@@ -556,6 +574,9 @@ $item-carrosel-size: 694.95px;
       border-radius: 12px;
       padding: 22px;
       min-height: $item-carrosel-size;
+      height: $item-carrosel-size;
+      display: flex;
+      flex-direction: column;
 
       h3 {
         margin-top: 6px;
@@ -568,8 +589,10 @@ $item-carrosel-size: 694.95px;
       border: 1px solid rgba(121, 247, 255, 0.26);
       border-radius: 10px;
       overflow: hidden;
-      aspect-ratio: 16 / 9;
-      min-height: 320px;
+      aspect-ratio: auto;
+      flex: 1 1 auto;
+      min-height: 0;
+      height: 100%;
       background: #000 center/cover no-repeat;
       position: relative;
 
