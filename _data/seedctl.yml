@@ -66,6 +66,24 @@ cli:
   id: cli
   eyebrow: CLI EXPERIENCE
   title: Designed like a real terminal workflow
+  carousel:
+    - eyebrow: "WALKTHROUGH PRINT"
+      type: "img"
+      title:  Demonstration print
+      thumb: /assets/images/seedctl-cli.png
+      alt: "SeedCTL CLI startup screen"
+      aria_label: "Terminal"
+      active: true
+    - eyebrow: WALKTHROUGH VIDEO
+      type: "video"
+      title: "Execution flow demonstration"
+      thumb: "/assets/images/video-placeholder.svg"
+      video_url: https://www.w3schools.com/html/mov_bbb.mp4
+      aria_label: "Play video walkthrough"
+      play_button: "Play Demo"
+      note: "Replace this demo URL with your own video file when ready."
+      active: false
+
   program:
     eyebrow: WALKTHROUGH PRINT
     title: Demonstration print

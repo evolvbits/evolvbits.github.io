@@ -72,64 +72,76 @@ permalink: /seedctl/
             data-bs-touch="false"
           >
             <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#seedctlCliCarousel"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Terminal"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#seedctlCliCarousel"
-                data-bs-slide-to="1"
-                aria-label="Video"
-              ></button>
+              {% for item in seedctl.cli.carousel %}
+                {% if item.active == true %}
+                  {%- assign active_class = "active" -%}
+                  {%- assign aria_current = "true" -%}
+                {% else %}
+                  {%- assign active_class = "deactive" -%}
+                  {%- assign aria_current = "false" -%}
+                {% endif %}
+                <button
+                  type="button"
+                  data-bs-target="#seedctlCliCarousel"
+                  data-bs-slide-to="{{ forloop.index0 }}"
+                  class="{{ active_class }}"
+                  aria-current="{{ aria_current }}"
+                  aria-label="{{ item.aria_label }}"
+                ></button>
+              {% endfor %}
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <article class="terminal-card reveal">
-                  <p class="eyebrow">{{ seedctl.cli.program.eyebrow }}</p>
-                  <h3>{{ seedctl.cli.program.title }}</h3>
-                  <div class="terminal-content">
-                    <div class="terminal-bar">
-                      <span class="dot red"></span>
-                      <span class="dot yellow"></span>
-                      <span class="dot green"></span>
-                      <span class="terminal-title"
-                        >{{ seedctl.cli.program.window.title }}</span
-                      >
+              {% for item in seedctl.cli.carousel %}
+              {% if item.type == "img" %}
+                <div class="carousel-item {% if item.active == true %} active {% endif %}">
+                  <article class="terminal-card reveal">
+                    <p class="eyebrow">{{ item.eyebrow }}</p>
+                    <h3>{{ item.title }}</h3>
+                    <div class="terminal-content">
+                      <div class="terminal-bar">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title"
+                          >seedctl — interactive session</span
+                        >
+                      </div>
+                        {% include img.html
+                          path=item.thumb
+                          alt=item.alt
+                        %}
                     </div>
-                      {% include img.html
-                        path="/assets/images/seedctl-cli.png"
-                        alt=seedctl.cli.program.window.image_alt
-                      %}
-                  </div>
-                </article>
-              </div>
-              <div class="carousel-item">
-                <article class="video-card reveal">
-                  <p class="eyebrow">{{ seedctl.cli.video.eyebrow }}</p>
-                  <h3>{{ seedctl.cli.video.title }}</h3>
-                  <div
-                    class="video-frame video-lazy"
-                    data-video-url="{{ seedctl.cli.video.url }}"
-                  >
-                    <button
-                      class="video-play"
-                      type="button"
-                      aria-label="{{ seedctl.cli.video.aria_label }}"
+                  </article>
+                </div>
+              {% else %}
+                <div class="carousel-item {% if item.active == true %} active {% endif %}">
+                  <article class="video-card reveal">
+                    <p class="eyebrow">{{ item.eyebrow }}</p>
+                    <h3>{{ item.title }}</h3>
+                    {%- assign thumb_path = item.thumb | relative_url -%}
+                    <div style="background-image:
+                    linear-gradient(to bottom, rgba(6, 11, 16, 0.18),
+                    rgba(6, 11, 16, 0.42)),url({{ thumb_path }})"
+                      class="video-frame"
+                      data-video-url="{{ item.video_url }}"
                     >
-                      <span class="video-play-icon"></span>
-                      <span>{{ seedctl.cli.video.play_text }}</span>
-                    </button>
-                  </div>
-                  <p class="video-note">{{ seedctl.cli.video.note }}</p>
-                </article>
-              </div>
-            </div>
-            <button
+                      <button
+                        class="video-play"
+                        type="button"
+                        aria-label="{{ item.aria_label }}"
+                      >
+                        <span class="video-play-icon"></span>
+                        <span>{{ item.play_button }}</span>
+                      </button>
+                    </div>
+                    {% if item.note %}<p class="video-note">{{ item.note }}</p>{% endif %}
+                  </article>
+                </div>
+              {% endif %}
+              {% endfor %}
+             </div> <!-- carousel-inner -->
+
+             <button
               class="carousel-control-prev"
               type="button"
               data-bs-target="#seedctlCliCarousel"
@@ -155,7 +167,9 @@ permalink: /seedctl/
             </button>
           </div>
         </div>
-        <div class="cli-stack d-lg-none">
+
+        <!-- mobile -->
+        <!-- <div class="cli-stack d-lg-none">
           <article class="terminal-card reveal">
             <div class="terminal-bar">
               <span class="dot red"></span>
@@ -188,7 +202,8 @@ permalink: /seedctl/
             </div>
             <p class="video-note">{{ seedctl.cli.video.note }}</p>
           </article>
-        </div>
+        </div> -->
+
       </div>
     </div>
   </section>
