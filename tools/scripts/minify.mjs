@@ -5,8 +5,13 @@ import { glob } from "glob";
 import { minify as htmlMinify } from "html-minifier-terser";
 import kleur from "kleur";
 import path from "path";
+import sharp from "sharp";
 
 const buildDir = "_site";
+
+function kb(size) {
+  return (size / 1024).toFixed(1) + "kb";
+}
 
 // Minifies all JavaScript files in the build directory
 async function minifyJavaScript() {
@@ -76,73 +81,81 @@ async function minifyHtml() {
 
 // Minifies all image files in the build directory
 async function minifyImages() {
-  console.log(kleur.yellow("Minifying image files..."));
+  const files = await glob(`${buildDir}/assets/images/**/*.{jpg,jpeg,png}`);
 
-  try {
-    let sharp;
-    try {
-      const sharpModule = await import("sharp");
-      sharp = sharpModule.default || sharpModule;
-    } catch (error) {
-      console.log(
-        kleur.yellow(
-          "Sharp not installed. Skipping image minification. Run npm install to enable.",
-        ),
-      );
-      return;
+  if (!files.length) {
+    console.log(kleur.yellow("No images found."));
+    return;
+  }
+
+  console.log(kleur.cyan(`Found ${files.length} images\n`));
+
+  for (const file of files) {
+    const buffer = await fs.readFile(file);
+    const image = sharp(buffer);
+    const metadata = await image.metadata();
+
+    const dir = path.dirname(file);
+    const name = path.basename(file, path.extname(file));
+
+    let optimized;
+
+    if (metadata.format === "jpeg") {
+      optimized = await image
+        .jpeg({
+          quality: 75,
+          mozjpeg: true,
+        })
+        .toBuffer();
     }
 
-    const imageFiles = await glob(
-      `${buildDir}/assets/images/**/*.{png,jpg,jpeg,webp}`,
-    );
-
-    if (imageFiles.length === 0) {
-      console.log(kleur.gray("No image files found to minify."));
-      return;
+    if (metadata.format === "png") {
+      optimized = await image
+        .png({
+          compressionLevel: 9,
+          palette: true,
+        })
+        .toBuffer();
     }
 
-    let optimized = 0;
-    let skipped = 0;
+    if (!optimized) continue;
 
-    for (const file of imageFiles) {
-      const ext = path.extname(file).toLowerCase();
-      const tempFile = `${file}.tmp`;
-
-      const stat = await fs.stat(file);
-      const pipeline = sharp(file);
-
-      if (ext === ".jpg" || ext === ".jpeg") {
-        await pipeline.jpeg({ quality: 82, mozjpeg: true }).toFile(tempFile);
-      } else if (ext === ".png") {
-        await pipeline
-          .png({ compressionLevel: 9, palette: true })
-          .toFile(tempFile);
-      } else if (ext === ".webp") {
-        await pipeline.webp({ quality: 82 }).toFile(tempFile);
-      } else {
-        skipped += 1;
-        continue;
-      }
-
-      const optimizedStat = await fs.stat(tempFile);
-
-      if (optimizedStat.size < stat.size) {
-        await fs.rename(tempFile, file);
-        optimized += 1;
-      } else {
-        await fs.unlink(tempFile);
-        skipped += 1;
-      }
-    }
+    await fs.writeFile(file, optimized);
 
     console.log(
-      kleur.green(`Images optimized: ${optimized}. Skipped: ${skipped}.`),
+      kleur.green("✔"),
+      file,
+      kleur.gray(`(${kb(buffer.length)} → ${kb(optimized.length)})`)
     );
-  } catch (error) {
-    console.error(kleur.red("Error minifying images:"), error);
-    throw error;
+
+    // WEBP
+    const webp = await sharp(optimized)
+      .webp({ quality: 75 })
+      .toBuffer();
+
+    const webpPath = `${dir}/${name}.webp`;
+    await fs.writeFile(webpPath, webp);
+
+    console.log(
+      kleur.blue("  → webp"),
+      kleur.gray(`${kb(webp.length)}`)
+    );
+
+    // AVIF
+    const avif = await sharp(optimized)
+      .avif({ quality: 50 })
+      .toBuffer();
+
+    const avifPath = `${dir}/${name}.avif`;
+    await fs.writeFile(avifPath, avif);
+
+    console.log(
+      kleur.magenta("  → avif"),
+      kleur.gray(`${kb(avif.length)}`)
+    );
   }
 }
+
 
 // Main function
 async function main() {
