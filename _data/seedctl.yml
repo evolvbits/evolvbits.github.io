@@ -4,7 +4,7 @@ nav:
     label: SeedCTL
     aria_label: SeedCTL
     title: SeedCTL
-    icon: "assets/images/seedctl-brand.png"
+    icon: si si-seed
     url: true
   - href: "/seedctl/#cli"
     label: CLI
