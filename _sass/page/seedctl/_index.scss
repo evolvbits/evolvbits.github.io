@@ -217,13 +217,14 @@
 
       .hero-stage {
         position: relative;
-        min-height: inherit;
+        // min-height: inherit;
         width: 100%;
         display: grid;
         place-items: center;
         overflow: clip;
         border-radius: 22px;
         box-shadow: 0 30px 80px rgba(2, 6, 10, 0.7);
+        min-height: 680px;
       }
 
       @media (max-width: 760px) {
