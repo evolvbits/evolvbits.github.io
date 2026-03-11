@@ -1,17 +1,27 @@
 @use "../base/mixins" as *;
 
 .body-seedctl {
-  background: radial-gradient(
-    circle at 18% -8%,
-    rgba(121, 247, 255, 0.08),
-    transparent 35%
-  ),
-  radial-gradient(
-    circle at 82% 8%,
-    rgba(255, 150, 31, 0.08),
-    transparent 30%
-  ),
-  #060b10;
+  --seedctl-ink: #060b10;
+  --seedctl-ink-deep: #04080d;
+  --seedctl-ice: #79f7ff;
+  --seedctl-ice-soft: #c8dde3;
+  --seedctl-amber: #ff961f;
+  --seedctl-amber-soft: #ffb64e;
+  --seedctl-panel: rgba(12, 20, 28, 0.92);
+  --seedctl-panel-strong: rgba(10, 16, 22, 0.98);
+
+  background:
+    radial-gradient(
+      circle at 18% -8%,
+      rgba(121, 247, 255, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(255, 150, 31, 0.08),
+      transparent 30%
+    ),
+    var(--seedctl-ink);
 
   .seedctl {
     overflow-x: hidden;
@@ -20,7 +30,7 @@
 
     p,
     li {
-      color: #c8dde3;
+      color: var(--seedctl-ice-soft);
       font-family: inherit;
       font-size: 1.04em;
       line-height: 1.7;
@@ -53,6 +63,20 @@
           font-weight: 700;
           color: #e6f3f7;
         }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 70px;
+          height: 2px;
+          margin-top: 16px;
+          background: linear-gradient(
+            90deg,
+            var(--seedctl-amber),
+            var(--seedctl-ice)
+          );
+          opacity: 0.6;
+        }
       }
 
       &-wrap {
@@ -65,8 +89,9 @@
     }
 
     .hero {
-      min-height: 96svh;
+      min-height: 94svh;
       position: relative;
+      isolation: isolate;
       overflow: clip;
       display: grid;
       place-items: center;
@@ -91,9 +116,8 @@
         inset: -8%;
         transform: translate3d(0, 0, 0);
         will-change: transform;
-        background: url("https://source.unsplash.com/2200x1400/?terminal,server,rack")
-          center/cover no-repeat;
-        filter: saturate(0.75) contrast(0.95);
+        background: url("../images/seedctl-banner.png") center/cover no-repeat;
+        filter: saturate(0.8) contrast(1.02) brightness(0.88);
       }
 
       &-overlay {
@@ -103,7 +127,7 @@
           linear-gradient(
             to bottom,
             rgba(6, 11, 16, 0.45),
-            rgba(6, 11, 16, 0.92)
+            rgba(6, 11, 16, 0.94)
           ),
           repeating-linear-gradient(
             0deg,
@@ -186,11 +210,19 @@
           background: linear-gradient(130deg, #ff961f 0%, #ffb64e 100%);
           color: #261300;
           box-shadow: 0 14px 28px rgba(255, 150, 31, 0.28);
+
+          &:hover {
+            box-shadow: 0 18px 36px rgba(255, 150, 31, 0.35);
+          }
         }
         &-ghost {
           border-color: rgba(121, 247, 255, 0.3);
           background: rgba(121, 247, 255, 0.08);
           color: #d8ebef;
+
+          &:hover {
+            background: rgba(121, 247, 255, 0.14);
+          }
         }
       }
 
@@ -230,12 +262,15 @@
       border-radius: 14px;
       background: linear-gradient(
         135deg,
-        rgba(20, 31, 40, 0.96) 0%,
+        rgba(20, 31, 40, 0.94) 0%,
         rgba(10, 16, 22, 0.98) 100%
       );
       box-shadow: 0 4px 24px rgba(121, 247, 255, 0.07);
+      backdrop-filter: blur(6px);
       padding: 20px 18px;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      transition:
+        box-shadow 0.2s,
+        border-color 0.2s;
       &:hover {
         box-shadow: 0 8px 32px rgba(121, 247, 255, 0.13);
         border-color: #79f7ff;
@@ -310,12 +345,16 @@
         height: 100%;
         border: 0;
       }
-    }
 
-    .video-lazy {
-      background-image:
-        linear-gradient(to bottom, rgba(6, 11, 16, 0.18), rgba(6, 11, 16, 0.42)),
-        url("../images/video-placeholder.svg");
+      &.video-lazy {
+        background-image:
+          linear-gradient(
+            to bottom,
+            rgba(6, 11, 16, 0.18),
+            rgba(6, 11, 16, 0.42)
+          ),
+          url("../images/video-placeholder.svg");
+      }
     }
 
     .video-play {
@@ -337,14 +376,14 @@
       &:hover {
         opacity: 0.98;
       }
-    }
 
-    .video-play-icon {
-      width: 0;
-      height: 0;
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 11px solid #000;
+      &-icon {
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 11px solid #000;
+      }
     }
 
     .video-note {
@@ -365,6 +404,17 @@
     .feature-card {
       border-radius: 10px;
       padding: 20px;
+      @include transition(
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease
+      );
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(5, 10, 16, 0.45);
+        border-color: rgba(121, 247, 255, 0.9);
+      }
 
       h3 {
         font-size: 1rem;
@@ -416,6 +466,16 @@
       }
     }
 
+    .mode-card,
+    .threat-card {
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: #bfd0d6;
+        line-height: 1.55;
+      }
+    }
+
     .card-icon {
       display: inline-flex;
       align-items: center;
@@ -445,13 +505,15 @@
       }
     }
 
-    .how-card:hover .card-icon,
-    .mode-card:hover .card-icon,
-    .threat-card:hover .card-icon {
-      border-color: rgba(121, 247, 255, 0.75);
-      background: rgba(121, 247, 255, 0.14);
-      box-shadow: 0 0 12px rgba(121, 247, 255, 0.3);
-      transform: translateY(-1px);
+    .how-card,
+    .mode-card,
+    .threat-card {
+      &:hover .card-icon {
+        border-color: rgba(121, 247, 255, 0.75);
+        background: rgba(121, 247, 255, 0.14);
+        box-shadow: 0 0 12px rgba(121, 247, 255, 0.3);
+        transform: translateY(-1px);
+      }
     }
 
     .mode-grid,
@@ -460,14 +522,6 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-    }
-
-    .mode-card ul,
-    .threat-card ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: #bfd0d6;
-      line-height: 1.55;
     }
 
     .mode-tag {
@@ -533,8 +587,8 @@
       width: 100%;
 
       h2 {
-         font-family: var(--font-family-secondary);
-         font-weight: bold;
+        font-family: var(--font-family-secondary);
+        font-weight: bold;
       }
     }
 
@@ -795,5 +849,4 @@
       }
     }
   }
-
 }

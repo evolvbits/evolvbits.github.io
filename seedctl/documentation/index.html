@@ -8,321 +8,332 @@ permalink: /seedctl/documentation/
 {%- include assign.liquid -%}
 
 <main id="overview" class="seedctl-documentation">
-  <aside class="sidebar">
-    <p class="toc-title">{{ seedctl_doc.sidebar_title }}</p>
-    {% for item in seedctl_doc.toc %}
-    <a href="#{{ item.id }}">{{ item.label }}</a>
-    {% endfor %}
-  </aside>
-
-  <article class="content">
-    <section class="overview-hero">
-      <p class="eyebrow">{{ seedctl_doc.overview.eyebrow }}</p>
-      {% if seedctl_doc.overview.logo %}
-      <div class="overview-logo">
-        <img
-          src="{{ seedctl_doc.overview.logo.src | relative_url }}"
-          alt="{{ seedctl_doc.overview.logo.alt }}"
-        />
-      </div>
-      {% endif %}
-      <h1>{{ seedctl_doc.overview.title }}</h1>
-      <p>{{ seedctl_doc.overview.text }}</p>
-      {% if seedctl_doc.overview.badges %}
-      <div class="overview-badges">
-        {% for badge in seedctl_doc.overview.badges %} {% if badge.href %}
-        <a
-          href="{{ badge.href }}"
-          target="_blank"
-          rel="noreferrer"
-          class="badge-link"
-        >
-          <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
-        </a>
-        {% else %}
-        <span class="badge-link">
-          <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
-        </span>
-        {% endif %} {% endfor %}
-      </div>
-      {% endif %}
-    </section>
-
-    <section id="project">
-      <h2>{{ seedctl_doc.project.title }}</h2>
-      <p>{{ seedctl_doc.project.summary }}</p>
-      <p>{{ seedctl_doc.project.goal }}</p>
-      <div class="split">
-        <div class="panel">
-          <h3>Mirrors</h3>
-          <ul>
-            {% for link in seedctl_doc.project.mirrors %}
-            <li>
-              <a
-                class="doc-inline-link{% if link.external %} external-link is-external{% endif %}"
-                href="{% if link.external %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"
-                {%
-                if
-                link.external
-                %}target="_blank"
-                rel="noreferrer"
-                {%
-                endif
-                %}
-                >{{ link.text }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Project Status</h3>
-          <ul>
-            {% for link in seedctl_doc.project.status %}
-            <li>
-              <a
-                class="doc-inline-link{% if link.external %} external-link is-external{% endif %}"
-                href="{% if link.external %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"
-                {%
-                if
-                link.external
-                %}target="_blank"
-                rel="noreferrer"
-                {%
-                endif
-                %}
-                >{{ link.text }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="panel doc-note">
-        <h3>{{ seedctl_doc.project.warning_title }}</h3>
-        <p>{{ seedctl_doc.project.warning }}</p>
-        <ul>
-          {% for item in seedctl_doc.project.philosophy %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-
-    <section id="quickstart">
-      <h2 class="title">{{ seedctl_doc.quickstart.title }}</h2>
-      <ol>
-        {% for step in seedctl_doc.quickstart.steps %}
-        <li>{{ step | markdownify }}</li>
+  <div class="container-xxl">
+    <div class="row g-4 doc-layout">
+      <aside class="sidebar col-12 col-lg-3">
+        <p class="toc-title">{{ seedctl_doc.sidebar_title }}</p>
+        {% for item in seedctl_doc.toc %}
+        <a href="#{{ item.id }}">{{ item.label }}</a>
         {% endfor %}
-      </ol>
-    </section>
+      </aside>
 
-    <section id="flow">
-      <h2 class="title">{{ seedctl_doc.flow.title }}</h2>
-      <div class="cards">
-        {% for card in seedctl_doc.flow.cards %}
-        <div class="card">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.text }}</p>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+      <article class="content col-12 col-lg-9">
+        <section class="overview-hero">
+          <p class="eyebrow">{{ seedctl_doc.overview.eyebrow }}</p>
+          {% if seedctl_doc.overview.logo %}
+          <div class="overview-logo">
+            <img
+              src="{{ seedctl_doc.overview.logo.src | relative_url }}"
+              alt="{{ seedctl_doc.overview.logo.alt }}"
+            />
+          </div>
+          {% endif %}
+          <h1>{{ seedctl_doc.overview.title }}</h1>
+          <p>{{ seedctl_doc.overview.text }}</p>
+          {% if seedctl_doc.overview.badges %}
+          <div class="overview-badges">
+            {% for badge in seedctl_doc.overview.badges %} {% if badge.href %}
+            <a
+              href="{{ badge.href }}"
+              target="_blank"
+              rel="noreferrer"
+              class="badge-link"
+            >
+              <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
+            </a>
+            {% else %}
+            <span class="badge-link">
+              <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
+            </span>
+            {% endif %} {% endfor %}
+          </div>
+          {% endif %}
+        </section>
 
-    <section id="entropy">
-      <h2 class="title">{{ seedctl_doc.entropy.title }}</h2>
-      <div class="split">
-        {% for panel in seedctl_doc.entropy.panels %}
-        <div class="panel">
-          <h3>{{ panel.title }}</h3>
-          <ul>
-            {% for point in panel.points %}
-            <li>{{ point }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-      </div>
-      <pre><code>{{ seedctl_doc.entropy.formula | escape }}</code></pre>
-    </section>
-
-    <section id="networks">
-      <h2 class="title">{{ seedctl_doc.networks.title }}</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              {% for header in seedctl_doc.networks.headers %}
-              <th>{{ header }}</th>
+        <section id="project">
+          <h2>{{ seedctl_doc.project.title }}</h2>
+          <p>{{ seedctl_doc.project.summary }}</p>
+          <p>{{ seedctl_doc.project.goal }}</p>
+          <div class="split">
+            <div class="panel">
+              <h3>Mirrors</h3>
+              <ul>
+                {% for link in seedctl_doc.project.mirrors %}
+                <li>
+                  <a
+                    class="doc-inline-link{% if link.external %} external-link is-external{% endif %}"
+                    href="{% if link.external %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"
+                    {%
+                    if
+                    link.external
+                    %}target="_blank"
+                    rel="noreferrer"
+                    {%
+                    endif
+                    %}
+                    >{{ link.text }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Project Status</h3>
+              <ul>
+                {% for link in seedctl_doc.project.status %}
+                <li>
+                  <a
+                    class="doc-inline-link{% if link.external %} external-link is-external{% endif %}"
+                    href="{% if link.external %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}"
+                    {%
+                    if
+                    link.external
+                    %}target="_blank"
+                    rel="noreferrer"
+                    {%
+                    endif
+                    %}
+                    >{{ link.text }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="panel doc-note">
+            <h3>{{ seedctl_doc.project.warning_title }}</h3>
+            <p>{{ seedctl_doc.project.warning }}</p>
+            <ul>
+              {% for item in seedctl_doc.project.philosophy %}
+              <li>{{ item }}</li>
               {% endfor %}
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in seedctl_doc.networks.rows %}
-            <tr>
-              <td>{{ row[0] }}</td>
-              <td>
-                {{ row[1] | markdownify | remove: '
-                <p>' | remove: '</p>
-                ' }}
-              </td>
-              <td>
-                {{ row[2] | markdownify | remove: '
-                <p>' | remove: '</p>
-                ' }}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </section>
+            </ul>
+          </div>
+        </section>
 
-    <section id="compatibility">
-      <h2 class="title">{{ seedctl_doc.compatibility.title }}</h2>
-      <div class="cards compatibility-grid">
-        {% for group in seedctl_doc.compatibility.groups %}
-        <div class="card">
-          <h3>{{ group.network }}</h3>
+        <section id="quickstart">
+          <h2 class="title">{{ seedctl_doc.quickstart.title }}</h2>
+          <ol>
+            {% for step in seedctl_doc.quickstart.steps %}
+            <li>{{ step | markdownify }}</li>
+            {% endfor %}
+          </ol>
+        </section>
+
+        <section id="flow">
+          <h2 class="title">{{ seedctl_doc.flow.title }}</h2>
+          <div class="cards">
+            {% for card in seedctl_doc.flow.cards %}
+            <div class="card">
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.text }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section id="entropy">
+          <h2 class="title">{{ seedctl_doc.entropy.title }}</h2>
+          <div class="split">
+            {% for panel in seedctl_doc.entropy.panels %}
+            <div class="panel">
+              <h3>{{ panel.title }}</h3>
+              <ul>
+                {% for point in panel.points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+          <pre><code>{{ seedctl_doc.entropy.formula | escape }}</code></pre>
+        </section>
+
+        <section id="networks">
+          <h2 class="title">{{ seedctl_doc.networks.title }}</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  {% for header in seedctl_doc.networks.headers %}
+                  <th>{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in seedctl_doc.networks.rows %}
+                <tr>
+                  <td>{{ row[0] }}</td>
+                  <td>
+                    {{ row[1] | markdownify | remove: '
+                    <p>' | remove: '</p>
+                    ' }}
+                  </td>
+                  <td>
+                    {{ row[2] | markdownify | remove: '
+                    <p>' | remove: '</p>
+                    ' }}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="compatibility">
+          <h2 class="title">{{ seedctl_doc.compatibility.title }}</h2>
+          <div class="cards compatibility-grid">
+            {% for group in seedctl_doc.compatibility.groups %}
+            <div class="card">
+              <h3>{{ group.network }}</h3>
+              <ul>
+                {% for wallet in group.wallets %}
+                <li>
+                  {{ wallet | markdownify | remove: '
+                  <p>' | remove: '</p>
+                  ' }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section id="outputs">
+          <h2 class="title">{{ seedctl_doc.outputs.title }}</h2>
           <ul>
-            {% for wallet in group.wallets %}
-            <li>
-              {{ wallet | markdownify | remove: '
-              <p>' | remove: '</p>
-              ' }}
-            </li>
+            {% for item in seedctl_doc.outputs.items %}
+            <li>{{ item }}</li>
             {% endfor %}
           </ul>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+        </section>
 
-    <section id="outputs">
-      <h2 class="title">{{ seedctl_doc.outputs.title }}</h2>
-      <ul>
-        {% for item in seedctl_doc.outputs.items %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <section id="security">
-      <h2 class="title">{{ seedctl_doc.security.title }}</h2>
-      <p class="doc-version-note">{{ seedctl_doc.security.version_note }}</p>
-      <div class="split">
-        {% for panel in seedctl_doc.security.panels %}
-        <div class="panel">
-          <h3>{{ panel.title }}</h3>
-          <ul>
-            {% for point in panel.points %}
-            <li>{{ point }}</li>
+        <section id="security">
+          <h2 class="title">{{ seedctl_doc.security.title }}</h2>
+          <p class="doc-version-note">
+            {{ seedctl_doc.security.version_note }}
+          </p>
+          <div class="split">
+            {% for panel in seedctl_doc.security.panels %}
+            <div class="panel">
+              <h3>{{ panel.title }}</h3>
+              <ul>
+                {% for point in panel.points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </div>
             {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="split split--spaced">
-        <div class="panel">
-          <h3>{{ seedctl_doc.security.assumptions.assumes.title }}</h3>
-          <ul>
-            {% for point in seedctl_doc.security.assumptions.assumes.points %}
-            <li>{{ point }}</li>
+          </div>
+          <div class="split split--spaced">
+            <div class="panel">
+              <h3>{{ seedctl_doc.security.assumptions.assumes.title }}</h3>
+              <ul>
+                {% for point in seedctl_doc.security.assumptions.assumes.points
+                %}
+                <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>
+                {{ seedctl_doc.security.assumptions.not_mitigated.title }}
+              </h3>
+              <ul>
+                {% for point in
+                seedctl_doc.security.assumptions.not_mitigated.points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="panel doc-note panel--spaced">
+            <h3>{{ seedctl_doc.security.reporting.title }}</h3>
+            <ul>
+              {% for item in seedctl_doc.security.reporting.items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="panel panel--spaced">
+            <h3>{{ seedctl_doc.security.responsibility.title }}</h3>
+            <ul>
+              {% for point in seedctl_doc.security.responsibility.points %}
+              <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+
+        <section id="recovery">
+          <h2 class="title">{{ seedctl_doc.recovery.title }}</h2>
+          <ol>
+            {% for step in seedctl_doc.recovery.steps %}
+            <li>{{ step }}</li>
             {% endfor %}
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>{{ seedctl_doc.security.assumptions.not_mitigated.title }}</h3>
-          <ul>
-            {% for point in
-            seedctl_doc.security.assumptions.not_mitigated.points %}
-            <li>{{ point }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="panel doc-note panel--spaced">
-        <h3>{{ seedctl_doc.security.reporting.title }}</h3>
-        <ul>
-          {% for item in seedctl_doc.security.reporting.items %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="panel panel--spaced">
-        <h3>{{ seedctl_doc.security.responsibility.title }}</h3>
-        <ul>
-          {% for point in seedctl_doc.security.responsibility.points %}
-          <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
+          </ol>
+        </section>
 
-    <section id="recovery">
-      <h2 class="title">{{ seedctl_doc.recovery.title }}</h2>
-      <ol>
-        {% for step in seedctl_doc.recovery.steps %}
-        <li>{{ step }}</li>
-        {% endfor %}
-      </ol>
-    </section>
+        <section id="reproducibility">
+          <h2 class="title">{{ seedctl_doc.reproducibility.title }}</h2>
+          <p>{{ seedctl_doc.reproducibility.intro }}</p>
+          <div class="panel panel--spaced-bottom">
+            <h3>Supported Networks</h3>
+            <ul class="network-list">
+              {% for net in seedctl_doc.reproducibility.networks %}
+              <li>{{ net }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% capture repro_md %}{% include
+          seedctl/documentation/reproducibility.md %}{% endcapture %}
+          <div class="doc-markdown">{{ repro_md | markdownify }}</div>
+        </section>
 
-    <section id="reproducibility">
-      <h2 class="title">{{ seedctl_doc.reproducibility.title }}</h2>
-      <p>{{ seedctl_doc.reproducibility.intro }}</p>
-      <div class="panel panel--spaced-bottom">
-        <h3>Supported Networks</h3>
-        <ul class="network-list">
-          {% for net in seedctl_doc.reproducibility.networks %}
-          <li>{{ net }}</li>
+        <section id="terms">
+          <h2 class="title">{{ seedctl_doc.terms.title }}</h2>
+          {% if seedctl_doc.terms.updated_at %}
+          <p class="doc-meta">
+            Last updated: {{ seedctl_doc.terms.updated_at }}
+          </p>
+          {% endif %}
+          <p>{{ seedctl_doc.terms.intro }}</p>
+          {% for sec in seedctl_doc.terms.sections %}
+          <div class="panel panel--spaced">
+            <h3>{{ sec.title }}</h3>
+            <ul>
+              {% for point in sec.points %}
+              <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          </div>
           {% endfor %}
-        </ul>
-      </div>
-      {% capture repro_md %}{% include seedctl/documentation/reproducibility.md
-      %}{% endcapture %}
-      <div class="doc-markdown">{{ repro_md | markdownify }}</div>
-    </section>
+        </section>
 
-    <section id="terms">
-      <h2 class="title">{{ seedctl_doc.terms.title }}</h2>
-      {% if seedctl_doc.terms.updated_at %}
-      <p class="doc-meta">Last updated: {{ seedctl_doc.terms.updated_at }}</p>
-      {% endif %}
-      <p>{{ seedctl_doc.terms.intro }}</p>
-      {% for sec in seedctl_doc.terms.sections %}
-      <div class="panel panel--spaced">
-        <h3>{{ sec.title }}</h3>
-        <ul>
-          {% for point in sec.points %}
-          <li>{{ point }}</li>
+        <section id="disclaimer">
+          <h2 class="title">{{ seedctl_doc.disclaimer.title }}</h2>
+          {% for sec in seedctl_doc.disclaimer.sections %}
+          <div
+            class="panel{% if sec.title == 'Security and Liability Notice' %} doc-note{% endif %} panel--spaced"
+          >
+            <h3>{{ sec.title }}</h3>
+            {% if sec.text %}
+            <p>{{ sec.text }}</p>
+            {% endif %} {% if sec.intro %}
+            <p>{{ sec.intro }}</p>
+            {% endif %} {% if sec.points %}
+            <ul>
+              {% for point in sec.points %}
+              <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
           {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </section>
-
-    <section id="disclaimer">
-      <h2 class="title">{{ seedctl_doc.disclaimer.title }}</h2>
-      {% for sec in seedctl_doc.disclaimer.sections %}
-      <div
-        class="panel{% if sec.title == 'Security and Liability Notice' %} doc-note{% endif %} panel--spaced"
-      >
-        <h3>{{ sec.title }}</h3>
-        {% if sec.text %}
-        <p>{{ sec.text }}</p>
-        {% endif %} {% if sec.intro %}
-        <p>{{ sec.intro }}</p>
-        {% endif %} {% if sec.points %}
-        <ul>
-          {% for point in sec.points %}
-          <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </section>
-  </article>
+        </section>
+      </article>
+    </div>
+  </div>
 </main>
