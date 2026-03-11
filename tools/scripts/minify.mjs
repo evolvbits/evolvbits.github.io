@@ -1,17 +1,27 @@
 // author: William C. Canin
+import os from "os";
+
+if (!globalThis.navigator) {
+  globalThis.navigator = {
+    hardwareConcurrency: os.cpus().length
+  };
+}
+
+import { Transformer } from "@napi-rs/image";
 import { build as esbuild } from "esbuild";
 import { promises as fs } from "fs";
 import { glob } from "glob";
 import { minify as htmlMinify } from "html-minifier-terser";
 import kleur from "kleur";
 import path from "path";
-import sharp from "sharp";
 
 const buildDir = "_site";
 
 function kb(size) {
   return (size / 1024).toFixed(1) + "kb";
 }
+
+
 
 // Minifies all JavaScript files in the build directory
 async function minifyJavaScript() {
@@ -53,7 +63,7 @@ async function minifyHtml() {
     }
 
     const minifyPromises = htmlFiles.map(async (file) => {
-      // segurança extra: garante que só HTML será processado
+      // Extra security: ensures that only HTML will be processed.
       if (path.extname(file) !== ".html") return;
 
       const content = await fs.readFile(file, "utf8");
@@ -62,7 +72,7 @@ async function minifyHtml() {
         collapseWhitespace: true,
         removeComments: true,
 
-        // IMPORTANTE
+        // IMPORTANT
         minifyCSS: false,
         minifyJS: false,
       });
@@ -81,79 +91,59 @@ async function minifyHtml() {
 
 // Minifies all image files in the build directory
 async function minifyImages() {
+  console.log(kleur.yellow("Minifying images..."));
+
   const files = await glob(`${buildDir}/assets/images/**/*.{jpg,jpeg,png}`);
 
   if (!files.length) {
-    console.log(kleur.yellow("No images found."));
+    console.log(kleur.gray("No images found."));
     return;
   }
 
   console.log(kleur.cyan(`Found ${files.length} images\n`));
 
-  for (const file of files) {
-    const buffer = await fs.readFile(file);
-    const image = sharp(buffer);
-    const metadata = await image.metadata();
+  let totalBefore = 0;
+  let totalAfter = 0;
 
-    const dir = path.dirname(file);
-    const name = path.basename(file, path.extname(file));
+  await Promise.all(
+    files.map(async (file) => {
+      const buffer = await fs.readFile(file);
+      const before = buffer.length;
 
-    let optimized;
+      const transformer = new Transformer(buffer);
 
-    if (metadata.format === "jpeg") {
-      optimized = await image
-        .jpeg({
-          quality: 75,
-          mozjpeg: true,
-        })
-        .toBuffer();
-    }
+      const jpeg = await transformer.jpeg(75);
+      const webp = await transformer.webp(75);
+      const avif = await transformer.avif({
+        quality: 50,
+        speed: 4 // Optional: balances speed vs compression (1-10)
+      });
 
-    if (metadata.format === "png") {
-      optimized = await image
-        .png({
-          compressionLevel: 9,
-          palette: true,
-        })
-        .toBuffer();
-    }
+      const dir = path.dirname(file);
+      const name = path.basename(file, path.extname(file));
 
-    if (!optimized) continue;
+      await fs.writeFile(file, jpeg);
+      await fs.writeFile(path.join(dir, `${name}.webp`), webp);
+      await fs.writeFile(path.join(dir, `${name}.avif`), avif);
 
-    await fs.writeFile(file, optimized);
+      totalBefore += before;
+      totalAfter += jpeg.length;
 
-    console.log(
-      kleur.green("✔"),
-      file,
-      kleur.gray(`(${kb(buffer.length)} → ${kb(optimized.length)})`)
-    );
+      console.log(
+        kleur.green("✔"),
+        file,
+        kleur.gray(`(${kb(before)} → ${kb(jpeg.length)})`)
+      );
+    })
+  );
 
-    // WEBP
-    const webp = await sharp(optimized)
-      .webp({ quality: 75 })
-      .toBuffer();
+  const saved = totalBefore - totalAfter;
 
-    const webpPath = `${dir}/${name}.webp`;
-    await fs.writeFile(webpPath, webp);
-
-    console.log(
-      kleur.blue("  → webp"),
-      kleur.gray(`${kb(webp.length)}`)
-    );
-
-    // AVIF
-    const avif = await sharp(optimized)
-      .avif({ quality: 50 })
-      .toBuffer();
-
-    const avifPath = `${dir}/${name}.avif`;
-    await fs.writeFile(avifPath, avif);
-
-    console.log(
-      kleur.magenta("  → avif"),
-      kleur.gray(`${kb(avif.length)}`)
-    );
-  }
+  console.log(
+    kleur.bold().green(
+      `\nImages optimized: ${kb(totalBefore)} → ${kb(totalAfter)} (saved ${kb(saved)})\n`
+    )
+  );
 }
 
 
