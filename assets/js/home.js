@@ -3,6 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
+  const isMobile = window.matchMedia("(max-width: 991.98px)").matches;
+  const connection =
+    navigator.connection ||
+    navigator.mozConnection ||
+    navigator.webkitConnection;
+  const saveData = Boolean(connection?.saveData);
+  const slowNetwork = ["slow-2g", "2g", "3g"].includes(
+    connection?.effectiveType || "",
+  );
+  const lowCpu = Boolean(
+    navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4,
+  );
+  const lowMem = Boolean(navigator.deviceMemory && navigator.deviceMemory <= 4);
+  const reduceEffects =
+    prefersReducedMotion ||
+    isMobile ||
+    saveData ||
+    slowNetwork ||
+    lowCpu ||
+    lowMem;
+
+  if (reduceEffects) {
+    document.body.classList.add("effects-lite");
+  }
+
   let revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
 
   if (!revealElements.length) {
@@ -44,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bitsLayer = document.querySelector("[data-bits-bg]");
   const cubeCluster = document.querySelector("[data-cube-cluster]");
 
-  if (bitsLayer) {
-    const bitCount = window.innerWidth < 992 ? 24 : 40;
+  if (bitsLayer && !reduceEffects) {
+    const bitCount = window.innerWidth < 1200 ? 20 : 32;
     const bits = [];
     let targetX = window.innerWidth * 0.5;
     let targetY = window.innerHeight * 0.35;
@@ -83,7 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    let animationFrameId = null;
+
     const animateBits = (time) => {
+      if (document.hidden) {
+        animationFrameId = null;
+        return;
+      }
       const seconds = time * 0.001;
       leaderX += (targetX - leaderX) * 0.14;
       leaderY += (targetY - leaderY) * 0.14;
@@ -102,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bit.element.style.transform = `translate3d(${bit.x.toFixed(2)}px, ${bit.y.toFixed(2)}px, 0) rotate(${(wave * 30).toFixed(2)}deg)`;
       }
 
-      window.requestAnimationFrame(animateBits);
+      animationFrameId = window.requestAnimationFrame(animateBits);
     };
 
     if (!prefersReducedMotion) {
@@ -125,7 +156,21 @@ document.addEventListener("DOMContentLoaded", () => {
         targetY = Math.min(targetY, window.innerHeight);
       });
 
-      window.requestAnimationFrame(animateBits);
+      animationFrameId = window.requestAnimationFrame(animateBits);
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          if (animationFrameId) {
+            window.cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+          return;
+        }
+
+        if (!animationFrameId) {
+          animationFrameId = window.requestAnimationFrame(animateBits);
+        }
+      });
     } else {
       for (let index = 0; index < bits.length; index += 1) {
         const bit = bits[index];
@@ -137,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (cubeCluster && !prefersReducedMotion) {
+  if (cubeCluster && !reduceEffects) {
     let scrollFrame = null;
     let latestScrollY = window.scrollY || 0;
 
@@ -166,6 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     renderClusterParallax();
+  }
+  if (bitsLayer && reduceEffects) {
+    bitsLayer.style.display = "none";
   }
 
   // Contact
