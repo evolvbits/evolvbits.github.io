@@ -58,9 +58,11 @@ let ticking = false;
 const prefersReduced = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
+const isMobile = window.matchMedia("(max-width: 991.98px)").matches;
+const disableParallax = prefersReduced || isMobile;
 
 function onScroll() {
-  if (prefersReduced) return;
+  if (disableParallax) return;
   if (ticking) return;
 
   window.requestAnimationFrame(() => {
@@ -76,8 +78,14 @@ function onScroll() {
   ticking = true;
 }
 
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
+if (!disableParallax) {
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+} else {
+  parallaxEls.forEach((el) => {
+    el.style.transform = "translate3d(0, 0, 0)";
+  });
+}
 
 const lazyVideos = document.querySelectorAll(".video-lazy");
 lazyVideos.forEach((lazyVideo) => {
