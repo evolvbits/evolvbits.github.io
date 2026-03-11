@@ -3,7 +3,8 @@
 @use "../../base/mixins" as *;
 @use "../../components/index";
 
-$item-carrosel-size: 594.95px;
+$item-carousel-size: 594.95px;
+$item-carousel-height: 460px;
 
 .body-seedctl {
   --seedctl-ink: #060b10;
@@ -509,7 +510,7 @@ $item-carrosel-size: 594.95px;
         min-height: 0;
         display: flex;
         flex-direction: column;
-        background: #0b0f14;
+        background: #1e1e1e;
 
         img {
           width: 100%;
@@ -523,8 +524,8 @@ $item-carrosel-size: 594.95px;
       &-card {
         border-radius: 12px;
         overflow: hidden;
-        min-height: $item-carrosel-size;
-        height: $item-carrosel-size;
+        min-height: $item-carousel-size;
+        height: $item-carousel-size;
         display: flex;
         flex-direction: column;
 
@@ -573,8 +574,8 @@ $item-carrosel-size: 594.95px;
     .video-card {
       border-radius: 12px;
       padding: 22px;
-      min-height: $item-carrosel-size;
-      height: $item-carrosel-size;
+      min-height: $item-carousel-size;
+      height: $item-carousel-size;
       display: flex;
       flex-direction: column;
 
