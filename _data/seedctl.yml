@@ -84,20 +84,6 @@ cli:
       note: "Replace this demo URL with your own video file when ready."
       active: false
 
-  program:
-    eyebrow: WALKTHROUGH PRINT
-    title: Demonstration print
-    window:
-      title: "seedctl — interactive session"
-      image_alt: SeedCTL CLI startup screen
-  video:
-    eyebrow: WALKTHROUGH VIDEO
-    title: Execution flow demonstration
-    url: https://www.w3schools.com/html/mov_bbb.mp4
-    play_text: Play Demo
-    aria_label: Play video walkthrough
-    note: Replace this demo URL with your own video file when ready.
-
 features:
   id: features
   eyebrow: WHY SEEDCTL
