@@ -66,8 +66,12 @@ cli:
   id: cli
   eyebrow: CLI EXPERIENCE
   title: Designed like a real terminal workflow
-  terminal_title: "seedctl — interactive session"
-  terminal_image_alt: SeedCTL CLI startup screen
+  program:
+    eyebrow: WALKTHROUGH PRINT
+    title: Demonstration print
+    window:
+      title: "seedctl — interactive session"
+      image_alt: SeedCTL CLI startup screen
   video:
     eyebrow: WALKTHROUGH VIDEO
     title: Execution flow demonstration

@@ -90,18 +90,22 @@ permalink: /seedctl/
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <article class="terminal-card reveal">
-                  <div class="terminal-bar">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title"
-                      >{{ seedctl.cli.terminal_title }}</span
-                    >
+                  <p class="eyebrow">{{ seedctl.cli.program.eyebrow }}</p>
+                  <h3>{{ seedctl.cli.program.title }}</h3>
+                  <div class="terminal-content">
+                    <div class="terminal-bar">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                      <span class="terminal-title"
+                        >{{ seedctl.cli.program.window.title }}</span
+                      >
+                    </div>
+                      {% include img.html
+                        path="/assets/images/seedctl-cli.png"
+                        alt=seedctl.cli.program.window.image_alt
+                      %}
                   </div>
-                    {% include img.html
-                      path="/assets/images/seedctl-cli.png"
-                      alt=seedctl.cli.terminal_image_alt
-                    %}
                 </article>
               </div>
               <div class="carousel-item">

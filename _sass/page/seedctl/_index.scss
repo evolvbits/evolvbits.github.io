@@ -2,6 +2,8 @@
 
 @use "../../base/mixins" as *;
 
+$item-carrosel-size: 694.95px;
+
 .body-seedctl {
   --seedctl-ink: #060b10;
   --seedctl-ink-deep: #04080d;
@@ -491,10 +493,19 @@
     }
 
     .terminal {
+      &-content {
+        bottom: 0 !important;
+        position: absolute;
+        margin: 20px;
+        margin-left: 0px;
+        margin-right: 15px;
+        border: 4px solid #050a0f;
+        border-radius: 10px;
+      }
       &-card {
         border-radius: 12px;
         overflow: hidden;
-        min-height: 360px;
+        min-height: $item-carrosel-size;
 
         img {
           width: 100%;
@@ -538,6 +549,7 @@
     .video-card {
       border-radius: 12px;
       padding: 22px;
+      min-height: $item-carrosel-size;
 
       h3 {
         margin-top: 6px;
