@@ -2,6 +2,8 @@
 {% assign original_path = include.path %}
 {% assign alt_text = include.alt | default: "" %}
 {% assign img_width = include.width %}
+{% assign data_parallax = include.data_parallax %}
+
 
 {% assign base_path = original_path | remove: ".png" | remove: ".jpg" | remove: ".jpeg" %}
 
@@ -16,6 +18,7 @@
     src="{{ original_path | relative_url }}"
     alt="{{ alt_text }}"
     {% if img_width %} width="{{ img_width }}" {% endif %}
+    {% if data_parallax %} data-parallax="{{ data_parallax }}" {% endif %}
     loading="lazy"
   >
 </picture>

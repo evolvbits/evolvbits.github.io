@@ -24,11 +24,13 @@
             {%- assign brand = contents.brand.dark -%}
           {%- endif -%}
 
-          <img
-            src="{{ brand | relative_url }}"
+
+          {% include img.html
             width="50"
-            alt="{{ contents.title.static }}"
-          />
+            path=brand
+            alt=contents.title.static
+          %}
+
           <span class="{{ include.class }}-brand__text">
             {{ contents.title.first }}<span class="{{ include.class }}-brand__highlight"
               >{{ contents.title.second }}</span

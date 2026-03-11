@@ -22,10 +22,10 @@ permalink: /seedctl/documentation/
           <p class="eyebrow">{{ seedctl_doc.overview.eyebrow }}</p>
           {% if seedctl_doc.overview.logo %}
           <div class="overview-logo">
-            <img
-              src="{{ seedctl_doc.overview.logo.src | relative_url }}"
-              alt="{{ seedctl_doc.overview.logo.alt }}"
-            />
+            {% include img.html
+              path=seedctl_doc.overview.logo.src
+              alt=seedctl_doc.overview.logo.alt
+            %}
           </div>
           {% endif %}
           <h1>{{ seedctl_doc.overview.title }}</h1>
@@ -39,11 +39,17 @@ permalink: /seedctl/documentation/
               rel="noreferrer"
               class="badge-link"
             >
-              <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
+              {% include img.html
+                path=badge.src
+                alt=badge.alt
+              %}
             </a>
             {% else %}
             <span class="badge-link">
-              <img src="{{ badge.src }}" alt="{{ badge.alt }}" loading="lazy" />
+              {% include img.html
+                path=badge.src
+                alt=badge.alt
+              %}
             </span>
             {% endif %} {% endfor %}
           </div>

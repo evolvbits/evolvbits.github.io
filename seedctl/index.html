@@ -19,12 +19,12 @@ permalink: /seedctl/
         <div class="hero-abstract hero-abstract--b" data-parallax="0.1"></div>
         <div class="hero-bg" data-parallax="0.12"></div>
         <div class="hero-overlay"></div>
-        <img
+        {% include img.html
           class="hero-logo-mark"
-          src="{{ '/assets/images/seedctl-brand.png' | relative_url }}"
+          path="/assets/images/seedctl-brand.png"
           alt="SeedCTL brand mark"
-          data-parallax="0.06"
-        />
+          data_parallax="0.06"
+        %}
         <div class="hero-content reveal">
           <p class="eyebrow">{{ seedctl.hero.eyebrow }}</p>
           <h1>{{ seedctl.hero.title }}</h1>
@@ -98,11 +98,10 @@ permalink: /seedctl/
                       >{{ seedctl.cli.terminal_title }}</span
                     >
                   </div>
-                  <img
-                    src="{{ '/assets/images/seedctl-cli.png' | relative_url }}"
-                    alt="{{ seedctl.cli.terminal_image_alt }}"
-                    loading="lazy"
-                  />
+                    {% include img.html
+                      path="/assets/images/seedctl-cli.png"
+                      alt=seedctl.cli.terminal_image_alt
+                    %}
                 </article>
               </div>
               <div class="carousel-item">
@@ -162,11 +161,10 @@ permalink: /seedctl/
                 >{{ seedctl.cli.terminal_title }}</span
               >
             </div>
-            <img
-              src="{{ '/assets/images/seedctl-cli.png' | relative_url }}"
-              alt="{{ seedctl.cli.terminal_image_alt }}"
-              loading="lazy"
-            />
+            {% include img.html
+              path="/assets/images/seedctl-cli.png"
+              alt=seedctl.cli.terminal_image_alt
+            %}
           </article>
           <article class="video-card reveal">
             <p class="eyebrow">{{ seedctl.cli.video.eyebrow }}</p>
@@ -365,15 +363,15 @@ permalink: /seedctl/
       </div>
       <div class="coins-grid">
         {% for coin in seedctl.coins.items %}
-        <article class="coin-card reveal">
-          <img
-            src="{{ '/assets/images/' | append: coin.logo | relative_url }}"
-            alt="{{ coin.alt }}"
-            loading="lazy"
-          />
-          <h3>{{ coin.name }}</h3>
-          <p>{{ coin.text }}</p>
-        </article>
+          <article class="coin-card reveal">
+            {%- assign path_imgs = '/assets/images/' | append: coin.logo -%}
+            {% include img.html
+              path=path_imgs
+              alt=coin.alt
+            %}
+            <h3>{{ coin.name }}</h3>
+            <p>{{ coin.text }}</p>
+          </article>
         {% endfor %}
       </div>
     </div>

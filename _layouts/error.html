@@ -8,7 +8,11 @@ layout: base
   <div class="row">
     <div class="col-sm text-center">
         {%- if contents.error.image -%}
-          <img class="error-image" src="{{ contents.error.image }}" alt="Error 404">
+          {% include img.html
+            class="error-image"
+            path=contents.error.image
+            alt="Error 404"
+          %}
         {%- endif -%}
         {%- if contents.error.title -%}
           <h1 class="error-title">{{ contents.error.title | escape }}</h1>
