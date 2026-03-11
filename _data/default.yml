@@ -37,7 +37,7 @@ organization:
 
 # Maintenance page
 maintenance:
-  enable: false
+  enable: true
   avatar: "assets/images/evolvbits-logo-transparent-compact-dark.png"
   title: "Under construction"
   subtitle: |
