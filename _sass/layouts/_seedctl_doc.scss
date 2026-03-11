@@ -198,7 +198,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 720px;
+      min-width: 640px;
     }
 
     th,
@@ -665,6 +665,10 @@
 
     .footer-grid {
       grid-template-columns: 1fr;
+    }
+
+    .content {
+      padding: 16px;
     }
   }
 

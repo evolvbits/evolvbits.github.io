@@ -47,7 +47,7 @@
 
     .section {
       position: relative;
-      padding: clamp(56px, 9vw, 110px) clamp(20px, 6vw, 80px);
+      padding: clamp(56px, 9vw, 110px) 0;
 
       &-head {
         max-width: 850px;
@@ -88,6 +88,10 @@
       }
     }
 
+    .container-xxl {
+      max-width: 1200px;
+    }
+
     .hero {
       min-height: 94svh;
       position: relative;
@@ -95,7 +99,24 @@
       overflow: clip;
       display: grid;
       place-items: center;
-      padding: 120px clamp(20px, 6vw, 80px) 66px;
+      padding: 120px 0 66px;
+
+      .hero-stage {
+        position: relative;
+        min-height: inherit;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        overflow: clip;
+        border-radius: 22px;
+        box-shadow: 0 30px 80px rgba(2, 6, 10, 0.7);
+      }
+
+      @media (max-width: 760px) {
+        .hero-stage {
+          border-radius: 16px;
+        }
+      }
 
       h1 {
         max-width: 18ch;
@@ -153,6 +174,7 @@
         position: relative;
         z-index: 2;
         max-width: 980px;
+        padding: 30px;
       }
 
       &-copy {
@@ -167,6 +189,7 @@
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        align-items: center;
       }
 
       &-badges {
@@ -249,7 +272,7 @@
     .cli-grid {
       margin-top: 26px;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 14px;
     }
 
@@ -548,13 +571,17 @@
     }
 
     .security {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
       padding-top: 0px !important;
+
       &-wrap {
         padding-bottom: 20px;
       }
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .security-panel {
@@ -629,7 +656,7 @@
         rgba(9, 15, 21, 0.96),
         rgba(5, 9, 13, 0.98)
       );
-      padding: 28px clamp(20px, 6vw, 80px) 32px;
+      padding: 28px 0 32px;
       color: #bfd0d6;
     }
 
@@ -727,10 +754,14 @@
       .how-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .mode-grid,
+      .threat-grid {
+        grid-template-columns: 1fr;
+      }
       .coins-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
-      .security {
+      .security-grid {
         grid-template-columns: 1fr;
       }
 
@@ -765,6 +796,7 @@
 
       .hero {
         min-height: 88svh;
+        padding: 96px 0 48px;
       }
 
       .hero-logo-mark {
@@ -772,6 +804,11 @@
         top: 68%;
         right: 14px;
         opacity: 0.24;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .features-grid,
