@@ -2,5 +2,5 @@
 
 git add .
 git commit -m "Update"
-git push origin main
-git push lab main
+git push origin
+git push lab
