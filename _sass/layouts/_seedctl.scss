@@ -59,6 +59,76 @@
       z-index: 1;
     }
 
+    .seedctl-backdrop {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .seedctl-orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(2px);
+      opacity: 0.22;
+      mix-blend-mode: screen;
+
+      &--a {
+        width: clamp(240px, 38vw, 520px);
+        height: clamp(240px, 38vw, 520px);
+        left: -6%;
+        top: 12%;
+        background: radial-gradient(
+          circle,
+          rgba(121, 247, 255, 0.45),
+          rgba(121, 247, 255, 0.02) 70%
+        );
+      }
+
+      &--b {
+        width: clamp(260px, 36vw, 560px);
+        height: clamp(260px, 36vw, 560px);
+        right: -10%;
+        top: 38%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 150, 31, 0.4),
+          rgba(255, 150, 31, 0.02) 70%
+        );
+      }
+    }
+
+    .seedctl-grid {
+      position: absolute;
+      right: clamp(-120px, -8vw, -20px);
+      bottom: clamp(-160px, -12vw, -40px);
+      width: clamp(280px, 40vw, 720px);
+      aspect-ratio: 1 / 1;
+      opacity: 0.16;
+      border: 1px solid rgba(121, 247, 255, 0.18);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(121, 247, 255, 0.18),
+          rgba(6, 11, 16, 0.02)
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(121, 247, 255, 0.12) 0 1px,
+          transparent 1px 28px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(121, 247, 255, 0.08) 0 1px,
+          transparent 1px 28px
+        );
+      box-shadow:
+        0 0 0 1px rgba(121, 247, 255, 0.08) inset,
+        0 20px 60px rgba(0, 0, 0, 0.35);
+      transform: rotate(-8deg);
+    }
+
     p,
     li {
       color: var(--seedctl-ice-soft);
@@ -341,7 +411,7 @@
 
     .cli-carousel {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 16px;
     }
 
@@ -401,7 +471,7 @@
       &-card {
         border-radius: 12px;
         overflow: hidden;
-        min-height: 320px;
+        min-height: 360px;
 
         img {
           width: 100%;
@@ -458,7 +528,7 @@
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16 / 9;
-      min-height: 280px;
+      min-height: 320px;
       background: #000 center/cover no-repeat;
       position: relative;
 
@@ -846,9 +916,6 @@
     }
 
     @media (max-width: 1140px) {
-      .cli-carousel {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      }
       .features-grid,
       .how-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -869,15 +936,16 @@
       }
     }
 
-    @media (max-width: 980px) {
+    @media (min-width: 1200px) {
       .cli-carousel {
         grid-auto-flow: column;
-        grid-auto-columns: minmax(82%, 1fr);
+        grid-auto-columns: minmax(100%, 1fr);
+        grid-template-columns: unset;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 12px;
         scroll-snap-type: x mandatory;
         scroll-padding: 10px;
-        gap: 12px;
+        gap: 18px;
 
         &::-webkit-scrollbar {
           height: 6px;
