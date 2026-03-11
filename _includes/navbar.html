@@ -55,14 +55,14 @@
 
 <!-- mobile menu -->
 <div
-  class="offcanvas offcanvas-top eb-offcanvas d-lg-none"
+  class="offcanvas offcanvas-top navbar-menu-mobile {{ include.class }}-menu-mobile"
   tabindex="-1"
   id="ebMenu"
 >
   <div class="offcanvas-body">
     <ul class="mobile-list">
       {% for item in contents.nav %}
-      <li><a href="{{ item.href | relative_url }}">{{ item.label }}</a></li>
+      <li><a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </div>
