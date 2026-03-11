@@ -79,8 +79,8 @@ function onScroll() {
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-const lazyVideo = document.querySelector(".video-lazy");
-if (lazyVideo) {
+const lazyVideos = document.querySelectorAll(".video-lazy");
+lazyVideos.forEach((lazyVideo) => {
   const playBtn = lazyVideo.querySelector(".video-play");
   const videoUrl =
     lazyVideo.dataset.videoUrl || "https://www.w3schools.com/html/mov_bbb.mp4";
@@ -100,76 +100,4 @@ if (lazyVideo) {
     lazyVideo.innerHTML = "";
     lazyVideo.appendChild(video);
   });
-}
-
-const carousels = document.querySelectorAll("[data-carousel]");
-const desktopCarouselQuery = window.matchMedia("(min-width: 1200px)");
-
-carousels.forEach((carousel) => {
-  const items = [...carousel.querySelectorAll("[data-carousel-item]")];
-  if (!items.length) return;
-
-  const controls = carousel.parentElement?.querySelector(
-    ".cli-carousel-controls",
-  );
-  const prevBtn = controls?.querySelector("[data-carousel-prev]");
-  const nextBtn = controls?.querySelector("[data-carousel-next]");
-
-  let index = 0;
-  let listening = false;
-
-  const scrollToIndex = (nextIndex) => {
-    index = (nextIndex + items.length) % items.length;
-    items[index].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
-  };
-
-  const updateIndexFromScroll = () => {
-    const containerLeft = carousel.getBoundingClientRect().left;
-    let bestIndex = 0;
-    let bestOffset = Number.POSITIVE_INFINITY;
-
-    items.forEach((item, i) => {
-      const offset = Math.abs(
-        item.getBoundingClientRect().left - containerLeft,
-      );
-      if (offset < bestOffset) {
-        bestOffset = offset;
-        bestIndex = i;
-      }
-    });
-
-    index = bestIndex;
-  };
-
-  const enable = () => {
-    if (listening) return;
-    prevBtn?.addEventListener("click", () => scrollToIndex(index - 1));
-    nextBtn?.addEventListener("click", () => scrollToIndex(index + 1));
-    carousel.addEventListener("scroll", updateIndexFromScroll, {
-      passive: true,
-    });
-    updateIndexFromScroll();
-    listening = true;
-  };
-
-  const disable = () => {
-    if (!listening) return;
-    carousel.removeEventListener("scroll", updateIndexFromScroll);
-    listening = false;
-  };
-
-  const sync = () => {
-    if (desktopCarouselQuery.matches) {
-      enable();
-    } else {
-      disable();
-    }
-  };
-
-  desktopCarouselQuery.addEventListener("change", sync);
-  sync();
 });
