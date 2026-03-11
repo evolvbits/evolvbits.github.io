@@ -5,7 +5,6 @@ import { glob } from "glob";
 import { minify as htmlMinify } from "html-minifier-terser";
 import kleur from "kleur";
 import path from "path";
-import sharp from "sharp";
 
 const buildDir = "_site";
 
@@ -80,6 +79,19 @@ async function minifyImages() {
   console.log(kleur.yellow("Minifying image files..."));
 
   try {
+    let sharp;
+    try {
+      const sharpModule = await import("sharp");
+      sharp = sharpModule.default || sharpModule;
+    } catch (error) {
+      console.log(
+        kleur.yellow(
+          "Sharp not installed. Skipping image minification. Run npm install to enable.",
+        ),
+      );
+      return;
+    }
+
     const imageFiles = await glob(
       `${buildDir}/assets/images/**/*.{png,jpg,jpeg,webp}`,
     );
