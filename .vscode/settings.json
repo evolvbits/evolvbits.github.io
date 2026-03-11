@@ -8,6 +8,8 @@
     "selecionar",
     "texto",
     "napi",
+    "webp",
+    "avif",
     "mozjpeg"
   ]
 }

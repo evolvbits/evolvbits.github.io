@@ -1,20 +1,24 @@
 <nav class="fixed-top {{ include.class }}">
   <div class="container navbar-inner">
     <div class="nav-left">
+      {% if jekyll.environment == "production" %}
+        {% assign logo_path = logo_path | replace: ".png", ".webp" | replace: ".jpg", ".webp" %}
+      {% endif %}
+
       <a href="{{ '/' | relative_url }}" class="brand">
         {% if include.class == 'navbar-legal' or include.class ==
         'navbar-maintenance' %}
-        <img
-          src="{{ contents.brand.dark | relative_url }}"
-          width="28"
-          alt="{{ contents.title.static }}"
-        />
+          {% include img.html
+            path=contents.brand.dark
+            width="28"
+            alt=contents.title.static
+          %}
         {% else %}
-        <img
-          src="{{ contents.brand.light | relative_url }}"
-          width="28"
-          alt="{{ contents.title.static }}"
-        />
+          {% include img.html
+            path=contents.brand.light
+            width="28"
+            alt=contents.title.static
+          %}
         {% endif %}
         <span class="brand-text">
           {{ contents.title.first }}<span class="brand-highlight"

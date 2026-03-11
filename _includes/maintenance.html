@@ -17,11 +17,11 @@
         {%- if contents.maintenance.avatar != "" -%}
         <div class="row">
           <div class="col-sm text-center">
-            <img
+            {% include img.html
               class="maintenance-avatar"
-              src="{{ contents.maintenance.avatar | relative_url }}"
-              alt="{{ contents.maintenance.title }}"
-            />
+              path=contents.maintenance.avatar
+              alt=contents.maintenance.title
+            %}
           </div>
         </div>
         {%- endif -%} {%- if contents.maintenance.title != "" -%}

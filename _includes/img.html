@@ -1,0 +1,21 @@
+{% assign img_class = include.class %}
+{% assign original_path = include.path %}
+{% assign alt_text = include.alt | default: "" %}
+{% assign img_width = include.width %}
+
+{% assign base_path = original_path | remove: ".png" | remove: ".jpg" | remove: ".jpeg" %}
+
+<picture>
+  {% if jekyll.environment == "production" %}
+    <source srcset="{{ base_path | append: '.avif' | relative_url }}" type="image/avif">
+    <source srcset="{{ base_path | append: '.webp' | relative_url }}" type="image/webp">
+  {% endif %}
+
+  <img
+    {% if img_class %} class="{{ img_class }}" {% endif %}
+    src="{{ original_path | relative_url }}"
+    alt="{{ alt_text }}"
+    {% if img_width %} width="{{ img_width }}" {% endif %}
+    loading="lazy"
+  >
+</picture>
