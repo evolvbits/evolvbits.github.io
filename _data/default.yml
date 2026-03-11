@@ -37,8 +37,8 @@ organization:
 
 # Maintenance page
 maintenance:
-  enable: false
-  avatar: "assets/images/evolvbits-logo-transparent-compact-white.png"
+  enable: true
+  avatar: "assets/images/evolvbits-logo-transparent-compact-dark.png"
   title: "Under construction"
   subtitle: |
     Our page is under construction. In the meantime, you can follow us on the social media links below to receive future updates.
@@ -47,7 +47,7 @@ maintenance:
 # Brand
 brand:
   light: "assets/images/evolvbits-logo-transparent-compact-white.png"
-  dark:  "assets/images/evolvbits-logo-transparent-compact-dark.png"
+  dark: "assets/images/evolvbits-logo-transparent-compact-dark.png"
 
 # Menu Home
 nav:

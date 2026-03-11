@@ -1,47 +1,52 @@
 {% include assign.liquid %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ contents.lang | default: 'en-US' }}" data-theme="static">
-
   <!-- head -->
   {%- include head.html -%}
 
   <body class="d-flex flex-column min-vh-100 maintenance">
-
     <!-- navbar -->
-    {% include navbar.html data="default" theme="dark" %}
+    {% include navbar.html data="default" class="navbar-maintenance" %}
 
     <!-- main/content -->
-    <main class="flex-grow-1 d-flex align-items-center justify-content-center maintenance-main">
+    <main
+      class="flex-grow-1 d-flex align-items-center justify-content-center maintenance-main"
+    >
       <div class="container">
         {%- if contents.maintenance.avatar != "" -%}
         <div class="row">
           <div class="col-sm text-center">
-            <img class="maintenance-avatar" src="{{ contents.maintenance.avatar | relative_url }}" alt="{{ contents.maintenance.title }}">
+            <img
+              class="maintenance-avatar"
+              src="{{ contents.maintenance.avatar | relative_url }}"
+              alt="{{ contents.maintenance.title }}"
+            />
           </div>
         </div>
-        {%- endif -%}
-        {%- if contents.maintenance.title != "" -%}
+        {%- endif -%} {%- if contents.maintenance.title != "" -%}
         <div class="row mt-5 text-center">
           <h1 class="maintenance-title">{{ contents.maintenance.title }}</h1>
         </div>
-        {%- endif -%}
-        {%- if contents.maintenance.subtitle != "" -%}
+        {%- endif -%} {%- if contents.maintenance.subtitle != "" -%}
         <div class="row text-center">
-          <h3 class="maintenance-subtitle">{{ contents.maintenance.subtitle | markdownify }}</h3>
+          <h3 class="maintenance-subtitle">
+            {{ contents.maintenance.subtitle | markdownify }}
+          </h3>
         </div>
-        {%- endif -%}
-        {%- if contents.maintenance.socials == true -%}
+        {%- endif -%} {%- if contents.maintenance.socials == true -%}
         <div class="row justify-content-center maintenance-socials">
           <span>Social networks:</span>
           <ul class="list-unstyled d-flex mb-2 justify-content-center">
-            {% assign socials_links = contents.socials.links %}
-            {% for item in socials_links %}
+            {% assign socials_links = contents.socials.links %} {% for item in
+            socials_links %}
             <li class="me-3 text-center">
-              <a class="text-muted maintenance-socials__links"
+              <a
+                class="text-muted maintenance-socials__links"
                 href="{{ item.url }}"
                 title="{{ item.title }}"
-                target="_blank">
+                target="_blank"
+              >
                 <i class="{{ item.icon }}"></i>
               </a>
             </li>
@@ -53,9 +58,9 @@
     </main>
 
     <!-- footer -->
-    {%- include footer.html -%}
+    {% include footer.html class="footer-maintenance" theme="light" %}
 
     <!-- scripts -->
-    {%- include scripts.html -%}
+    {%- include scripts/global.html -%}
   </body>
 </html>

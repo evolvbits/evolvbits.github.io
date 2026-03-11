@@ -2,6 +2,7 @@
 @use "base";
 @use "includes";
 @use "layouts";
+@use "page";
 
 :root[data-theme="static"] {
   --bg-color: #{theme.theme-color(bg-color, static)};

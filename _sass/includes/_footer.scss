@@ -1,9 +1,12 @@
 @use "../components/index";
 
 // Footer All
-.footer-default, .footer-seedctl, .footer-legal {
+.footer-default,
+.footer-seedctl,
+.footer-legal,
+.footer-maintenance {
   position: relative;
-  font-size: .8rem !important;
+  font-size: 0.8rem !important;
 
   &-description {
     margin-top: 5px;
@@ -14,13 +17,13 @@
   }
 
   &-links {
-    transition: color .2s ease;
+    transition: color 0.2s ease;
     &:hover {
       color: var(--color-links) !important;
     }
 
     i {
-      transition: color .2s ease;
+      transition: color 0.2s ease;
       &:hover {
         color: var(--color-links) !important;
       }
@@ -39,8 +42,8 @@
       &:hover {
         .footer-default-brand__highlight,
         .footer-seedctl-brand__highlight,
-        .footer-legal-brand__highlight  {
-          transition: color .2s ease;
+        .footer-legal-brand__highlight {
+          transition: color 0.2s ease;
           color: var(--color-links) !important;
         }
       }
@@ -60,7 +63,7 @@
     content: "" !important;
   }
 
-  a{
+  a {
     text-decoration: underline !important;
   }
 }
@@ -76,7 +79,11 @@
 
 // Footer SeedCTL
 .footer-seedctl {
-  background: linear-gradient(to bottom, rgba(6, 11, 16, 0.95), rgba(6, 11, 16, 0.72));
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 11, 16, 0.95),
+    rgba(6, 11, 16, 0.72)
+  );
   backdrop-filter: blur(8px);
   border-top: 1px solid hsla(165.8, 71.8%, 48.6%, 0.37);
 
@@ -86,8 +93,13 @@
 }
 
 // Footer Legal
-.footer-legal {
-  background: linear-gradient(to bottom, rgba(229, 229, 229, 0.44), rgba(231, 231, 231, 0.45));
+.footer-legal,
+.footer-maintenance {
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 229, 229, 0.44),
+    rgba(231, 231, 231, 0.45)
+  );
   backdrop-filter: blur(8px);
   border-top: 1px solid hsla(0, 1.9%, 79.2%, 0.37);
 

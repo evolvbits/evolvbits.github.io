@@ -1,7 +1,10 @@
 $height: 44px;
 
 // All
-.navbar-default, .navbar-seedctl, .navbar-legal {
+.navbar-default,
+.navbar-seedctl,
+.navbar-legal,
+.navbar-maintenance {
   height: $height;
   width: 100%;
   z-index: 9999;
@@ -43,7 +46,7 @@ $height: 44px;
       text-decoration: none;
       font-size: 13px;
       transition: opacity 0.2s ease;
-      transition: color .5s ease;
+      transition: color 0.5s ease;
       &:hover {
         color: var(--color-links);
       }
@@ -92,7 +95,7 @@ $height: 44px;
   .nav-right {
     a {
       &:hover {
-        color:  var(--color-links);
+        color: var(--color-links);
       }
     }
   }
@@ -100,9 +103,13 @@ $height: 44px;
 
 // SeedCtl
 .navbar-seedctl {
-  background: linear-gradient(to bottom, rgba(6, 11, 16, 0.95), rgba(6, 11, 16, 0.72));
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 11, 16, 0.95),
+    rgba(6, 11, 16, 0.72)
+  );
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(121,247,255,.15);
+  border-bottom: 1px solid rgba(121, 247, 255, 0.15);
 
   .brand {
     &:hover .brand-highlight {
@@ -119,16 +126,21 @@ $height: 44px;
   .nav-right {
     a {
       &:hover {
-        color:  var(--color-links);
+        color: var(--color-links);
       }
     }
   }
 }
 
 // Legal
-.navbar-legal {
+.navbar-legal,
+.navbar-maintenance {
   backdrop-filter: blur(8px);
-  background: linear-gradient(to bottom, rgba(236, 236, 236, 0.95), rgba(246, 246, 246, 0.72));
+  background: linear-gradient(
+    to bottom,
+    rgba(236, 236, 236, 0.95),
+    rgba(246, 246, 246, 0.72)
+  );
   border-bottom: 1px solid rgba(186, 186, 186, 0.15);
   .nav-right {
     a {
@@ -136,4 +148,3 @@ $height: 44px;
     }
   }
 }
-

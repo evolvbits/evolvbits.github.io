@@ -1,4 +1,6 @@
-@use "../base/mixins" as *;
+@use "documentation";
+
+@use "../../base/mixins" as *;
 
 .body-seedctl {
   --seedctl-ink: #060b10;
