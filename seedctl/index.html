@@ -221,7 +221,7 @@ permalink: /seedctl/
           {% endfor %}
         </ul>
         {% if panel.cta %}<a
-          class="{{ panel.cta.class }}{% if panel.cta.external %} external-link is-external{% endif %}"
+          class="{{ panel.cta.class }}{% if panel.cta.external %} external-link is-external{% endif %} btn-ghost"
           href="{% if panel.cta.external %}{{ panel.cta.href }}{% else %}{{ panel.cta.href | relative_url }}{% endif %}"
           {%
           if
