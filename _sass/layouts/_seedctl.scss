@@ -27,6 +27,37 @@
     overflow-x: hidden;
     color: #d8ebef;
     font-family: var(--font-family-tertiary);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          700px circle at 8% 12%,
+          rgba(121, 247, 255, 0.1),
+          transparent 60%
+        ),
+        radial-gradient(
+          900px circle at 92% 32%,
+          rgba(255, 150, 31, 0.08),
+          transparent 55%
+        ),
+        radial-gradient(
+          800px circle at 40% 82%,
+          rgba(121, 247, 255, 0.06),
+          transparent 65%
+        );
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
 
     p,
     li {
@@ -139,6 +170,39 @@
         will-change: transform;
         background: url("../images/seedctl-banner.png") center/cover no-repeat;
         filter: saturate(0.8) contrast(1.02) brightness(0.88);
+      }
+
+      .hero-abstract {
+        position: absolute;
+        border-radius: 999px;
+        opacity: 0.55;
+        filter: blur(2px);
+        mix-blend-mode: screen;
+        pointer-events: none;
+
+        &--a {
+          width: clamp(160px, 24vw, 320px);
+          height: clamp(160px, 24vw, 320px);
+          left: -6%;
+          top: 14%;
+          background: radial-gradient(
+            circle,
+            rgba(121, 247, 255, 0.35),
+            rgba(121, 247, 255, 0.02) 70%
+          );
+        }
+
+        &--b {
+          width: clamp(180px, 26vw, 380px);
+          height: clamp(180px, 26vw, 380px);
+          right: -8%;
+          top: 48%;
+          background: radial-gradient(
+            circle,
+            rgba(255, 150, 31, 0.35),
+            rgba(255, 150, 31, 0.02) 70%
+          );
+        }
       }
 
       &-overlay {
@@ -269,11 +333,44 @@
 
     // CLI
 
-    .cli-grid {
+    .cli-showcase {
       margin-top: 26px;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 14px;
+      gap: 12px;
+    }
+
+    .cli-carousel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .cli-carousel [data-carousel-item] {
+      scroll-snap-align: start;
+    }
+
+    .cli-carousel-controls {
+      display: none;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .cli-carousel-btn {
+      border: 1px solid rgba(121, 247, 255, 0.3);
+      background: rgba(121, 247, 255, 0.08);
+      color: #d8ebef;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: var(--font-family-secondary);
+      @include transition(background 0.2s ease, transform 0.2s ease);
+
+      &:hover {
+        background: rgba(121, 247, 255, 0.16);
+        transform: translateY(-1px);
+      }
     }
 
     .terminal-card,
@@ -304,6 +401,7 @@
       &-card {
         border-radius: 12px;
         overflow: hidden;
+        min-height: 320px;
 
         img {
           width: 100%;
@@ -346,11 +444,11 @@
 
     .video-card {
       border-radius: 12px;
-      padding: 18px;
+      padding: 22px;
 
       h3 {
         margin-top: 6px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -360,6 +458,7 @@
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16 / 9;
+      min-height: 280px;
       background: #000 center/cover no-repeat;
       position: relative;
 
@@ -747,8 +846,8 @@
     }
 
     @media (max-width: 1140px) {
-      .cli-grid {
-        grid-template-columns: 1fr;
+      .cli-carousel {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       }
       .features-grid,
       .how-grid {
@@ -767,6 +866,31 @@
 
       .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 980px) {
+      .cli-carousel {
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(82%, 1fr);
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 10px;
+        gap: 12px;
+
+        &::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba(121, 247, 255, 0.25);
+          border-radius: 999px;
+        }
+      }
+
+      .cli-carousel-controls {
+        display: flex;
       }
     }
 

@@ -11,6 +11,8 @@ permalink: /seedctl/
   <section class="hero">
     <div class="container-xxl">
       <div class="hero-stage">
+        <div class="hero-abstract hero-abstract--a" data-parallax="0.22"></div>
+        <div class="hero-abstract hero-abstract--b" data-parallax="0.1"></div>
         <div class="hero-bg" data-parallax="0.12"></div>
         <div class="hero-overlay"></div>
         <img
@@ -56,38 +58,60 @@ permalink: /seedctl/
         <p class="eyebrow">{{ seedctl.cli.eyebrow }}</p>
         <h2>{{ seedctl.cli.title }}</h2>
       </div>
-      <div class="cli-grid">
-        <article class="terminal-card reveal">
-          <div class="terminal-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="terminal-title">{{ seedctl.cli.terminal_title }}</span>
-          </div>
-          <img
-            src="{{ '/assets/images/seedctl-cli.png' | relative_url }}"
-            alt="{{ seedctl.cli.terminal_image_alt }}"
-            loading="lazy"
-          />
-        </article>
-        <article class="video-card reveal">
-          <p class="eyebrow">{{ seedctl.cli.video.eyebrow }}</p>
-          <h3>{{ seedctl.cli.video.title }}</h3>
-          <div
-            class="video-frame video-lazy"
-            data-video-url="{{ seedctl.cli.video.url }}"
-          >
-            <button
-              class="video-play"
-              type="button"
-              aria-label="{{ seedctl.cli.video.aria_label }}"
+      <div class="cli-showcase">
+        <div class="cli-carousel" data-carousel>
+          <article class="terminal-card reveal" data-carousel-item>
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title"
+                >{{ seedctl.cli.terminal_title }}</span
+              >
+            </div>
+            <img
+              src="{{ '/assets/images/seedctl-cli.png' | relative_url }}"
+              alt="{{ seedctl.cli.terminal_image_alt }}"
+              loading="lazy"
+            />
+          </article>
+          <article class="video-card reveal" data-carousel-item>
+            <p class="eyebrow">{{ seedctl.cli.video.eyebrow }}</p>
+            <h3>{{ seedctl.cli.video.title }}</h3>
+            <div
+              class="video-frame video-lazy"
+              data-video-url="{{ seedctl.cli.video.url }}"
             >
-              <span class="video-play-icon"></span>
-              <span>{{ seedctl.cli.video.play_text }}</span>
-            </button>
-          </div>
-          <p class="video-note">{{ seedctl.cli.video.note }}</p>
-        </article>
+              <button
+                class="video-play"
+                type="button"
+                aria-label="{{ seedctl.cli.video.aria_label }}"
+              >
+                <span class="video-play-icon"></span>
+                <span>{{ seedctl.cli.video.play_text }}</span>
+              </button>
+            </div>
+            <p class="video-note">{{ seedctl.cli.video.note }}</p>
+          </article>
+        </div>
+        <div class="cli-carousel-controls">
+          <button
+            class="cli-carousel-btn"
+            type="button"
+            data-carousel-prev
+            aria-label="Anterior"
+          >
+            Anterior
+          </button>
+          <button
+            class="cli-carousel-btn"
+            type="button"
+            data-carousel-next
+            aria-label="Proximo"
+          >
+            Proximo
+          </button>
+        </div>
       </div>
     </div>
   </section>

@@ -101,3 +101,51 @@ if (lazyVideo) {
     lazyVideo.appendChild(video);
   });
 }
+
+const carousels = document.querySelectorAll("[data-carousel]");
+carousels.forEach((carousel) => {
+  const items = [...carousel.querySelectorAll("[data-carousel-item]")];
+  if (!items.length) return;
+
+  const controls = carousel.parentElement?.querySelector(
+    ".cli-carousel-controls",
+  );
+  const prevBtn = controls?.querySelector("[data-carousel-prev]");
+  const nextBtn = controls?.querySelector("[data-carousel-next]");
+
+  let index = 0;
+
+  const scrollToIndex = (nextIndex) => {
+    index = (nextIndex + items.length) % items.length;
+    items[index].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
+  };
+
+  const updateIndexFromScroll = () => {
+    const containerLeft = carousel.getBoundingClientRect().left;
+    let bestIndex = 0;
+    let bestOffset = Number.POSITIVE_INFINITY;
+
+    items.forEach((item, i) => {
+      const offset = Math.abs(
+        item.getBoundingClientRect().left - containerLeft,
+      );
+      if (offset < bestOffset) {
+        bestOffset = offset;
+        bestIndex = i;
+      }
+    });
+
+    index = bestIndex;
+  };
+
+  prevBtn?.addEventListener("click", () => scrollToIndex(index - 1));
+  nextBtn?.addEventListener("click", () => scrollToIndex(index + 1));
+  carousel.addEventListener("scroll", updateIndexFromScroll, {
+    passive: true,
+  });
+  updateIndexFromScroll();
+});
