@@ -12,15 +12,17 @@
 <html lang="{{ contents.lang }}" data-theme="static">
   {% include head.html %}
   <body id="top" class="d-flex flex-column min-vh-100 {{ body_class }}">
-    {% include preloader.html %}
+    <div class="container">
+      {% include preloader.html %}
 
-    {% if page.url == "/" %}
-      {% include navbar.html data="default" class="navbar-default" %}
-    {% elsif page.url contains "seedctl" %}
-      {% include navbar.html data="seedctl" class="navbar-seedctl" %}
-    {% endif %}
+      {% if page.url == "/" %}
+        {% include navbar.html data="default" class="navbar-default" %}
+      {% elsif page.url contains "seedctl" %}
+        {% include navbar.html data="seedctl" class="navbar-seedctl" %}
+      {% endif %}
 
-    {{ content }}
+      {{ content }}
+    </div>
 
     {%- if page.url contains "seedctl" -%}
       {% include footer.html class="footer-seedctl" theme="dark" %}
