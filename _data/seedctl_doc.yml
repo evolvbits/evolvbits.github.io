@@ -4,7 +4,7 @@ description: |
 brand_text: "seedctl Docs"
 sidebar_title: Contents
 toc:
-  - id: overview
+  - id: top
     label: Overview
   - id: project
     label: Project Context
@@ -134,11 +134,7 @@ networks:
     - Primary Path / Style
     - Address Format
   rows:
-    - [
-        Bitcoin,
-        "`m/84'/coin_type'/0'` (+ BIP49/BIP44)",
-        "`bc1...` / `tb1...`",
-      ]
+    - [Bitcoin, "`m/84'/coin_type'/0'` (+ BIP49/BIP44)", "`bc1...` / `tb1...`"]
     - [Ethereum, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
     - [BNB Chain, "`m/44'/60'/0'/0/x` (+ ledger/custom)", "`0x...`"]
     - [XRP Ledger, "`m/44'/144'/0'/0/x`", "`r...`"]

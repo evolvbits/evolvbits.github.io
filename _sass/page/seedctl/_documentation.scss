@@ -12,6 +12,13 @@
     position: static;
     border: 1px solid rgba(121, 247, 255, 0.7);
     border-radius: 12px;
+
+    @media (min-width: 992.98px) {
+      border-right: none;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
     background: linear-gradient(
       180deg,
       rgba(14, 26, 35, 0.92),
@@ -59,6 +66,12 @@
     padding: clamp(18px, 3vw, 34px);
     color: #d8ebef;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+
+    @media (min-width: 992.98px) {
+      border-left: none;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
 
     section {
       scroll-margin-top: 96px;
