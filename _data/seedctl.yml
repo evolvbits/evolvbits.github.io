@@ -48,7 +48,7 @@ hero:
       external: true
     - text: Explore Project
       href: https://github.com/evolvbits/seedctl
-      class: btn btn-ghost
+      class: btn btn-standard
       external: true
     - text: Open Documentation
       href: /seedctl/documentation/

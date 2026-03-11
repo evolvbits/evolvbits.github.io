@@ -1,6 +1,7 @@
 @use "documentation";
 
 @use "../../base/mixins" as *;
+@use "../../components/index";
 
 $item-carrosel-size: 694.95px;
 
@@ -217,6 +218,10 @@ $item-carrosel-size: 694.95px;
       place-items: center;
       padding: 120px 0 66px;
 
+      .btn-standard {
+        @extend %btn-standard;
+      }
+
       .hero-stage {
         position: relative;
         // min-height: inherit;
@@ -312,7 +317,7 @@ $item-carrosel-size: 694.95px;
 
       &-logo-mark {
         position: absolute;
-        right: clamp(16px, 7vw, 94px);
+        right: clamp(1px,7vw,0px);
         top: 57%;
         width: clamp(120px, 18vw, 280px);
         opacity: 0.3;
@@ -370,6 +375,7 @@ $item-carrosel-size: 694.95px;
         font-weight: 700;
         font-size: 0.9rem;
         border: 1px solid transparent;
+        min-width: 200px;
         @include transition(
           transform 0.2s ease,
           box-shadow 0.2s ease,
@@ -779,6 +785,10 @@ $item-carrosel-size: 694.95px;
 
       &-wrap {
         padding-bottom: 20px;
+      }
+
+      .btn-standard {
+        @extend %btn-standard;
       }
     }
 
