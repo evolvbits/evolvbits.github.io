@@ -68,7 +68,7 @@ cli:
   title: Designed like a real terminal workflow
   carousel:
     - eyebrow: "WALKTHROUGH PRINT"
-      type: "img"
+      type: "image"
       title:  Demonstration print
       thumb: /assets/images/seedctl-cli.png
       alt: "SeedCTL CLI startup screen"
