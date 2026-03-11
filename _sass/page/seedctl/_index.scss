@@ -844,6 +844,14 @@
     .footer {
       padding: 28px 0 32px;
       color: #bfd0d6;
+      &-brand {
+        &--img {
+          margin-left: 15px;
+          width: 75px;
+          height: 75px;
+          object-fit: contain;
+        }
+      }
     }
 
     .footer-grid {
@@ -863,7 +871,7 @@
       }
 
       h2 {
-        font-size: 1.02rem;
+        font-size: 1.5rem;
         color: #d8ebef;
       }
 
@@ -905,10 +913,13 @@
     }
 
     .footer-notice {
-      li {
-        padding-left: 10px;
-        margin: 8px 0px;
-        border-left: 2px solid rgba(255, 150, 31, 0.45);
+      ul {
+        padding: 0px;
+        li {
+          padding-left: 10px;
+          margin: 8px 0px;
+          border-left: 2px solid rgba(255, 150, 31, 0.45);
+        }
       }
     }
 
