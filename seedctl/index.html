@@ -111,27 +111,28 @@ permalink: /seedctl/
               >
                 <article class="video-card reveal">
                   <p class="eyebrow">{{ item.eyebrow }}</p>
-                  <!--<h3>{{ item.title }}</h3>-->
-                  {%- assign thumb_path = item.thumb | relative_url -%}
-                  <div
-                    style="background-image:
-                    linear-gradient(to bottom, rgba(6, 11, 16, 0.18),
-                    rgba(6, 11, 16, 0.42)),url({{ thumb_path }})"
-                    class="video-frame video-lazy"
-                    data-video-url="{{ item.video_url }}"
-                  >
-                    <button
-                      class="video-play"
-                      type="button"
-                      aria-label="{{ item.aria_label }}"
-                    >
+
+                  <div class="video-player" data-video="{{ item.video_url }}">
+
+                    <img
+                      src="{{ item.thumb | relative_url }}"
+                      alt="{{ item.aria_label }}"
+                      class="video-thumb"
+                      loading="lazy"
+                      decoding="async"
+                    />
+
+                    <button class="video-play" aria-label="{{ item.aria_label }}">
                       <span class="video-play-icon"></span>
                       <span>{{ item.play_button }}</span>
                     </button>
+
                   </div>
+
                   {% if item.note %}
                   <p class="video-note">{{ item.note }}</p>
                   {% endif %}
+
                 </article>
               </div>
               {% endif %} {% endfor %}

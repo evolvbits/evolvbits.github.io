@@ -87,25 +87,52 @@ if (!disableParallax) {
   });
 }
 
-const lazyVideos = document.querySelectorAll(".video-lazy");
-lazyVideos.forEach((lazyVideo) => {
-  const playBtn = lazyVideo.querySelector(".video-play");
-  const videoUrl =
-    lazyVideo.dataset.videoUrl || "https://www.w3schools.com/html/mov_bbb.mp4";
+// const lazyVideos = document.querySelectorAll(".video-lazy");
+// lazyVideos.forEach((lazyVideo) => {
+//   const playBtn = lazyVideo.querySelector(".video-play");
+//   const videoUrl =
+//     lazyVideo.dataset.videoUrl || "https://www.w3schools.com/html/mov_bbb.mp4";
 
-  playBtn?.addEventListener("click", () => {
+//   playBtn?.addEventListener("click", () => {
+//     const video = document.createElement("video");
+//     video.src = videoUrl;
+//     video.controls = true;
+//     video.autoplay = true;
+//     video.playsInline = true;
+//     video.preload = "metadata";
+//     video.setAttribute("aria-label", "SeedCTL walkthrough video");
+//     video.style.width = "100%";
+//     video.style.height = "100%";
+//     video.style.objectFit = "cover";
+
+//     lazyVideo.innerHTML = "";
+//     lazyVideo.appendChild(video);
+//   });
+// });
+
+
+document.querySelectorAll(".video-player").forEach((player) => {
+
+  const btn = player.querySelector(".video-play");
+  const url = player.dataset.video;
+
+  btn.addEventListener("click", () => {
+
     const video = document.createElement("video");
-    video.src = videoUrl;
+
+    video.src = url;
     video.controls = true;
     video.autoplay = true;
     video.playsInline = true;
     video.preload = "metadata";
-    video.setAttribute("aria-label", "SeedCTL walkthrough video");
+
     video.style.width = "100%";
     video.style.height = "100%";
     video.style.objectFit = "cover";
 
-    lazyVideo.innerHTML = "";
-    lazyVideo.appendChild(video);
+    player.classList.add("playing");
+
+    player.appendChild(video);
   });
+
 });
