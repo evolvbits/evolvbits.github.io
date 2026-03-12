@@ -109,8 +109,10 @@ class VideoPlayer extends HTMLElement {
         >
 
         <button class="video-play" aria-label="${label}">
-          <span class="video-play-icon"></span>
-          <span>${buttonText}</span>
+          <div class="button-play-wrapper">
+            <span class="video-play-icon"></span>
+            <span class="video-play-text">${buttonText}</span>
+          </div>
         </button>
 
       </div>

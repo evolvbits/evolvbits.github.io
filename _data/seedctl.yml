@@ -73,8 +73,8 @@ cli:
       aria_label: "Terminal"
       active: true
     - eyebrow: WALKTHROUGH VIDEO
-      # video: https://www.youtube.com/watch?v=izjbePPP3h0
-      video: /assets/videos/example.mp4
+      video: https://www.youtube.com/watch?v=izjbePPP3h0
+      # video: /assets/videos/example.mp4
       thumb: /assets/images/video-placeholder.svg
       play_button: Watch demo
       aria_label: Watch SeedCTL demo
