@@ -83,6 +83,7 @@ permalink: /seedctl/
               ></button>
               {% endfor %}
             </div>
+
             <div class="carousel-inner">
               {% for item in seedctl.cli.carousel %} {% if item.type == "image"
               %}
@@ -109,33 +110,36 @@ permalink: /seedctl/
               <div
                 class="carousel-item {% if item.active == true %} active {% endif %}"
               >
-                <article class="video-card reveal">
-                  <p class="eyebrow">{{ item.eyebrow }}</p>
-
-                  <div class="video-player" data-video="{{ item.video_url }}">
-
-                    <img
-                      src="{{ item.thumb | relative_url }}"
-                      alt="{{ item.aria_label }}"
-                      class="video-thumb"
-                      loading="lazy"
-                      decoding="async"
-                    />
-
-                    <button class="video-play" aria-label="{{ item.aria_label }}">
-                      <span class="video-play-icon"></span>
-                      <span>{{ item.play_button }}</span>
-                    </button>
-
-                  </div>
-
-                  {% if item.note %}
-                  <p class="video-note">{{ item.note }}</p>
-                  {% endif %}
-
-                </article>
+              <article class="video-card reveal">
+                <p class="eyebrow">{{ item.eyebrow }}</p>
+                <div
+                  class="video-player"
+                  data-video="{{ item.video }}"
+                  data-type="{{ item.type }}"
+                >
+                  <img
+                    class="video-thumb"
+                    src="{{ item.thumb | relative_url }}"
+                    alt="{{ item.aria_label }}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <button
+                    class="video-play"
+                    type="button"
+                    aria-label="{{ item.aria_label }}"
+                  >
+                    <span class="video-play-icon"></span>
+                    <span>{{ item.play_button }}</span>
+                  </button>
+                </div>
+                {% if item.note %}
+                <p class="video-note">{{ item.note }}</p>
+                {% endif %}
+              </article>
               </div>
-              {% endif %} {% endfor %}
+              {% endif %}
+            {% endfor %}
             </div>
             <!-- carousel-inner -->
 

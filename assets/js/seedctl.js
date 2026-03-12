@@ -87,52 +87,44 @@ if (!disableParallax) {
   });
 }
 
-// const lazyVideos = document.querySelectorAll(".video-lazy");
-// lazyVideos.forEach((lazyVideo) => {
-//   const playBtn = lazyVideo.querySelector(".video-play");
-//   const videoUrl =
-//     lazyVideo.dataset.videoUrl || "https://www.w3schools.com/html/mov_bbb.mp4";
+// VIDEO CAROUSEL
+const players = document.querySelectorAll(".video-player");
 
-//   playBtn?.addEventListener("click", () => {
-//     const video = document.createElement("video");
-//     video.src = videoUrl;
-//     video.controls = true;
-//     video.autoplay = true;
-//     video.playsInline = true;
-//     video.preload = "metadata";
-//     video.setAttribute("aria-label", "SeedCTL walkthrough video");
-//     video.style.width = "100%";
-//     video.style.height = "100%";
-//     video.style.objectFit = "cover";
+players.forEach((player) => {
 
-//     lazyVideo.innerHTML = "";
-//     lazyVideo.appendChild(video);
-//   });
-// });
+  const button = player.querySelector(".video-play");
+  const videoSrc = player.dataset.video;
+  const type = player.dataset.type || "mp4";
 
+  button.addEventListener("click", () => {
 
-document.querySelectorAll(".video-player").forEach((player) => {
-
-  const btn = player.querySelector(".video-play");
-  const url = player.dataset.video;
-
-  btn.addEventListener("click", () => {
-
-    const video = document.createElement("video");
-
-    video.src = url;
-    video.controls = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-
-    video.style.width = "100%";
-    video.style.height = "100%";
-    video.style.objectFit = "cover";
+    if (player.classList.contains("playing")) return;
 
     player.classList.add("playing");
 
-    player.appendChild(video);
+    let element;
+
+    if (type === "youtube") {
+
+      element = document.createElement("iframe");
+      element.src = `https://www.youtube.com/embed/${videoSrc}?autoplay=1&rel=0`;
+      element.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      element.allowFullscreen = true;
+
+    } else {
+
+      element = document.createElement("video");
+      element.src = videoSrc;
+      element.controls = true;
+      element.autoplay = true;
+      element.playsInline = true;
+      element.preload = "metadata";
+
+    }
+
+    player.appendChild(element);
+
   });
 
 });
