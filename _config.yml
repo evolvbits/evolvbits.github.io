@@ -8,6 +8,7 @@ title: EvolvBits
 description: Tools that scale with you.
 plugins:
   - jekyll-sitemap
+  - jekyll-coffeescript
 markdown: kramdown
 sass:
   sass_dir: _sass

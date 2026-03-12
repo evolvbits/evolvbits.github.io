@@ -35,9 +35,47 @@ organization:
     name: William C. Canin
     url: https://williamcanin.github.io
 
+csp:
+  frame-src:
+    - https://www.google.com
+    - https://www.youtube.com
+    - https://giscus.app
+    - https://disqus.com
+    - https://challenges.cloudflare.com
+  connect-src:
+    - https://www.google.com
+    - https://api.github.com
+    - https://script.google.com
+    - https://script.googleusercontent.com
+  img-src:
+    - https://www.google.com
+    - https://media0.giphy.com
+    - https://media4.giphy.com
+    - https://media.giphy.com
+    - https://github.githubassets.com
+  script-src:
+    - https://www.google.com
+    - https://www.gstatic.com
+    - https://cdn.jsdelivr.net
+    - https://cdnjs.cloudflare.com
+    - https://giscus.app
+    - https://disqus.com
+    - https://script.google.com
+    - https://challenges.cloudflare.com
+  style-src:
+    - https://cdnjs.cloudflare.com
+    - https://fonts.googleapis.com
+    - https://cdn.jsdelivr.net
+    - https://giscus.app
+    - https://disqus.com
+  font-src:
+    - https://fonts.gstatic.com
+    - https://cdnjs.cloudflare.com
+    - https://cdn.jsdelivr.net
+
 # Maintenance page
 maintenance:
-  enable: true
+  enable: false
   avatar: "assets/images/evolvbits-logo-transparent-compact-dark.png"
   title: "Under construction"
   subtitle: |
@@ -138,9 +176,40 @@ projects:
     - "New automation modules adaptable to different kinds of workflows"
 
 contact:
+  google:
+    app_web: https://script.google.com/macros/s/AKfycbxz0btyblOxIZx6KlUHKk_hyCLGuosWyc9sn8QX_tVon0ju3Zv1LnSRbsAgeWZsTqL_5w/exec
+  cloudflare:
+    site_key: 0x4AAAAAACpe65JjyvNY7GHJ
   title: "Talk to EvolvBits"
   text: "Use the form below to send your message. Anyone can contact us: users, creators, partners, or curious visitors."
   cta_label: "Send message"
+  name:
+    placeholder: "first and last name"
+  email:
+    placeholder: "your best email address"
+    help: "we'll never share your email with anyone else."
+  message:
+    placeholder: "write your message here"
+    status: "sending...wait"
+    caracters:
+      min: 50
+      warning:
+        title: "Warning"
+        content: "the message must have at least 50 characters."
+    success:
+      title: "Message sent"
+      content: "your message has been sent successfully!"
+    error:
+      title: "Error"
+      content: "something went wrong while sending your message."
+  button:
+    text: "send!"
+  recaptcha:
+    warning:
+      title: Warning
+      content: "Please tick the 'I'm not a robot' box."
+    fail: "Verification failed. Please reload the page and try again."
+    error: "An error occurred while sending the message. Please try again."
 
 # Footer
 footer:

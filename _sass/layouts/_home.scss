@@ -1,5 +1,23 @@
 @use "../components/index";
 
+#contactMessageModal {
+
+  .modal-content,
+  .modal-header,
+  .modal-body {
+    border-radius: .1em !important;
+  }
+
+  .modal-content {
+    border: 1px solid cyan;
+
+    .modal-body {
+      background: rgba(10,15,20,.62);
+      color: #fff;
+    }
+  }
+}
+
 .home {
   position: relative;
   padding-bottom: 4.5rem;
@@ -690,6 +708,11 @@
       font-size: 0.87rem;
       font-weight: 600;
       color: #c2cbd4;
+    }
+    &__help {
+      color: #c2cbd4;
+      font-size: .8rem;
+      opacity: .7;
     }
     &__input,
     &__textarea {

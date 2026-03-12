@@ -185,6 +185,7 @@ title: Home
     </div>
   </section>
 
+
   <section class="container page-section" data-reveal>
     <div class="row g-4">
       <div class="col-12 col-lg-7">
@@ -194,6 +195,26 @@ title: Home
             Fill out the form and your default email app will open with your
             message ready to send.
           </p>
+          <!-- contact form -->
+           <!-- <div class="modal fade"
+              id="contactMessageModal"
+              tabindex="-1"
+              aria-labelledby="contactMessageModalLabel"
+              aria-hidden="true"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="contactMessageModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body"></div>
+                </div>
+              </div>
+            </div> -->
+
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
           <form
             id="contactForm"
             class="contact-form"
@@ -201,11 +222,11 @@ title: Home
           >
             <div class="row g-3">
               <div class="col-12 col-md-6">
-                <label for="contactName" class="contact-form__label"
-                  >Name</label
+                <label for="inputName" class="contact-form__label"
+                  >Full Name</label
                 >
                 <input
-                  id="contactName"
+                  id="inputName"
                   name="name"
                   type="text"
                   class="contact-form__input"
@@ -213,35 +234,26 @@ title: Home
                 />
               </div>
               <div class="col-12 col-md-6">
-                <label for="contactEmail" class="contact-form__label"
-                  >Email</label
+                <label for="inputEmail" class="contact-form__label"
+                  >Your Email</label
                 >
                 <input
-                  id="contactEmail"
+                  id="inputEmail"
                   name="email"
                   type="email"
                   class="contact-form__input"
                   required
                 />
+                <div id="emailHelp" class="form-text contact-form__help">
+                  {{ contents.contact.email.help | default: "We'll never share your email with anyone else." }}
+                </div>
               </div>
               <div class="col-12">
-                <label for="contactSubject" class="contact-form__label"
-                  >Subject</label
-                >
-                <input
-                  id="contactSubject"
-                  name="subject"
-                  type="text"
-                  class="contact-form__input"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label for="contactMessage" class="contact-form__label"
-                  >Message</label
+                <label for="textMessage" class="contact-form__label"
+                  >Your Message</label
                 >
                 <textarea
-                  id="contactMessage"
+                  id="textMessage"
                   name="message"
                   class="contact-form__textarea"
                   rows="6"
@@ -249,10 +261,19 @@ title: Home
                 ></textarea>
               </div>
             </div>
-            <div class="contact-form__actions">
-              <button type="submit" class="btn home-btn home-btn--primary">
-                {{ contents.contact.cta_label }}
-              </button>
+            <div class="row contact-form__actions">
+              <div class="col-5">
+                <input type="text" name="website" style="display:none">
+                <div class="cf-turnstile"
+                    data-sitekey="{{ contents.contact.cloudflare.site_key }}"
+                    data-appearance="interaction-only">
+                </div>
+              </div>
+              <div class="col-7">
+                <button id="submitButton" type="submit" class="btn home-btn home-btn--primary">
+                  {{ contents.contact.cta_label }}
+                </button>
+              </div>
             </div>
             <p
               id="contactFormStatus"
@@ -262,6 +283,8 @@ title: Home
           </form>
         </article>
       </div>
+      <!-- contact form -->
+
       <div class="col-12 col-lg-5">
         <article class="page-card page-card--direct-contact h-100" data-reveal>
           <div class="direct-contact__group">
@@ -318,3 +341,5 @@ title: Home
     </div>
   </section>
 </main>
+
+<script src="{{ '/assets/js/contact.js' | relative_url }}" defer></script>
