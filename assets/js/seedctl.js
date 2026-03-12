@@ -89,7 +89,6 @@ if (!disableParallax) {
 
 // VIDEO CAROUSEL
 class VideoPlayer extends HTMLElement {
-
   connectedCallback() {
 
     const video = this.dataset.video;
