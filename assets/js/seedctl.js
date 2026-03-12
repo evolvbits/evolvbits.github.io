@@ -87,7 +87,7 @@ if (!disableParallax) {
   });
 }
 
-const lazyVideos = document.querySelectorAll(".video-frame");
+const lazyVideos = document.querySelectorAll(".video-lazy");
 lazyVideos.forEach((lazyVideo) => {
   const playBtn = lazyVideo.querySelector(".video-play");
   const videoUrl =
