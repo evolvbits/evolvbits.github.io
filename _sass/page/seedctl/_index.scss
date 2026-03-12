@@ -554,11 +554,7 @@ $item-carousel-size: 594.95px;
       height: $item-carousel-size;
       display: flex;
       flex-direction: column;
-
-      video-player {
-        flex: 1 1 auto;
-        min-height: 0;
-      }
+      background: #0b1a22;
     }
 
     .dot {
