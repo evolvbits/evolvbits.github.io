@@ -88,43 +88,105 @@ if (!disableParallax) {
 }
 
 // VIDEO CAROUSEL
-const players = document.querySelectorAll(".video-player");
+class VideoPlayer extends HTMLElement {
 
-players.forEach((player) => {
+  connectedCallback() {
 
-  const button = player.querySelector(".video-play");
-  const videoSrc = player.dataset.video;
-  const type = player.dataset.type || "mp4";
+    const video = this.dataset.video;
+    const thumb = this.dataset.thumb;
+    const label = this.dataset.label || "Play video";
+    const buttonText = this.dataset.button || "Play";
 
-  button.addEventListener("click", () => {
+    this.innerHTML = `
+      <div class="video-wrapper">
 
-    if (player.classList.contains("playing")) return;
+        <div class="video-skeleton"></div>
 
-    player.classList.add("playing");
+        <img
+          class="video-thumb"
+          src="${thumb}"
+          alt="${label}"
+          loading="lazy"
+          decoding="async"
+        >
 
-    let element;
+        <button class="video-play" aria-label="${label}">
+          <span class="video-play-icon"></span>
+          <span>${buttonText}</span>
+        </button>
 
-    if (type === "youtube") {
+      </div>
+    `;
 
-      element = document.createElement("iframe");
-      element.src = `https://www.youtube.com/embed/${videoSrc}?autoplay=1&rel=0`;
-      element.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      element.allowFullscreen = true;
+    const wrapper = this.querySelector(".video-wrapper");
+    const button = this.querySelector(".video-play");
+    const skeleton = this.querySelector(".video-skeleton");
 
-    } else {
+    const createPlayer = () => {
 
-      element = document.createElement("video");
-      element.src = videoSrc;
-      element.controls = true;
-      element.autoplay = true;
-      element.playsInline = true;
-      element.preload = "metadata";
+      if (wrapper.classList.contains("playing")) return;
 
-    }
+      wrapper.classList.add("playing");
 
-    player.appendChild(element);
+      let element;
 
-  });
+      if (video.includes("youtube") || video.includes("youtu.be")) {
 
-});
+        const id = video.split("v=")[1]?.split("&")[0]
+          || video.split("/").pop();
+
+        element = document.createElement("iframe");
+
+        element.src =
+          `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+
+        element.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+
+        element.allowFullscreen = true;
+
+      } else {
+
+        element = document.createElement("video");
+
+        element.src = video;
+        element.controls = true;
+        element.autoplay = true;
+        element.playsInline = true;
+        element.preload = "metadata";
+
+      }
+
+      element.addEventListener("loadeddata", () => {
+        skeleton.remove();
+      });
+
+      wrapper.appendChild(element);
+
+    };
+
+    button.addEventListener("click", createPlayer);
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) {
+
+          const vid = wrapper.querySelector("video");
+
+          if (vid) vid.pause();
+
+        }
+
+      });
+
+    }, { threshold: 0.1 });
+
+    observer.observe(wrapper);
+
+  }
+
+}
+
+customElements.define("video-player", VideoPlayer);
