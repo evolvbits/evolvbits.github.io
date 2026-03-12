@@ -4,7 +4,6 @@
 @use "video";
 
 $item-carousel-size: 594.95px;
-$item-carousel-height: 460px;
 
 .body-seedctl {
   --seedctl-ink: #060b10;
@@ -545,6 +544,20 @@ $item-carousel-height: 460px;
         padding: 10px 12px;
         border-bottom: 1px solid rgba(121, 247, 255, 0.18);
         background: rgba(4, 9, 13, 0.9);
+      }
+    }
+
+    .video-card {
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: $item-carousel-size;
+      height: $item-carousel-size;
+      display: flex;
+      flex-direction: column;
+
+      video-player {
+        flex: 1 1 auto;
+        min-height: 0;
       }
     }
 

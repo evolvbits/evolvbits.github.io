@@ -90,7 +90,6 @@ if (!disableParallax) {
 // VIDEO CAROUSEL
 class VideoPlayer extends HTMLElement {
   connectedCallback() {
-
     const video = this.dataset.video;
     const thumb = this.dataset.thumb;
     const label = this.dataset.label || "Play video";
@@ -120,32 +119,41 @@ class VideoPlayer extends HTMLElement {
     const wrapper = this.querySelector(".video-wrapper");
     const button = this.querySelector(".video-play");
     const skeleton = this.querySelector(".video-skeleton");
+    const thumbImg = this.querySelector(".video-thumb");
+
+    const hideOverlay = () => {
+      if (skeleton && skeleton.isConnected) skeleton.remove();
+    };
+
+    if (thumbImg) {
+      thumbImg.addEventListener("load", hideOverlay, { once: true });
+      thumbImg.addEventListener("error", hideOverlay, { once: true });
+      if (thumbImg.complete) hideOverlay();
+    }
 
     const createPlayer = () => {
-
       if (wrapper.classList.contains("playing")) return;
 
       wrapper.classList.add("playing");
+      hideOverlay();
 
       let element;
 
       if (video.includes("youtube") || video.includes("youtu.be")) {
-
-        const id = video.split("v=")[1]?.split("&")[0]
-          || video.split("/").pop();
+        const id =
+          video.split("v=")[1]?.split("&")[0] || video.split("/").pop();
 
         element = document.createElement("iframe");
 
-        element.src =
-          `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+        element.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
 
         element.allow =
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
         element.allowFullscreen = true;
 
+        element.addEventListener("load", hideOverlay, { once: true });
       } else {
-
         element = document.createElement("video");
 
         element.src = video;
@@ -154,38 +162,29 @@ class VideoPlayer extends HTMLElement {
         element.playsInline = true;
         element.preload = "metadata";
 
+        element.addEventListener("loadeddata", hideOverlay, { once: true });
       }
 
-      element.addEventListener("loadeddata", () => {
-        skeleton.remove();
-      });
-
       wrapper.appendChild(element);
-
     };
 
     button.addEventListener("click", createPlayer);
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            const vid = wrapper.querySelector("video");
 
-      entries.forEach((entry) => {
-
-        if (!entry.isIntersecting) {
-
-          const vid = wrapper.querySelector("video");
-
-          if (vid) vid.pause();
-
-        }
-
-      });
-
-    }, { threshold: 0.1 });
+            if (vid) vid.pause();
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
     observer.observe(wrapper);
-
   }
-
 }
 
 customElements.define("video-player", VideoPlayer);
