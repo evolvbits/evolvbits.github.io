@@ -35,6 +35,7 @@ organization:
     name: William C. Canin
     url: https://williamcanin.github.io
 
+# Security site - access urls
 csp:
   frame-src:
     - https://www.google.com
@@ -182,16 +183,11 @@ contact:
     site_key: 0x4AAAAAACpe65JjyvNY7GHJ
   title: "Talk to EvolvBits"
   text: "Use the form below to send your message. Anyone can contact us: users, creators, partners, or curious visitors."
-  cta_label: "Send message"
-  name:
-    placeholder: "first and last name"
   email:
-    placeholder: "your best email address"
     help: "we'll never share your email with anyone else."
   message:
-    placeholder: "write your message here"
     status: "sending...wait"
-    caracters:
+    characters:
       min: 50
       warning:
         title: "Warning"
@@ -203,13 +199,7 @@ contact:
       title: "Error"
       content: "something went wrong while sending your message."
   button:
-    text: "send!"
-  recaptcha:
-    warning:
-      title: Warning
-      content: "Please tick the 'I'm not a robot' box."
-    fail: "Verification failed. Please reload the page and try again."
-    error: "An error occurred while sending the message. Please try again."
+    text: "Send message"
 
 # Footer
 footer:
