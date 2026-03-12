@@ -186,18 +186,15 @@ contact:
   email:
     help: "we'll never share your email with anyone else."
   message:
-    status: "sending...wait"
+    status: "Sending..."
     characters:
       min: 50
-      warning:
-        title: "Warning"
-        content: "the message must have at least 50 characters."
     success:
-      title: "Message sent"
-      content: "your message has been sent successfully!"
+      content: "Your message has been sent successfully!"
     error:
-      title: "Error"
-      content: "something went wrong while sending your message."
+      content: "Something went wrong while sending your message."
+    network:
+      error: "Network error"
   button:
     text: "Send message"
 

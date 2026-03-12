@@ -1,13 +1,11 @@
 @use "../components/index";
 
 #contactMessageModal {
-
   .modal-content,
   .modal-header,
   .modal-body {
     border-radius: .1em !important;
   }
-
   .modal-content {
     border: 1px solid cyan;
 
@@ -20,6 +18,52 @@
 
 #messageCounter {
   color: #23d5ab;
+}
+
+#messageProgressBar {
+  height: 100%;
+  width: 0%;
+  background: #23d5ab;
+  transition: width .2s ease;
+}
+
+#submitButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+
+.page-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.form-toast {
+  position: absolute;
+  left: 50%;
+  bottom: -80px;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: all .35s ease;
+  pointer-events: none;
+}
+
+.form-toast.show {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.form-toast.success {
+  background: #16a34a;
+}
+
+.form-toast.error {
+  background: #dc2626;
 }
 
 .home {
@@ -749,6 +793,15 @@
       margin: 0.8rem 0 0;
       font-size: 0.85rem;
       color: #aab4bf;
+    }
+
+    .message-progress {
+      width: 100%;
+      height: 4px;
+      background: #eee;
+      border-radius: 3px;
+      margin-top: 6px;
+      overflow: hidden;
     }
   }
 

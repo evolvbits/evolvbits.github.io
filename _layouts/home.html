@@ -195,29 +195,15 @@ title: Home
             Fill out the form and your default email app will open with your
             message ready to send.
           </p>
-          <!-- contact form -->
-           <!-- <div class="modal fade"
-              id="contactMessageModal"
-              tabindex="-1"
-              aria-labelledby="contactMessageModalLabel"
-              aria-hidden="true"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="contactMessageModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body"></div>
-                </div>
-              </div>
-            </div> -->
 
           <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+          <div id="formToast" class="form-toast">
+            <span id="formToastMessage"></span>
+          </div>
           <form
             id="contactForm"
             class="contact-form"
+            autocomplete="off"
             data-contact-email="{{ contents.email }}"
           >
             <div class="row g-3">
@@ -259,7 +245,12 @@ title: Home
                   rows="6"
                   required
                 ></textarea>
-                <small id="messageCounter">Minimum 50 characters (50 remaining)</small>
+                <div class="message-progress">
+                  <div id="messageProgressBar"></div>
+                </div>
+                <small id="messageCounter">
+                  Minimum 50 characters (50 remaining)
+                </small>
               </div>
             </div>
             <div class="row contact-form__actions">
@@ -270,7 +261,7 @@ title: Home
                     data-appearance="interaction-only">
                 </div>
               </div>
-              <div class="col-7">
+              <div class="col-7 d-flex justify-content-end">
                 <button id="submitButton" type="submit" class="btn home-btn home-btn--primary">
                   {{ contents.contact.button.text }}
                 </button>
