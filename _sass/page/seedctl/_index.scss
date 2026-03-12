@@ -550,7 +550,6 @@ $item-carousel-size: 594.95px;
     .video-card {
       border-radius: 12px;
       overflow: hidden;
-      min-height: $item-carousel-size;
       height: $item-carousel-size;
       display: flex;
       flex-direction: column;
