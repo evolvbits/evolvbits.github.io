@@ -1,21 +1,5 @@
 @use "../components/index";
 
-#contactMessageModal {
-  .modal-content,
-  .modal-header,
-  .modal-body {
-    border-radius: .1em !important;
-  }
-  .modal-content {
-    border: 1px solid cyan;
-
-    .modal-body {
-      background: rgba(10,15,20,.62);
-      color: #fff;
-    }
-  }
-}
-
 #messageCounter {
   color: #23d5ab;
 }
@@ -538,35 +522,6 @@
         color: #b8ffef;
       }
     }
-
-    .form-toast {
-      position: absolute;
-      left: 50%;
-      bottom: -80px;
-      transform: translateX(-50%);
-      background: #111;
-      color: white;
-      padding: 14px 22px;
-      border-radius: 8px;
-      font-size: 14px;
-      opacity: 0;
-      transition: all .35s ease;
-      pointer-events: none;
-
-      &.show {
-        bottom: 20px;
-        opacity: 1;
-      }
-
-      &.success {
-        background: #16a34a;
-      }
-
-      &.error {
-        background: #dc2626;
-      }
-    }
-
   }
 
   // Modifiers for specific Cards
@@ -748,12 +703,7 @@
   .contact-form {
     margin-top: 0.8rem;
 
-    // > :has(button:disabled) {
-    //   opacity: .7;
-    //   pointer-events: none;
-    // }
-
-    &--submit-wrap {
+     &--submit-wrap {
       min-height: 65px;
     }
 
