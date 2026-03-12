@@ -89,7 +89,7 @@ permalink: /seedctl/
                 {% if item.video %}
                   <div class="carousel-item {% if item.active == true %} active {% endif %}">
                     <section class="video-section">
-                      <article class="video-card reveal">
+                      <article class="video-card">
                         <p class="eyebrow">{{ item.eyebrow }}</p>
                         <video-player
                           data-video="{{ item.video }}"
@@ -102,17 +102,16 @@ permalink: /seedctl/
                   </div>
                 {% else %}
                   <div class="carousel-item {% if item.active == true %} active {% endif %}">
-                    <article class="terminal-card reveal">
+                    <article class="terminal-card">
                       <p class="eyebrow">{{ item.eyebrow }}</p>
-                      <!--<h3>{{ item.title }}</h3>-->
                       <div class="terminal-content">
                         <div class="terminal-bar">
                           <span class="dot red"></span>
                           <span class="dot yellow"></span>
                           <span class="dot green"></span>
-                          <span class="terminal-title"
-                            >seedctl — interactive session</span
-                          >
+                          <span class="terminal-title">
+                            seedctl — interactive session
+                          </span>
                         </div>
                         {% include img.html path=item.thumb alt=item.alt %}
                       </div>

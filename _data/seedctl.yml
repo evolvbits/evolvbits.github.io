@@ -68,13 +68,12 @@ cli:
   title: Designed like a real terminal workflow
   carousel:
     - eyebrow: "WALKTHROUGH PRINT"
-      type: image # image | mp4 | youtube
       thumb: /assets/images/seedctl-cli.png
       alt: "SeedCTL CLI startup screen"
       aria_label: "Terminal"
       active: true
     - eyebrow: WALKTHROUGH VIDEO
-      video: /assets/videos/example.mp4
+      video: https://www.youtube.com/watch?v=izjbePPP3h0
       thumb: /assets/images/video-placeholder.svg
       play_button: Watch demo
       aria_label: Watch SeedCTL demo
