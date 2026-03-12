@@ -197,9 +197,22 @@ title: Home
           </p>
 
           <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-          <div id="formToast" class="form-toast">
-            <span id="formToastMessage"></span>
+
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="formToast" class="toast align-items-center text-bg-dark border-0" role="alert">
+              <div class="d-flex">
+                <div id="formToastMessage" class="toast-body">
+                  Message sent
+                </div>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white me-2 m-auto"
+                  data-bs-dismiss="toast">
+                </button>
+              </div>
+            </div>
           </div>
+
           <form
             id="contactForm"
             class="contact-form"
@@ -256,6 +269,7 @@ title: Home
             <div class="row contact-form__actions">
               <div class="col-5 d-flex justify-content-start">
                 <input type="text" name="website" style="display:none">
+                <input type="hidden" name="form_start" id="formStart">
                 <div class="cf-turnstile"
                     data-sitekey="{{ contents.contact.cloudflare.site_key }}"
                     data-appearance="interaction-only">
