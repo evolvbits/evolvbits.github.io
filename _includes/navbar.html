@@ -37,7 +37,7 @@
         {%- endif -%}
       {% endfor %}
     </div>
-    <div class="nav-mobile d-lg-none">
+    <div class="nav-mobile d-lg-none ">
       <button
         class="menu-btn"
         data-bs-toggle="offcanvas"
@@ -60,7 +60,7 @@
     <ul class="mobile-list">
       {% assign links = site.data[include.data].nav %}
       {% for item in links %}
-      <li><a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a></li>
+      <li class="{% if item.label == 'CLI' %}d-none d-lg-block{% endif %}"><a href="{{ item.href | relative_url }}"><i class="{{ item.icon }}">&nbsp;</i>{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </div>

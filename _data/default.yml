@@ -50,6 +50,8 @@ csp:
     - https://script.googleusercontent.com
   img-src:
     - https://www.google.com
+    - https://github.com
+    - https://img.shields.io
     - https://media0.giphy.com
     - https://media4.giphy.com
     - https://media.giphy.com
