@@ -254,14 +254,14 @@ title: Home
               </div>
             </div>
             <div class="row contact-form__actions">
-              <div class="col-5">
+              <div class="col-5 d-flex justify-content-start">
                 <input type="text" name="website" style="display:none">
                 <div class="cf-turnstile"
                     data-sitekey="{{ contents.contact.cloudflare.site_key }}"
                     data-appearance="interaction-only">
                 </div>
               </div>
-              <div class="col-7 d-flex justify-content-end">
+              <div class="col-7 d-flex justify-content-end contact-form--submit-wrap">
                 <button id="submitButton" type="submit" class="btn home-btn home-btn--primary">
                   {{ contents.contact.button.text }}
                 </button>
