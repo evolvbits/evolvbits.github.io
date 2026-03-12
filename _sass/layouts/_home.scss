@@ -704,7 +704,7 @@
     margin-top: 0.8rem;
 
      &--submit-wrap {
-      min-height: 65px;
+      height: 65px !important;
     }
 
     &__label {
