@@ -46,7 +46,7 @@ overview:
       src: https://img.shields.io/github/v/release/seedctl/seedctl?label=latest&color=blue
       alt: Latest Release
     - href: https://github.com/evolvbits/seedctl/blob/main/LICENSE
-      src: https://img.shields.io/github/license/seedctl/seedctl
+      src: https://img.shields.io/badge/license-source--available-orange
       alt: License
     - src: https://img.shields.io/badge/rust-1.75%2B-orange
       alt: Rust 1.75+
