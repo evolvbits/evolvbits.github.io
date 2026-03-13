@@ -78,7 +78,7 @@ csp:
 
 # Maintenance page
 maintenance:
-  enable: true
+  enable: false
   avatar: "assets/images/evolvbits-logo-transparent-compact-dark.png"
   title: "Under construction"
   subtitle: |

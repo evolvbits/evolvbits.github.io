@@ -151,6 +151,11 @@ $item-carousel-size: 594.95px;
       font-family: inherit;
       font-size: 1.04em;
       line-height: 1.7;
+      list-style: decimal;
+      &::marker {
+        color: #3ddac4;
+        font-weight: bold;
+      }
     }
 
     h1,
@@ -217,6 +222,10 @@ $item-carousel-size: 594.95px;
       display: grid;
       place-items: center;
       padding: 120px 0 66px;
+
+      li {
+        list-style: none !important;
+      }
 
       .btn-standard {
         @extend %btn-standard;
@@ -657,7 +666,6 @@ $item-carousel-size: 594.95px;
     .threat-card {
       ul {
         margin: 12px 0 0;
-        padding-left: 18px;
         color: #bfd0d6;
         line-height: 1.55;
       }
@@ -765,7 +773,6 @@ $item-carousel-size: 594.95px;
 
       ul {
         margin: 14px 0 20px;
-        padding-left: 18px;
         color: #bfd0d6;
         line-height: 1.55;
       }

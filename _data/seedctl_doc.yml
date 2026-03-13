@@ -89,8 +89,18 @@ project:
 quickstart:
   title: Quick Start
   steps:
-    - Download SeedCTL in [https://github.com/evolvbits/seedctl/releases](https://github.com/evolvbits/seedctl/releases){:target="_blank"}
-    - Run `seedctl-[VERSION]-[SYSTEM]-x86_64` in a trusted environment.
+    - |
+      Download the latest version at:
+
+      [https://github.com/evolvbits/seedctl/releases](https://github.com/evolvbits/seedctl/releases){:target='_blank'}
+
+    - Disconnect from the internet.
+
+    - |
+      In a trusted environment, run the binary "`seedctl-[VERSION]-[SYSTEM]-x86_64`".
+      If you are on Linux, grant execute permission.
+
+    - "Important: Read ALL the initial recommendations."
     - Select `Create new wallet` or `Import existing wallet`.
     - Choose entropy mode and enter/select passphrase.
     - Select network and derivation options.

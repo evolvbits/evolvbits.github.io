@@ -115,7 +115,13 @@
     ul,
     ol {
       margin: 12px 0 0;
-      padding-left: 18px;
+      li {
+        list-style: decimal !important;
+        &::marker {
+          color: #3ddac4;
+          font-weight: bold;
+        }
+      }
     }
   }
 
