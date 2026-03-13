@@ -231,4 +231,3 @@ footer:
     - SeedCTL is non-custodial software and does not store, recover, or transmit your secrets.
     - You are fully responsible for host integrity, secure backups, and key lifecycle operations.
     - Always test recovery on a safe environment before holding funds.
-
