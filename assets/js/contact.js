@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
         body: formData
       });
 
-      // Mudança aqui: de .text() para .json()
+      // de .text() para .json()
       const result = await response.json();
 
-      // Mudança aqui: verifica a propriedade 'result' do objeto
+      // verifica a propriedade 'result' do objeto
       if (result.result === 'success') {
         showToast(
           "{{ contents.contact.message.success.content }}",
