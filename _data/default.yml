@@ -180,7 +180,7 @@ projects:
 
 contact:
   google:
-    app_web: "https://script.google.com/macros/s/AKfycbxGB7e369rWZl84A7_f_gxtSD_ff4CUsHlz7qod9XV480aVs9qh9pz1vDIFsUCp5bYO5A/exec"
+    app_web: "https://script.google.com/macros/s/AKfycbwVMkZ3PSZ0gaQVT4zEoa71o2jAxk4XvcMg6zOmpACaymI7-rDg_ehFhuK776Lc1zWIJA/exec"
   cloudflare:
     site_key: 0x4AAAAAACpe65JjyvNY7GHJ
   title: "Talk to EvolvBits"
