@@ -32,7 +32,7 @@
     "@type": "WebSite",
     "description": "{{ include.description | default: contents.description | strip_html | truncate: 160 | escape }}",
     "headline": "{{ include.title | default: contents.title.static | escape }}",
-    "name": "contents.title.static",
+    "name": "{{ contents.title.static }}",
     "url": "{{ page.url | prepend: site.url }}"
   }
 </script>
