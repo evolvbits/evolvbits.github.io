@@ -103,9 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         body: formData
       });
-      const text = await response.text();
 
-      if (text === "success") {
+      // Mudança aqui: de .text() para .json()
+      const result = await response.json();
+
+      // Mudança aqui: verifica a propriedade 'result' do objeto
+      if (result.result === 'success') {
         showToast(
           "{{ contents.contact.message.success.content }}",
           "success"
@@ -118,9 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
       } else {
+        // Exibe a mensagem de erro que veio do script ou a padrão
         showToast(
-          text ||
-          "{{ contents.contact.message.error.content }}",
+          result.debug || result.message || "{{ contents.contact.message.error.content }}",
           "error"
         );
       }
