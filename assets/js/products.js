@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".navbar-default");e&&window.addEventListener("scroll",()=>{window.scrollY>200?e.classList.add("navbar-scrolled"):e.classList.remove("navbar-scrolled")},{passive:!0})});

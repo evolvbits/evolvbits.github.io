@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="SeedCTL video placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1a22"/>
+      <stop offset="100%" stop-color="#101922"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#143040"/>
+      <stop offset="100%" stop-color="#111d2a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#79f7ff"/>
+      <stop offset="100%" stop-color="#ff961f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="36" y="30" width="1208" height="660" rx="24" fill="none" stroke="#79f7ff" stroke-opacity=".28"/>
+
+  <rect x="84" y="94" width="1112" height="84" rx="12" fill="#0b131b" stroke="#79f7ff" stroke-opacity=".22"/>
+  <circle cx="120" cy="136" r="10" fill="#ff5f56"/>
+  <circle cx="150" cy="136" r="10" fill="#ffbd2e"/>
+  <circle cx="180" cy="136" r="10" fill="#27c93f"/>
+  <text x="220" y="144" fill="#c8e7ee" font-size="26" font-family="monospace">seedctl walkthrough (placeholder)</text>
+
+  <rect x="84" y="210" width="760" height="420" rx="18" fill="url(#card)" stroke="#79f7ff" stroke-opacity=".32"/>
+  <text x="128" y="278" fill="#ff961f" font-size="28" font-family="monospace">CLI FLOW</text>
+  <text x="128" y="330" fill="#d8ebef" font-size="34" font-family="monospace">01 entropy   02 mnemonic</text>
+  <text x="128" y="380" fill="#d8ebef" font-size="34" font-family="monospace">03 derive    04 verify</text>
+  <text x="128" y="454" fill="#8fb0b8" font-size="25" font-family="monospace">deterministic • auditable • offline-first</text>
+
+  <rect x="888" y="210" width="308" height="420" rx="18" fill="#0f1822" stroke="#79f7ff" stroke-opacity=".22"/>
+  <rect x="930" y="282" width="224" height="224" rx="18" fill="#121f2c" stroke="#79f7ff" stroke-opacity=".22"/>
+  <polygon points="1018,332 1018,456 1122,394" fill="url(#accent)"/>
+  <text x="952" y="555" fill="#c6e6ed" font-size="24" font-family="monospace">press play</text>
+
+  <rect x="84" y="642" width="1112" height="8" rx="4" fill="url(#accent)" fill-opacity=".85"/>
+</svg>
