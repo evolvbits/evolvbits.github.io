@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Created with Inkscape (http://www.inkscape.org/)
+  © 2026 William C. Canin
+  This artwork is protected by copyright.
+  Unauthorized use, copying, or modification is prohibited.
+-->
+
+<svg
+   width="270mm"
+   height="270mm"
+   viewBox="0 0 270 270"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="evolvbits-logo-dark-v2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title1">EvolvBits</title><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.18084315"
+     inkscape:cx="-1061.6935"
+     inkscape:cy="270.95303"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" /><defs
+     id="defs1" /><g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="background"><rect
+       style="opacity:1;fill:#0d1117;fill-opacity:1;stroke:none;stroke-width:5.67497;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect2"
+       width="270"
+       height="270"
+       x="0"
+       y="0"
+       inkscape:label="bg" /></g><g
+     inkscape:label="evolvbits"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline;opacity:1"><path
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;paint-order:fill markers stroke;stroke-opacity:1"
+       d="m 147.01006,179.10396 54.31535,-0.0229 c 2.33559,0 3.38331,1.81834 3.38331,3.48063 v 31.10952 c 0,1.9696 -1.5861,3.45189 -3.60735,3.45189 H 145.9168 c -1.5718,0 -3.02158,-0.849 -3.02158,-2.60607 V 183.1561 c 0,-2.13012 1.3824,-4.05214 4.11484,-4.05214 z"
+       id="path1"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="bottom" /><path
+       style="opacity:1;fill:#0fb2a4;fill-opacity:1;stroke:none;stroke-width:1.22177;stroke-linecap:round;paint-order:fill markers stroke"
+       d="m 108.31325,170.65266 h 23.23441 c 1.83288,0 2.84856,1.07239 2.84856,2.44086 v 24.86436 c 0,1.51661 -1.09135,2.66716 -2.52527,2.66716 h -24.23076 c -1.30063,0 -2.50451,-1.21111 -2.50451,-2.3762 l 0,-25.01408 c 0,-1.55175 1.70913,-2.5821 3.17757,-2.5821 z"
+       id="path1-2"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="bit3" /><path
+       style="opacity:1;fill:#14c9b7;fill-opacity:1;stroke:none;stroke-width:1.17186;stroke-linecap:round;paint-order:fill markers stroke"
+       d="m 71.489913,149.71768 23.819808,0 c 1.540819,0 2.308882,1.16876 2.308882,2.14277 v 23.39472 c 0,1.62749 -1.057926,2.74323 -2.680102,2.74323 H 71.598214 c -1.281655,0 -2.508624,-0.95109 -2.508624,-2.42318 v -23.71477 c 0,-1.18963 0.921693,-2.14277 2.400323,-2.14277 z"
+       id="path1-2-0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="bit2" /><path
+       style="opacity:1;fill:#1ed6c3;fill-opacity:1;stroke:none;stroke-width:0.845468;stroke-linecap:round;paint-order:fill markers stroke"
+       d="m 47.905974,118.51235 16.692087,0 c 0.851853,0 1.592215,0.66696 1.592215,1.62309 l 0,17.26208 c 0,0.98264 -0.64183,1.8974 -1.713021,1.8974 h -16.53937 c -1.072865,0 -1.955501,-0.73469 -1.955501,-1.79453 v -17.21947 c 0,-0.96384 0.727451,-1.76857 1.92359,-1.76857 z"
+       id="path1-2-0-6"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="bit1" /><path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;paint-order:fill markers stroke;stroke-opacity:1"
+       d="m 115.03264,121.79926 c -5.06383,-0.004 -3.6547,-4.3285 -3.56116,-6.1681 2.94937,-15.34888 16.13729,-18.573165 32.08784,-18.525919 h 55.78181 c 3.52833,0.03734 5.51671,-1.851524 5.75829,-5.758286 V 65.105912 c -0.55756,-2.884033 -3.25218,-4.828046 -7.72806,-4.461794 h -65.14784 c -31.31002,-0.0079 -57.943212,18.53763 -58.284158,58.284162 0.742154,17.42428 9.049125,23.21434 13.402807,23.21434 h 14.340101 c 3.13693,0 3.41741,2.63317 3.41741,5.91913 v 3.73012 c 0.0405,4.83545 2.64953,5.97233 5.97233,5.97233 h 89.00065 c 2.92869,0 4.99786,-2.10503 4.99786,-4.99787 v -26.76079 c 0.025,-2.09944 -1.91848,-4.19289 -4.38686,-4.19289 z"
+       id="path2"
+       sodipodi:nodetypes="ccccccccccccccccccc"
+       inkscape:label="top" /></g><metadata
+     id="metadata1"><rdf:RDF><cc:Work
+         rdf:about=""><dc:creator><cc:Agent><dc:title>William C. Canin</dc:title></cc:Agent></dc:creator><dc:rights><cc:Agent><dc:title>© 2026 William C. Canin. Unauthorized use prohibited.</dc:title></cc:Agent></dc:rights><dc:publisher><cc:Agent><dc:title>William C. Canin</dc:title></cc:Agent></dc:publisher><dc:title>EvolvBits</dc:title></cc:Work></rdf:RDF></metadata></svg>

@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /products/
+Allow: /seedctl/
+Allow: /seedctl/documentation/
+Allow: /smog/
+Allow: /smog/documentation/
+Allow: /tilder/
+Allow: /tilder/documentation/
+Allow: /contact/
+Allow: /legal/
+
+# Block system files and licenses
+Disallow: /LICENSE
+Disallow: /README.txt
+Disallow: /CNAME
+Disallow: /feed.xml
+
+# Block assets that do not need to be indexed individually.
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/json/
+Disallow: /assets/vendors/
+
+# Prevent indexing of error pages.
+Disallow: /404.html
+
+# Change the URL to your website's sitemap.xml.
+Sitemap: http://evolvbits.github.io.com/sitemap.xml
